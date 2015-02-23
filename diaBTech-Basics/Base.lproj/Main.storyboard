@@ -19,13 +19,13 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J0A-d7-sNV">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <color key="barTintColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="DiaBTech - Basics" id="D6H-gp-x90"/>
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jny-14-hhA">
                                 <rect key="frame" x="242" y="156" width="117" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ali-Sf-ESe"/>
                                 </constraints>
@@ -42,7 +42,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.75838824090000001" green="0.79545454550000005" blue="0.7708837838" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.3411764705882353" green="0.37254901960784315" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
                         <accessibility key="accessibilityConfiguration">
                             <accessibilityTraits key="traits" none="YES" button="YES"/>
                         </accessibility>
@@ -77,6 +77,7 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Fd-2C-DKd">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <color key="barTintColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Registration" id="qH9-kg-ltR"/>
                                 </items>
@@ -114,7 +115,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="0.75838824089899504" green="0.79545454545454541" blue="0.77088378375278033" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="0Fd-2C-DKd" firstAttribute="trailing" secondItem="HsI-MH-rbb" secondAttribute="trailing" id="4qG-3q-8Z7"/>
                             <constraint firstItem="AoL-X3-q3x" firstAttribute="leading" secondItem="M3g-Vd-FVJ" secondAttribute="leadingMargin" constant="60" id="EIJ-6N-et5"/>
@@ -155,6 +156,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6A4-W4-mGu">
                                 <rect key="frame" x="547" y="562" width="37" height="30"/>
                                 <state key="normal" title="Done">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -163,6 +165,7 @@
                             </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GAM-dn-3uU">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <color key="barTintColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Registration " id="wSb-mF-a3i"/>
                                 </items>
@@ -171,7 +174,7 @@
                                 <rect key="frame" x="16" y="59" width="568" height="495"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.75838824090000001" green="0.79545454550000005" blue="0.7708837838" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="6A4-W4-mGu" firstAttribute="trailing" secondItem="MUI-vS-N0r" secondAttribute="trailing" id="5oZ-Qe-O47"/>
                             <constraint firstAttribute="trailing" secondItem="GAM-dn-3uU" secondAttribute="trailing" id="97U-xM-Rwx"/>
@@ -203,6 +206,7 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jgs-JM-8DI">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <color key="barTintColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="DiaBTech - Basics" id="Ksn-ZL-xSG"/>
                                 </items>
@@ -280,7 +284,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.70588235290000001" green="0.75294117650000003" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="BIF-7T-ajD" firstAttribute="top" secondItem="CBk-8c-baK" secondAttribute="top" id="6LD-ai-mLh"/>
                             <constraint firstAttribute="trailing" secondItem="Jgs-JM-8DI" secondAttribute="trailing" id="6Ob-vT-RTO"/>
@@ -323,9 +327,11 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZU-6T-DWi">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <color key="barTintColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Achievements" id="3Ka-eH-hrY">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="FJw-pk-EOi">
+                                            <color key="tintColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="UPO-ct-TnV" kind="showDetail" id="Hya-EU-KIr"/>
                                             </connections>
@@ -368,9 +374,11 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0OI-t4-28S">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <color key="barTintColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Export Activity" id="nES-wf-KB4">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="dPB-r1-bkF">
+                                            <color key="tintColor" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="UPO-ct-TnV" kind="showDetail" id="63Z-0h-spV"/>
                                             </connections>
@@ -381,6 +389,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nde-Co-IGp">
                                 <rect key="frame" x="538" y="550" width="50" height="30"/>
                                 <state key="normal" title="Export!">
+                                    <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -418,7 +427,7 @@
                                 <rect key="frame" x="162" y="484" width="51" height="31"/>
                             </switch>
                         </subviews>
-                        <color key="backgroundColor" red="0.70588235290000001" green="0.75294117650000003" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="nuA-2w-9a3" firstAttribute="trailing" secondItem="AWV-4x-WOM" secondAttribute="trailing" id="2Td-R0-Zdc"/>
                             <constraint firstItem="nuA-2w-9a3" firstAttribute="top" secondItem="wpC-9Q-U31" secondAttribute="bottom" constant="1" id="6Jd-Y7-0CP"/>
@@ -460,9 +469,11 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SEH-DT-pQX">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <color key="barTintColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Graph-It" id="rQR-u6-WLL">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="C6E-ti-Ha3">
+                                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="UPO-ct-TnV" kind="showDetail" id="5ER-ok-sPP"/>
                                             </connections>
@@ -506,6 +517,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvW-QY-j25">
                                 <rect key="frame" x="506" y="550" width="60" height="30"/>
                                 <state key="normal" title="Graph It!">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -513,7 +525,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.70588235290000001" green="0.75294117650000003" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="riR-71-6jK" firstAttribute="leading" secondItem="dOm-rx-HuT" secondAttribute="leading" id="Klh-L6-vTa"/>
                             <constraint firstItem="qQA-jJ-4mW" firstAttribute="top" secondItem="qTr-AF-2Lw" secondAttribute="bottom" constant="19" id="QJl-Cd-0iO"/>
@@ -555,6 +567,7 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cTd-5W-7WP">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <color key="barTintColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem id="VQh-iQ-ov2">
                                         <barButtonItem key="backBarButtonItem" title="Back" id="4Hu-pq-FlV"/>
@@ -564,6 +577,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VgP-SG-KMW">
                                 <rect key="frame" x="547" y="562" width="37" height="30"/>
                                 <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -599,9 +613,11 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I2w-ZG-Sh9">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <color key="barTintColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Add Activity" id="z7t-Q0-bJ8">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="DKP-qU-42F">
+                                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="UPO-ct-TnV" kind="showDetail" id="TbK-3d-9dG"/>
                                             </connections>
@@ -637,7 +653,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.70588235290000001" green="0.75294117650000003" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="I2w-ZG-Sh9" secondAttribute="trailing" id="1EE-pO-h6p"/>
                             <constraint firstItem="Y9s-VT-ceq" firstAttribute="top" secondItem="ymf-sW-8Ua" secondAttribute="bottom" constant="8" symbolic="YES" id="9ax-fi-rTi"/>
@@ -688,9 +704,11 @@
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLd-pa-3xW">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <color key="barTintColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="View Logs" id="LGe-w5-3DA">
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="T0D-E7-LmH">
+                                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="rrG-Ab-M8f" kind="showDetail" id="l5t-cO-nOX"/>
                                             </connections>
@@ -745,9 +763,11 @@
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AVY-fQ-fQJ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <color key="barTintColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Diabetic Resources" id="kfj-kb-2D9">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="ViD-kb-O3Z">
+                                            <color key="tintColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="UPO-ct-TnV" kind="showDetail" id="Qel-Bj-pqd"/>
                                             </connections>
@@ -786,9 +806,11 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3uO-Im-Hm8">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <color key="barTintColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Symptom Checker" id="zqj-QV-OcT">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="C4e-Gv-Xub">
+                                            <color key="tintColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="UPO-ct-TnV" kind="showDetail" id="5Oz-et-wga"/>
                                             </connections>
@@ -797,7 +819,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" red="0.70588235290000001" green="0.75294117650000003" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="3uO-Im-Hm8" secondAttribute="trailing" id="0DX-YG-B5a"/>
                             <constraint firstItem="3uO-Im-Hm8" firstAttribute="top" secondItem="ls2-qI-Sfn" secondAttribute="top" id="8vk-ku-FG0"/>
@@ -823,9 +845,11 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekT-Fd-UA8">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <color key="barTintColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Edit Settings" id="lIm-M1-x42">
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="GSQ-Yn-N9W">
+                                            <color key="tintColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="UPO-ct-TnV" kind="showDetail" id="aft-mC-cmG"/>
                                             </connections>
@@ -834,7 +858,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" red="0.70588235290000001" green="0.75294117650000003" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ekT-Fd-UA8" secondAttribute="trailing" id="Gw9-nf-nl7"/>
                             <constraint firstItem="ekT-Fd-UA8" firstAttribute="leading" secondItem="B5m-Cg-REZ" secondAttribute="leading" id="q6H-vU-TrN"/>
@@ -860,9 +884,11 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jTB-9K-z1H">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <color key="barTintColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Comments" id="Ddz-fh-Y9F">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="h8g-f4-tIL">
+                                            <color key="tintColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="UPO-ct-TnV" kind="showDetail" id="dCN-VJ-Jj6"/>
                                             </connections>
@@ -873,6 +899,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMY-ck-SfG">
                                 <rect key="frame" x="463" y="550" width="121" height="30"/>
                                 <state key="normal" title="Submit Comment">
+                                    <color key="titleColor" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -899,7 +926,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="0.70588235290000001" green="0.75294117650000003" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="aMY-ck-SfG" firstAttribute="top" secondItem="GNl-3K-BXr" secondAttribute="bottom" constant="8" symbolic="YES" id="5oE-KO-g3y"/>
                             <constraint firstItem="GNl-3K-BXr" firstAttribute="trailing" secondItem="aMY-ck-SfG" secondAttribute="trailing" id="DbR-63-NA6"/>
@@ -936,9 +963,11 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zP-Uc-0xU">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <color key="barTintColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Add an Activity" id="4bE-IX-SGM">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="dyl-ji-Q4l">
+                                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="rrG-Ab-M8f" kind="showDetail" id="204-27-nes"/>
                                             </connections>
@@ -953,19 +982,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insulin In-take:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vdq-wy-PY5">
-                                <rect key="frame" x="16" y="336" width="113" height="21"/>
+                                <rect key="frame" x="16" y="341" width="113" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estimated Carb Count:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iqu-fd-kcc">
-                                <rect key="frame" x="16" y="296" width="176" height="21"/>
+                                <rect key="frame" x="16" y="306" width="176" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blood Sugar Reading:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADi-yX-Stm">
-                                <rect key="frame" x="16" y="256" width="169" height="21"/>
+                                <rect key="frame" x="16" y="272" width="169" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -977,7 +1006,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Twx-WE-gla">
-                                <rect key="frame" x="0.0" y="93" width="600" height="155"/>
+                                <rect key="frame" x="0.0" y="93" width="600" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="445836831.28607601">
                                     <!--2015-02-17 03:33:51 +0000-->
                                 </date>
@@ -986,20 +1015,20 @@
                                 </date>
                             </datePicker>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gbU-Nb-DDq">
-                                <rect key="frame" x="354" y="252" width="173" height="30"/>
+                                <rect key="frame" x="352" y="268" width="173" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="173" id="ZK6-jL-i75"/>
+                                    <constraint firstAttribute="width" constant="173" id="KCy-pw-8lY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tjZ-o3-0vD">
-                                <rect key="frame" x="354" y="292" width="173" height="30"/>
+                                <rect key="frame" x="352" y="302" width="173" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CFU-s4-G3G">
-                                <rect key="frame" x="354" y="332" width="173" height="30"/>
+                                <rect key="frame" x="352" y="337" width="173" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -1013,45 +1042,70 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hhb-zt-kLX">
                                 <rect key="frame" x="495" y="550" width="89" height="30"/>
                                 <state key="normal" title="Save Activity">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="rrG-Ab-M8f" kind="showDetail" id="z1i-d3-ZfG"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mg/dl" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9t2-FA-3pQ">
+                                <rect key="frame" x="539" y="272" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="grams" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tU1-Vf-1FA">
+                                <rect key="frame" x="539" y="306" width="48" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="units" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOU-aj-hiB">
+                                <rect key="frame" x="539" y="341" width="37" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.70588235290000001" green="0.75294117650000003" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Q8v-lB-Ir9" firstAttribute="leading" secondItem="Vdq-wy-PY5" secondAttribute="leading" id="0Kb-IW-Qkj"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gbU-Nb-DDq" secondAttribute="trailing" constant="57" id="5gb-Nc-CpY"/>
-                            <constraint firstItem="Twx-WE-gla" firstAttribute="top" secondItem="0zP-Uc-0xU" secondAttribute="bottom" constant="49" id="6Xx-e9-yRx"/>
-                            <constraint firstItem="Tds-t4-olI" firstAttribute="trailing" secondItem="Hhb-zt-kLX" secondAttribute="trailing" id="7jb-ZC-Mf2"/>
-                            <constraint firstItem="Twx-WE-gla" firstAttribute="trailing" secondItem="0zP-Uc-0xU" secondAttribute="trailing" id="9Xb-ER-RXE"/>
-                            <constraint firstItem="rIR-8d-g5P" firstAttribute="top" secondItem="0zP-Uc-0xU" secondAttribute="bottom" constant="30" id="EF3-aH-j4J"/>
-                            <constraint firstAttribute="trailing" secondItem="0zP-Uc-0xU" secondAttribute="trailing" id="Hzg-0a-BPx"/>
-                            <constraint firstItem="Twx-WE-gla" firstAttribute="leading" secondItem="Tni-JR-B4G" secondAttribute="leading" id="JSF-4J-lTT"/>
-                            <constraint firstItem="CFU-s4-G3G" firstAttribute="top" secondItem="tjZ-o3-0vD" secondAttribute="bottom" constant="10" id="LiQ-VI-YXg"/>
-                            <constraint firstItem="CFU-s4-G3G" firstAttribute="leading" secondItem="tjZ-o3-0vD" secondAttribute="leading" id="M7b-Eq-pDx"/>
-                            <constraint firstItem="ADi-yX-Stm" firstAttribute="leading" secondItem="rIR-8d-g5P" secondAttribute="leading" id="MtS-SN-Fh5"/>
-                            <constraint firstItem="0zP-Uc-0xU" firstAttribute="top" secondItem="Tni-JR-B4G" secondAttribute="top" id="Mxh-qS-jMP"/>
-                            <constraint firstItem="Tds-t4-olI" firstAttribute="top" secondItem="Q8v-lB-Ir9" secondAttribute="bottom" constant="8" symbolic="YES" id="Rfo-d6-3PK"/>
-                            <constraint firstItem="Vdq-wy-PY5" firstAttribute="leading" secondItem="Iqu-fd-kcc" secondAttribute="leading" id="Vg9-93-PA9"/>
-                            <constraint firstItem="Twx-WE-gla" firstAttribute="centerX" secondItem="Tds-t4-olI" secondAttribute="centerX" id="XMd-DE-cg9"/>
-                            <constraint firstItem="Twx-WE-gla" firstAttribute="leading" secondItem="0zP-Uc-0xU" secondAttribute="leading" id="XbQ-d8-WQ2"/>
-                            <constraint firstAttribute="bottom" secondItem="Hhb-zt-kLX" secondAttribute="bottom" constant="20" symbolic="YES" id="ZCr-WH-7ZK"/>
-                            <constraint firstItem="ADi-yX-Stm" firstAttribute="top" secondItem="Twx-WE-gla" secondAttribute="bottom" constant="1" id="ZRV-fb-6QQ"/>
-                            <constraint firstItem="Hhb-zt-kLX" firstAttribute="top" secondItem="Tds-t4-olI" secondAttribute="bottom" constant="18" id="abS-B4-1qk"/>
-                            <constraint firstItem="tjZ-o3-0vD" firstAttribute="leading" secondItem="gbU-Nb-DDq" secondAttribute="leading" id="anU-VT-PZC"/>
-                            <constraint firstItem="tjZ-o3-0vD" firstAttribute="top" secondItem="gbU-Nb-DDq" secondAttribute="bottom" constant="10" id="ckw-SO-2pb"/>
-                            <constraint firstItem="ADi-yX-Stm" firstAttribute="leading" secondItem="Iqu-fd-kcc" secondAttribute="leading" id="den-0v-waM"/>
-                            <constraint firstItem="Vdq-wy-PY5" firstAttribute="top" secondItem="Iqu-fd-kcc" secondAttribute="bottom" constant="19" id="dmw-PS-0ew"/>
-                            <constraint firstItem="Iqu-fd-kcc" firstAttribute="top" secondItem="ADi-yX-Stm" secondAttribute="bottom" constant="19" id="fKp-bY-AAN"/>
-                            <constraint firstItem="tjZ-o3-0vD" firstAttribute="trailing" secondItem="CFU-s4-G3G" secondAttribute="trailing" id="h36-7e-P1f"/>
-                            <constraint firstItem="Q8v-lB-Ir9" firstAttribute="top" secondItem="Vdq-wy-PY5" secondAttribute="bottom" constant="18" id="k05-Cb-ZBY"/>
-                            <constraint firstItem="Tds-t4-olI" firstAttribute="leading" secondItem="Q8v-lB-Ir9" secondAttribute="leading" id="m9G-Dh-GgK"/>
-                            <constraint firstItem="Tds-t4-olI" firstAttribute="top" secondItem="CFU-s4-G3G" secondAttribute="bottom" constant="42" id="m9s-3Q-gdW"/>
-                            <constraint firstItem="tjZ-o3-0vD" firstAttribute="trailing" secondItem="gbU-Nb-DDq" secondAttribute="trailing" id="myB-k7-ZU0"/>
-                            <constraint firstItem="Tds-t4-olI" firstAttribute="leading" secondItem="Tni-JR-B4G" secondAttribute="leadingMargin" id="pA3-0d-k4D"/>
+                            <constraint firstItem="tU1-Vf-1FA" firstAttribute="leading" secondItem="9t2-FA-3pQ" secondAttribute="leading" id="1rU-bF-Qw5"/>
+                            <constraint firstItem="CFU-s4-G3G" firstAttribute="top" secondItem="tjZ-o3-0vD" secondAttribute="bottom" constant="5" id="3Af-aR-HNL"/>
+                            <constraint firstItem="0zP-Uc-0xU" firstAttribute="top" secondItem="Tni-JR-B4G" secondAttribute="top" id="3Xh-bW-sFW"/>
+                            <constraint firstItem="CFU-s4-G3G" firstAttribute="leading" secondItem="tjZ-o3-0vD" secondAttribute="leading" id="3c7-LJ-lgR"/>
+                            <constraint firstItem="ADi-yX-Stm" firstAttribute="leading" secondItem="Iqu-fd-kcc" secondAttribute="leading" id="4CP-oY-ZNs"/>
+                            <constraint firstItem="rIR-8d-g5P" firstAttribute="top" secondItem="0zP-Uc-0xU" secondAttribute="bottom" constant="30" id="6BM-zD-i0p"/>
+                            <constraint firstItem="0zP-Uc-0xU" firstAttribute="trailing" secondItem="Twx-WE-gla" secondAttribute="trailing" id="9Ph-w5-UFV"/>
+                            <constraint firstItem="tjZ-o3-0vD" firstAttribute="leading" secondItem="gbU-Nb-DDq" secondAttribute="leading" id="EZz-C3-DpL"/>
+                            <constraint firstItem="0zP-Uc-0xU" firstAttribute="leading" secondItem="Twx-WE-gla" secondAttribute="leading" id="FS8-Js-dyo"/>
+                            <constraint firstItem="tjZ-o3-0vD" firstAttribute="trailing" secondItem="gbU-Nb-DDq" secondAttribute="trailing" id="Fjm-pH-3k8"/>
+                            <constraint firstItem="ADi-yX-Stm" firstAttribute="baseline" secondItem="9t2-FA-3pQ" secondAttribute="baseline" id="GC1-1D-1pl"/>
+                            <constraint firstItem="9t2-FA-3pQ" firstAttribute="trailing" secondItem="Tds-t4-olI" secondAttribute="trailing" id="GNj-wb-ax1"/>
+                            <constraint firstAttribute="bottom" secondItem="Hhb-zt-kLX" secondAttribute="bottom" constant="20" symbolic="YES" id="Iem-OJ-Gzu"/>
+                            <constraint firstItem="rIR-8d-g5P" firstAttribute="leading" secondItem="ADi-yX-Stm" secondAttribute="leading" id="JGa-yF-Y0f"/>
+                            <constraint firstItem="Q8v-lB-Ir9" firstAttribute="leading" secondItem="Vdq-wy-PY5" secondAttribute="leading" id="MBZ-FJ-JPx"/>
+                            <constraint firstItem="Q8v-lB-Ir9" firstAttribute="top" secondItem="Vdq-wy-PY5" secondAttribute="bottom" constant="13" id="PE8-IA-tzg"/>
+                            <constraint firstItem="ADi-yX-Stm" firstAttribute="top" secondItem="Twx-WE-gla" secondAttribute="bottom" constant="17" id="RQD-pD-bnb"/>
+                            <constraint firstItem="Twx-WE-gla" firstAttribute="leading" secondItem="Tni-JR-B4G" secondAttribute="leading" id="St2-fs-Qf2"/>
+                            <constraint firstItem="Tds-t4-olI" firstAttribute="top" secondItem="Q8v-lB-Ir9" secondAttribute="bottom" constant="8" symbolic="YES" id="Sy2-av-BYk"/>
+                            <constraint firstItem="Tds-t4-olI" firstAttribute="leading" secondItem="Q8v-lB-Ir9" secondAttribute="leading" id="Teg-db-26E"/>
+                            <constraint firstItem="9t2-FA-3pQ" firstAttribute="leading" secondItem="gbU-Nb-DDq" secondAttribute="trailing" constant="14" id="WkN-bl-bkY"/>
+                            <constraint firstItem="Iqu-fd-kcc" firstAttribute="top" secondItem="ADi-yX-Stm" secondAttribute="bottom" constant="13" id="WmW-sf-RKv"/>
+                            <constraint firstItem="Vdq-wy-PY5" firstAttribute="top" secondItem="Iqu-fd-kcc" secondAttribute="bottom" constant="14" id="ZVV-tq-g9C"/>
+                            <constraint firstItem="Hhb-zt-kLX" firstAttribute="trailing" secondItem="Tds-t4-olI" secondAttribute="trailing" id="hSC-ap-prF"/>
+                            <constraint firstAttribute="trailing" secondItem="Twx-WE-gla" secondAttribute="trailing" id="hYY-if-Qhf"/>
+                            <constraint firstItem="Twx-WE-gla" firstAttribute="centerX" secondItem="Tds-t4-olI" secondAttribute="centerX" id="lAS-2H-GWe"/>
+                            <constraint firstItem="Vdq-wy-PY5" firstAttribute="leading" secondItem="Tni-JR-B4G" secondAttribute="leadingMargin" id="mVY-lC-uzg"/>
+                            <constraint firstItem="gbU-Nb-DDq" firstAttribute="top" secondItem="Twx-WE-gla" secondAttribute="bottom" constant="13" id="mlg-JY-7XF"/>
+                            <constraint firstItem="Hhb-zt-kLX" firstAttribute="top" secondItem="Tds-t4-olI" secondAttribute="bottom" constant="18" id="n9F-LK-ZZ5"/>
+                            <constraint firstItem="CFU-s4-G3G" firstAttribute="trailing" secondItem="tjZ-o3-0vD" secondAttribute="trailing" id="pvY-6v-4gI"/>
+                            <constraint firstItem="tU1-Vf-1FA" firstAttribute="leading" secondItem="UOU-aj-hiB" secondAttribute="leading" id="pwX-IM-QSY"/>
+                            <constraint firstItem="UOU-aj-hiB" firstAttribute="baseline" secondItem="Vdq-wy-PY5" secondAttribute="baseline" id="qUk-Kc-HUW"/>
+                            <constraint firstItem="Twx-WE-gla" firstAttribute="top" secondItem="0zP-Uc-0xU" secondAttribute="bottom" constant="49" id="qzc-pi-nDw"/>
+                            <constraint firstItem="Iqu-fd-kcc" firstAttribute="baseline" secondItem="tU1-Vf-1FA" secondAttribute="baseline" id="uDS-Te-Z1f"/>
+                            <constraint firstItem="tjZ-o3-0vD" firstAttribute="top" secondItem="gbU-Nb-DDq" secondAttribute="bottom" constant="4" id="wf4-Ok-hwl"/>
+                            <constraint firstItem="Vdq-wy-PY5" firstAttribute="leading" secondItem="Iqu-fd-kcc" secondAttribute="leading" id="ymd-C5-Us1"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -1073,9 +1127,11 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OYY-pj-WK4">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <color key="barTintColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Add A1C" id="1LY-4x-50e">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="7am-Sm-NSH">
+                                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="rrG-Ab-M8f" kind="showDetail" id="QMB-Yc-e40"/>
                                             </connections>
@@ -1112,6 +1168,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBe-B6-ybX">
                                 <rect key="frame" x="516" y="562" width="68" height="30"/>
                                 <state key="normal" title="Save A1C">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1119,7 +1176,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.64705882349999999" green="0.70196078429999997" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="IHC-IS-pmD" firstAttribute="leading" secondItem="GmX-1K-qee" secondAttribute="leading" id="7Vv-Hm-Erh"/>
                             <constraint firstItem="e98-63-A5F" firstAttribute="top" secondItem="gBe-B6-ybX" secondAttribute="bottom" constant="8" symbolic="YES" id="9kI-fn-xoF"/>
@@ -1164,7 +1221,7 @@
         <image name="SCIcon.png" width="114" height="114"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wBR-0O-bTs"/>
         <segue reference="dCN-VJ-Jj6"/>
+        <segue reference="z1i-d3-ZfG"/>
     </inferredMetricsTieBreakers>
 </document>
