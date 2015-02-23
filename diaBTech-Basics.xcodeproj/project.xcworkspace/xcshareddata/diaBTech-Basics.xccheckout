@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E340DA89-5A09-45EF-85CF-623FD2E70E51</string>
+	<key>IDESourceControlProjectName</key>
+	<string>diaBTech-Basics</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EABD4DBBE668374BA7B23F3FB01162A5670DA7C8</key>
+		<string>https://github.com/sadie1992/diaBTech-Basics.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>diaBTech-Basics.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EABD4DBBE668374BA7B23F3FB01162A5670DA7C8</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sadie1992/diaBTech-Basics.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EABD4DBBE668374BA7B23F3FB01162A5670DA7C8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EABD4DBBE668374BA7B23F3FB01162A5670DA7C8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>diaBTech-Basics</string>
+		</dict>
+	</array>
+</dict>
+</plist>

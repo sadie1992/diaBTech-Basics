@@ -23,9 +23,11 @@ class Facebook {
         if ( fbsessionState == FBSessionState.Open
             || fbsessionState == FBSessionState.OpenTokenExtended ){
                 self.fbSession = FBSession.activeSession();
+                println("Signed in: true")
                 return true;
         }
         else {
+            println("Signed in: false")
             return false;
         }
     }

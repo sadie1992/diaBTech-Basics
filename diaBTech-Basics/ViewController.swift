@@ -14,17 +14,23 @@ class ViewController: UIViewController, FBLoginViewDelegate {
     
     @IBOutlet weak var nameLabel: UILabel!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        println("Has session: ");
+       // self.fbLoginView.delegate = self
+       // self.fbLoginView.readPermissions = ["public_profile", "email", "user_friends"]
         
-        self.fbLoginView.delegate = self
-        self.fbLoginView.readPermissions = ["public_profile", "email", "user_friends"]
+        
+        
         
     }
     
     //FB delegate methods
     func loginViewShowingLoggedInUser(loginView: FBLoginView!) {
+        println("Has session: ", FBSession.activeSession());
         println("User Logged In");
     }
     
