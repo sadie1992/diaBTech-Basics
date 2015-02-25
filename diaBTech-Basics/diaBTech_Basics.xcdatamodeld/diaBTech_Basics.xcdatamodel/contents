@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="UserHealth" syncable="YES">
-        <attribute name="a1c" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+    <entity name="UserA1C" parentEntity="UserID" syncable="YES">
+        <attribute name="a1c" attributeType="Decimal" minValueString="0" maxValueString="20" defaultValueString="0" syncable="YES"/>
+        <attribute name="dateTime" attributeType="Date" syncable="YES"/>
+        <attribute name="userID" attributeType="Integer 16" minValueString="0" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <relationship name="hasParent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserID" inverseName="hasA1CEntry" inverseEntity="UserID" syncable="YES"/>
+    </entity>
+    <entity name="UserHealth" parentEntity="UserID" syncable="YES">
         <attribute name="bloodSugarReading" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateTime" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="estCarbCount" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="insulinInTake" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="userID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserID" inverseName="connectByUserId" inverseEntity="UserID" syncable="YES"/>
+        <attribute name="userID" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <relationship name="hasParent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserID" inverseName="hasDailyEntry" inverseEntity="UserID" syncable="YES"/>
+        <userInfo>
+            <entry key="userId" value="Int"/>
+        </userInfo>
     </entity>
     <entity name="UserID" syncable="YES">
         <attribute name="dinnerMealTime" optional="YES" attributeType="Date" syncable="YES"/>
@@ -18,17 +25,22 @@
         <attribute name="fbUserFname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fbUserLname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lunchMealTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="maxGoalBS" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="700" defaultValueString="0" syncable="YES"/>
+        <attribute name="minGoalBS" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="700" defaultValueString="0" syncable="YES"/>
         <attribute name="morningMealTime" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="nextEndoApt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="snack1MealTime" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="snack2MealTime" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="userAge" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="userGender" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="userid" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <relationship name="connectByUserId" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserHealth" inverseName="relationship" inverseEntity="UserHealth" syncable="YES"/>
+        <attribute name="userid" attributeType="Integer 64" minValueString="0" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <relationship name="hasA1CEntry" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserA1C" inverseName="hasParent" inverseEntity="UserA1C" syncable="YES"/>
+        <relationship name="hasDailyEntry" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserHealth" inverseName="hasParent" inverseEntity="UserHealth" syncable="YES"/>
+        <userInfo>
+            <entry key="userId" value="Int"/>
+        </userInfo>
     </entity>
     <elements>
-        <element name="UserHealth" positionX="-18" positionY="27" width="128" height="178"/>
-        <element name="UserID" positionX="-299" positionY="-90" width="128" height="253"/>
+        <element name="UserHealth" positionX="-63" positionY="-136" width="128" height="148"/>
+        <element name="UserID" positionX="-468" positionY="-115" width="128" height="268"/>
+        <element name="UserA1C" positionX="-63" positionY="81" width="128" height="103"/>
     </elements>
 </model>

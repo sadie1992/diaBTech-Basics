@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E4B8F8B1A9E640F002D2CFE /* user-A1C.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4B8F8A1A9E640F002D2CFE /* user-A1C.swift */; };
 		1E58ED311A774555007C320F /* user-idTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E58ED301A774555007C320F /* user-idTable.swift */; };
 		1E58ED331A77465C007C320F /* user-health.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E58ED321A77465C007C320F /* user-health.swift */; };
 		1E7B3CBA1A89AA9100541A19 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7B3CB91A89AA9100541A19 /* Facebook.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E4B8F8A1A9E640F002D2CFE /* user-A1C.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "user-A1C.swift"; sourceTree = "<group>"; };
 		1E58ED301A774555007C320F /* user-idTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "user-idTable.swift"; sourceTree = "<group>"; };
 		1E58ED321A77465C007C320F /* user-health.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "user-health.swift"; sourceTree = "<group>"; };
 		1E7B3CB31A89A55F00541A19 /* Bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-header.h"; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				1EF0E5321A76C06D0089649F /* Images.xcassets */,
 				1EF0E5341A76C06D0089649F /* LaunchScreen.xib */,
 				1EF0E52A1A76C06C0089649F /* diaBTech_Basics.xcdatamodeld */,
+				1E4B8F8A1A9E640F002D2CFE /* user-A1C.swift */,
 				1EF0E5261A76C06C0089649F /* Supporting Files */,
 				1E7B3CB31A89A55F00541A19 /* Bridging-header.h */,
 				1E7B3CB91A89AA9100541A19 /* Facebook.swift */,
@@ -266,6 +269,7 @@
 				1EF0E52E1A76C06C0089649F /* ViewController.swift in Sources */,
 				1E7B3CBA1A89AA9100541A19 /* Facebook.swift in Sources */,
 				1EF0E52C1A76C06C0089649F /* diaBTech_Basics.xcdatamodeld in Sources */,
+				1E4B8F8B1A9E640F002D2CFE /* user-A1C.swift in Sources */,
 				1E58ED311A774555007C320F /* user-idTable.swift in Sources */,
 				1E58ED331A77465C007C320F /* user-health.swift in Sources */,
 				1EF0E5291A76C06C0089649F /* AppDelegate.swift in Sources */,
