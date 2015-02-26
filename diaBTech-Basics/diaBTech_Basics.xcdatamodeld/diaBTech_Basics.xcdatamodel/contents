@@ -3,7 +3,6 @@
     <entity name="UserA1C" parentEntity="UserID" syncable="YES">
         <attribute name="a1c" attributeType="Decimal" minValueString="0" maxValueString="20" defaultValueString="0" syncable="YES"/>
         <attribute name="dateTime" attributeType="Date" syncable="YES"/>
-        <attribute name="userID" attributeType="Integer 16" minValueString="0" defaultValueString="0" indexed="YES" syncable="YES"/>
         <relationship name="hasParent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserID" inverseName="hasA1CEntry" inverseEntity="UserID" syncable="YES"/>
     </entity>
     <entity name="UserHealth" parentEntity="UserID" syncable="YES">
@@ -12,7 +11,6 @@
         <attribute name="estCarbCount" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="insulinInTake" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="userID" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
         <relationship name="hasParent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserID" inverseName="hasDailyEntry" inverseEntity="UserID" syncable="YES"/>
         <userInfo>
             <entry key="userId" value="Int"/>
@@ -31,7 +29,6 @@
         <attribute name="nextEndoApt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="snack1MealTime" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="snack2MealTime" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="userid" attributeType="Integer 64" minValueString="0" defaultValueString="0" indexed="YES" syncable="YES"/>
         <relationship name="hasA1CEntry" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserA1C" inverseName="hasParent" inverseEntity="UserA1C" syncable="YES"/>
         <relationship name="hasDailyEntry" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserHealth" inverseName="hasParent" inverseEntity="UserHealth" syncable="YES"/>
         <userInfo>
@@ -39,8 +36,8 @@
         </userInfo>
     </entity>
     <elements>
-        <element name="UserHealth" positionX="-63" positionY="-136" width="128" height="148"/>
-        <element name="UserID" positionX="-468" positionY="-115" width="128" height="268"/>
-        <element name="UserA1C" positionX="-63" positionY="81" width="128" height="103"/>
+        <element name="UserA1C" positionX="-63" positionY="81" width="128" height="90"/>
+        <element name="UserHealth" positionX="-63" positionY="-136" width="128" height="135"/>
+        <element name="UserID" positionX="-468" positionY="-115" width="128" height="255"/>
     </elements>
 </model>

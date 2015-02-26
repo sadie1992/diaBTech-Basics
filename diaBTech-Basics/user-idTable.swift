@@ -10,7 +10,6 @@ import Foundation
 import CoreData
 
 class useridTable: NSManagedObject {
-    @NSManaged var userid: Int
     @NSManaged var fbuserfname: String
     @NSManaged var fbuserlname: String
     @NSManaged var fbemail: String
@@ -25,9 +24,8 @@ class useridTable: NSManagedObject {
     @NSManaged var maxGoalBS: Int
     
     
-    class func createInManagedObjectContextID(moc: NSManagedObjectContext, uid: Int, fbUserFN: String, fbUserLN: String, userEmail: String, endoEmail:String, nextAPPT: NSDate, morningMT: TimeRecord, lunchMT: TimeRecord, dinnerMT: TimeRecord, snack1MT: TimeRecord, snack2MT: TimeRecord, minBS: Int, maxBS: Int) -> useridTable {
+    class func createInManagedObjectContextID(moc: NSManagedObjectContext, fbUserFN: String, fbUserLN: String, userEmail: String, endoEmail:String, nextAPPT: NSDate, morningMT: TimeRecord, lunchMT: TimeRecord, dinnerMT: TimeRecord, snack1MT: TimeRecord, snack2MT: TimeRecord, minBS: Int, maxBS: Int) -> useridTable {
         let newItem = NSEntityDescription.insertNewObjectForEntityForName("useridTable", inManagedObjectContext: moc) as useridTable
-        newItem.userid = uid
         newItem.fbuserfname = fbUserFN
         newItem.fbuserlname = fbUserLN
         newItem.fbemail = userEmail

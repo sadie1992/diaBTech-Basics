@@ -18,9 +18,9 @@ class userhealth: NSManagedObject {
     @NSManaged var notes: String
     
     
-    class func createInManagedObjectContextHealth(moc: NSManagedObjectContext, userID: Int, dT: NSDate, BSreading: Int, estCC: Double, II: Double, note: String) -> userhealth {
+    class func createInManagedObjectContextHealth(moc: NSManagedObjectContext, dT: NSDate, BSreading: Int, estCC: Double, II: Double, note: String) -> userhealth {
         let newEntry = NSEntityDescription.insertNewObjectForEntityForName("userhealth", inManagedObjectContext: moc) as userhealth
-        newEntry.userid = userID
+       // newEntry.userid = user
         newEntry.dateTime = dT
         newEntry.bloodsugarreading = BSreading
         newEntry.estcarbcount = estCC
