@@ -20,10 +20,10 @@
 		1E7B3E941A8BD06500541A19 /* ResourcesIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E7B3E8C1A8BD06500541A19 /* ResourcesIcon.png */; };
 		1E7B3E951A8BD06500541A19 /* SCIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E7B3E8D1A8BD06500541A19 /* SCIcon.png */; };
 		1E7B3E971A8BD34A00541A19 /* ActivityLogIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E7B3E961A8BD34A00541A19 /* ActivityLogIcon.png */; };
+		1ED9936A1AC082F50069DA45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ED993681AC082F50069DA45 /* Main.storyboard */; };
 		1EF0E5291A76C06C0089649F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF0E5281A76C06C0089649F /* AppDelegate.swift */; };
 		1EF0E52C1A76C06C0089649F /* diaBTech_Basics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1EF0E52A1A76C06C0089649F /* diaBTech_Basics.xcdatamodeld */; };
 		1EF0E52E1A76C06C0089649F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF0E52D1A76C06C0089649F /* ViewController.swift */; };
-		1EF0E5311A76C06D0089649F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EF0E52F1A76C06D0089649F /* Main.storyboard */; };
 		1EF0E5331A76C06D0089649F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EF0E5321A76C06D0089649F /* Images.xcassets */; };
 		1EF0E5361A76C06D0089649F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EF0E5341A76C06D0089649F /* LaunchScreen.xib */; };
 		1EF0E5421A76C06D0089649F /* diaBTech_BasicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF0E5411A76C06D0089649F /* diaBTech_BasicsTests.swift */; };
@@ -54,12 +54,12 @@
 		1E7B3E8C1A8BD06500541A19 /* ResourcesIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ResourcesIcon.png; path = "../../../Dropbox/Research Docs/In-App Icons/ResourcesIcon.png"; sourceTree = "<group>"; };
 		1E7B3E8D1A8BD06500541A19 /* SCIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SCIcon.png; path = "../../../Dropbox/Research Docs/In-App Icons/SCIcon.png"; sourceTree = "<group>"; };
 		1E7B3E961A8BD34A00541A19 /* ActivityLogIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ActivityLogIcon.png; path = "../../../Dropbox/Research Docs/In-App Icons/ActivityLogIcon.png"; sourceTree = "<group>"; };
+		1ED993691AC082F50069DA45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1EF0E5231A76C06C0089649F /* diaBTech-Basics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "diaBTech-Basics.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EF0E5271A76C06C0089649F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EF0E5281A76C06C0089649F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EF0E52B1A76C06C0089649F /* diaBTech_Basics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = diaBTech_Basics.xcdatamodel; sourceTree = "<group>"; };
 		1EF0E52D1A76C06C0089649F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1EF0E5301A76C06D0089649F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1EF0E5321A76C06D0089649F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1EF0E5351A76C06D0089649F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1EF0E53B1A76C06D0089649F /* diaBTech-BasicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "diaBTech-BasicsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,8 +117,8 @@
 				1E7B3E8A1A8BD06500541A19 /* ExportActivityIcon.png */,
 				1E7B3E861A8BD06500541A19 /* AchievementsIcon.png */,
 				1EF0E5281A76C06C0089649F /* AppDelegate.swift */,
+				1ED993681AC082F50069DA45 /* Main.storyboard */,
 				1EF0E52D1A76C06C0089649F /* ViewController.swift */,
-				1EF0E52F1A76C06D0089649F /* Main.storyboard */,
 				1E58ED301A774555007C320F /* user-idTable.swift */,
 				1E58ED321A77465C007C320F /* user-health.swift */,
 				1EF0E5321A76C06D0089649F /* Images.xcassets */,
@@ -243,7 +243,7 @@
 				1E7B3E8E1A8BD06500541A19 /* AchievementsIcon.png in Resources */,
 				1E7B3E921A8BD06500541A19 /* ExportActivityIcon.png in Resources */,
 				1E7B3E951A8BD06500541A19 /* SCIcon.png in Resources */,
-				1EF0E5311A76C06D0089649F /* Main.storyboard in Resources */,
+				1ED9936A1AC082F50069DA45 /* Main.storyboard in Resources */,
 				1E7B3E911A8BD06500541A19 /* EditSettings.png in Resources */,
 				1EF0E5361A76C06D0089649F /* LaunchScreen.xib in Resources */,
 				1EF0E5331A76C06D0089649F /* Images.xcassets in Resources */,
@@ -295,10 +295,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1EF0E52F1A76C06D0089649F /* Main.storyboard */ = {
+		1ED993681AC082F50069DA45 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1EF0E5301A76C06D0089649F /* Base */,
+				1ED993691AC082F50069DA45 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

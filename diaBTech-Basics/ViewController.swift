@@ -9,8 +9,8 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, FBLoginViewDelegate {
-    @IBOutlet var fbLoginView : FBLoginView!
+class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate, UITableViewDataSource {
+
     var userItems = [useridTable]()
     var userData = [userhealth]()
     var userA1CData = [userA1C]()
@@ -56,7 +56,10 @@ class ViewController: UIViewController, FBLoginViewDelegate {
     
     
     //table for Diabetic Resources
+    //for links: https://www.youtube.com/watch?v=gMR0cvVToNc 
     @IBOutlet weak var drTable: UITableView!
+    var links: [String]  = ["one", "two",
+        "three", "four", "five"]
     
     //table for Activity Log
     @IBOutlet weak var logTable: UITableView!
@@ -64,11 +67,9 @@ class ViewController: UIViewController, FBLoginViewDelegate {
     //achievement table
     @IBOutlet weak var achievementTable: UITableView!
     
+    @IBOutlet weak var fbLogin: FBLoginView!
     
-    
-    
-    
-    
+
     //managedObjectContext var
     lazy var managedObjectContext : NSManagedObjectContext? = {
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
@@ -82,19 +83,33 @@ class ViewController: UIViewController, FBLoginViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        println("Has session: ");
-       // self.fbLoginView.delegate = self
-       // self.fbLoginView.readPermissions = ["public_profile", "email", "user_friends"]
         
+        if(FB.hasActiveSession()){
+            println("FACEBOOK HAS ACTIVE SESSION")
+            performSegueWithIdentifier("registrationScene1", sender: fbLogin)
+        }
+        else{
+            println("FACEBOOK DOES NOT HAVE ACTIVE SESSION.")
+        }
+        
+        fbLogin.delegate = self;
+        fbLogin.sizeToFit();
+        
+        
+ //       self.drTable.delegate = self
+ //       self.drTable.dataSource = self
+  
         //manually put in a object
       //  if let moc = self.managedObjectContext {
             //userData.createInManagedObjectHealth(moc, )
        // }
         
+       // self.fbLogin.readPermissions = [@"public_profile", @"email", @"user_friends"];
+
         
         
     }
+    
     @IBAction func addLog(sender: AnyObject) {
         if let moc = self.managedObjectContext {
             var dateAA: NSDate = dateActivity.date
@@ -129,12 +144,12 @@ class ViewController: UIViewController, FBLoginViewDelegate {
     
     
     //FB delegate methods
-    /**
+    
     func loginViewShowingLoggedInUser(loginView: FBLoginView!) {
         println("Has session: ", FBSession.activeSession());
         println("User Logged In");
     }
-    
+    /**
     func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
         nameLabel.text = "Hey \(user.name)!"
     }
@@ -153,6 +168,26 @@ class ViewController: UIViewController, FBLoginViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int
+    {
+        return self.links.count;
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        var cell = drTable.dequeueReusableCellWithIdentifier("cell") as? UITableViewCell
+        
+        if (cell == nil) {
+            cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "CELL")
+        }
+        
+        cell?.textLabel?.text = NSString(format: "%d", indexPath.row)
+        //cell="row#\(indexPath.row)"
+        // cell.detailTextLabel.text="subtitle#\(indexPath.row)"
+        
+        return cell!
     }
 
 }
