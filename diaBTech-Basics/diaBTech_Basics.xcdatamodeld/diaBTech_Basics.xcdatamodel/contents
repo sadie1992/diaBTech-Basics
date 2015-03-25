@@ -8,7 +8,7 @@
     <entity name="UserHealth" parentEntity="UserID" syncable="YES">
         <attribute name="bloodSugarReading" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="dateTime" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="estCarbCount" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="estCarbCount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="insulinInTake" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="hasParent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserID" inverseName="hasDailyEntry" inverseEntity="UserID" syncable="YES"/>
@@ -37,7 +37,7 @@
     </entity>
     <elements>
         <element name="UserA1C" positionX="-63" positionY="81" width="128" height="90"/>
-        <element name="UserHealth" positionX="-63" positionY="-136" width="128" height="135"/>
+        <element name="UserHealth" positionX="-63" positionY="-136" width="128" height="133"/>
         <element name="UserID" positionX="-468" positionY="-115" width="128" height="255"/>
     </elements>
 </model>

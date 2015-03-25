@@ -12,7 +12,7 @@ import CoreData
 class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate, UITableViewDataSource {
 
     var userItems = [useridTable]()
-    var userData = [userhealth]()
+    var userData = [Userhealth]()
     var userA1CData = [UserA1C]()
     
     
@@ -75,7 +75,7 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     
 
     //managedObjectContext var
-    lazy var managedObjectContext : NSManagedObjectContext? = {
+    /*lazy var managedObjectContext : NSManagedObjectContext? = {
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         if let managedObjectContext = appDelegate.managedObjectContext {
             return managedObjectContext
@@ -83,24 +83,10 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         else {
             return nil
         }
-    }()
+    }()*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        if(FB.hasActiveSession()){
-            println("FACEBOOK HAS ACTIVE SESSION")
-        }
-        else{
-            println("FACEBOOK DOES NOT HAVE ACTIVE SESSION.")
-        }
-
-  
-        //manually put in a object
-      //  if let moc = self.managedObjectContext {
-            //userData.createInManagedObjectHealth(moc, )
-       // }
 
         
         
@@ -119,14 +105,28 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     }
     
     @IBAction func addLog(sender: AnyObject) {
-        if let moc = self.managedObjectContext {
+        /*if let moc = self.managedObjectContext {
             var dateAA: NSDate = dateActivity.date
             var doubleII : Double = NSString(string: insulinActivity.text).doubleValue
             var doubleCC : Double = NSString(string: ccActivity.text).doubleValue
             let readingInt:Int = readingActivity.text.toInt()!
             let noteString:NSString = notesActivity.text!
             userhealth.createInManagedObjectContextHealth(moc, dT: dateAA, BSreading: readingInt, estCC: doubleCC, II: doubleII, note: noteString)
-        }
+        }*/
+        var doubleII : Double = NSString(string: insulinActivity.text).doubleValue
+        var doubleCC : Double = NSString(string: ccActivity.text).doubleValue
+        
+        var appDel:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate);
+        var context:NSManagedObjectContext = appDel.managedObjectContext!
+        var newHealth = NSEntityDescription.insertNewObjectForEntityForName("UserHealth", inManagedObjectContext: context) as NSManagedObject
+        
+        newHealth.setValue(dateActivity.date, forKey: "dateTime")
+        newHealth.setValue(doubleII, forKey: "insulinInTake")
+        newHealth.setValue(doubleCC, forKey: "estCarbCount")
+        newHealth.setValue(readingActivity.text.toInt(), forKey: "bloodSugarReading")
+        newHealth.setValue(notesActivity.text, forKey: "notes")
+        
+        context.save(nil);
         
         var viewFrame = self.view.frame
         viewFrame.origin.y += 20
@@ -134,20 +134,22 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     }
     
     @IBAction func addRegister(sender: AnyObject) {
-        if let moc = self.managedObjectContext {
+      //  if let moc = self.managedObjectContext {
             var fbFirstName = "First"
             var fbLastName = "Last"
-        //    useridTable.createInManagedObjectContextID(moc: NSManagedObjectContext, fbUserFN: fbFirstName
-        //        , fbUserLN: fbLastName, userEmail: String, endoEmail: <#String#>, nextAPPT: <#NSDate#>, morningMT: <#TimeRecord#>, lunchMT: <#TimeRecord#>, dinnerMT: <#TimeRecord#>, snack1MT: <#TimeRecord#>, snack2MT: <#TimeRecord#>, minBS: <#Int#>, maxBS: <#Int#>)
-        }
+       
+       // }
     }
     
     @IBAction func addA1C(sender: AnyObject) {
-        var dateA1C: NSDate = dateTimeA1C.date
         var readingDouble : Double  = NSString(string: readingA1C.text).doubleValue
-        if let moc = self.managedObjectContext {
-            UserA1C.createInManagedObjectContextA1C(moc, dT: dateA1C, reading: readingDouble)
-        }
+        var appDel:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate);
+        var context:NSManagedObjectContext = appDel.managedObjectContext!
+       var newA1C = NSEntityDescription.insertNewObjectForEntityForName("UserA1C", inManagedObjectContext: context) as NSManagedObject
+        newA1C.setValue(dateTimeA1C.date, forKey: "dateTime")
+        newA1C.setValue(readingDouble, forKey: "a1c")
+        
+        context.save(nil);
     }
     
     

@@ -9,22 +9,22 @@
 import Foundation
 import CoreData
 
-class userhealth: NSManagedObject {
+class Userhealth: NSManagedObject {
     @NSManaged var userid: Int
     @NSManaged var dateTime: NSDate
-    @NSManaged var bloodsugarreading: Int
-    @NSManaged var estcarbcount: Double
-    @NSManaged var insulinintake: Double
+    @NSManaged var bloodSugarReading: Int
+    @NSManaged var estCarbCount: Double
+    @NSManaged var insulinInTake: Double
     @NSManaged var notes: String
     
     
-    class func createInManagedObjectContextHealth(moc: NSManagedObjectContext, dT: NSDate, BSreading: Int, estCC: Double, II: Double, note: String) -> userhealth {
-        let newEntry = NSEntityDescription.insertNewObjectForEntityForName("userhealth", inManagedObjectContext: moc) as userhealth
+    class func createInManagedObjectContextHealth(moc: NSManagedObjectContext, dT: NSDate, BSreading: Int, estCC: Double, II: Double, note: String) -> Userhealth {
+        let newEntry = NSEntityDescription.insertNewObjectForEntityForName("Userhealth", inManagedObjectContext: moc) as Userhealth
        // newEntry.userid = user
         newEntry.dateTime = dT
-        newEntry.bloodsugarreading = BSreading
-        newEntry.estcarbcount = estCC
-        newEntry.insulinintake = II
+        newEntry.bloodSugarReading = BSreading
+        newEntry.estCarbCount = estCC
+        newEntry.insulinInTake = II
         newEntry.notes = note
         return newEntry
     }
