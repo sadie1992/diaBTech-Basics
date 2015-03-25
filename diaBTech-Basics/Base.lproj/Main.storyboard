@@ -31,29 +31,56 @@
                                     <outlet property="delegate" destination="RBU-Kn-ZeK" id="EuK-cP-PXb"/>
                                 </connections>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Once you've signed into Facebook, you may continue by clicking 'Next'" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xv8-kh-A6U">
+                                <rect key="frame" x="26" y="355" width="549" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rxJ-Re-WWj">
+                                <rect key="frame" x="280" y="390" width="40" height="33"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Next">
+                                            <attributes>
+                                                <font key="NSFont" size="18" name="HelveticaNeue-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="regMenu:" destination="RBU-Kn-ZeK" eventType="touchUpInside" id="ChX-bi-WHW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.3411764705882353" green="0.37254901960784315" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
                         <accessibility key="accessibilityConfiguration">
                             <accessibilityTraits key="traits" none="YES" button="YES"/>
                         </accessibility>
                         <constraints>
-                            <constraint firstItem="FE5-a6-jSj" firstAttribute="top" secondItem="yeU-DR-fZX" secondAttribute="top" constant="208" id="78b-eU-lpF"/>
-                            <constraint firstAttribute="trailing" secondItem="J0A-d7-sNV" secondAttribute="trailing" id="KQX-oH-i2e"/>
-                            <constraint firstItem="J0A-d7-sNV" firstAttribute="leading" secondItem="yeU-DR-fZX" secondAttribute="leading" id="NHq-tf-2sL"/>
-                            <constraint firstItem="J0A-d7-sNV" firstAttribute="top" secondItem="yeU-DR-fZX" secondAttribute="top" id="css-pD-QrB"/>
-                            <constraint firstItem="FE5-a6-jSj" firstAttribute="centerX" secondItem="J0A-d7-sNV" secondAttribute="centerX" id="hdG-xh-CTJ"/>
-                            <constraint firstItem="FE5-a6-jSj" firstAttribute="leading" secondItem="yeU-DR-fZX" secondAttribute="leading" constant="150" id="jIH-g5-ZSn"/>
-                            <constraint firstItem="LhK-io-kFk" firstAttribute="top" secondItem="FE5-a6-jSj" secondAttribute="bottom" constant="266" id="ufa-da-HGd"/>
+                            <constraint firstItem="J0A-d7-sNV" firstAttribute="centerX" secondItem="FE5-a6-jSj" secondAttribute="centerX" id="44L-HF-wWh"/>
+                            <constraint firstItem="FE5-a6-jSj" firstAttribute="top" secondItem="yeU-DR-fZX" secondAttribute="top" constant="208" id="6gy-Je-nv7"/>
+                            <constraint firstItem="J0A-d7-sNV" firstAttribute="leading" secondItem="yeU-DR-fZX" secondAttribute="leading" id="CGK-g9-ZVT"/>
+                            <constraint firstItem="FE5-a6-jSj" firstAttribute="centerX" secondItem="Xv8-kh-A6U" secondAttribute="centerX" id="Jto-Iw-Dkt"/>
+                            <constraint firstItem="LhK-io-kFk" firstAttribute="top" secondItem="rxJ-Re-WWj" secondAttribute="bottom" constant="177" id="PKf-se-hqt"/>
+                            <constraint firstItem="Xv8-kh-A6U" firstAttribute="top" secondItem="FE5-a6-jSj" secondAttribute="bottom" constant="21" id="WSu-4g-Oqb"/>
+                            <constraint firstItem="FE5-a6-jSj" firstAttribute="leading" secondItem="yeU-DR-fZX" secondAttribute="leading" constant="150" id="fUP-uK-BT3"/>
+                            <constraint firstItem="J0A-d7-sNV" firstAttribute="top" secondItem="yeU-DR-fZX" secondAttribute="top" id="ita-q7-fqj"/>
+                            <constraint firstItem="rxJ-Re-WWj" firstAttribute="centerX" secondItem="Xv8-kh-A6U" secondAttribute="centerX" id="vhc-14-m0S"/>
+                            <constraint firstAttribute="trailing" secondItem="J0A-d7-sNV" secondAttribute="trailing" id="xPu-hX-67r"/>
+                            <constraint firstItem="rxJ-Re-WWj" firstAttribute="top" secondItem="Xv8-kh-A6U" secondAttribute="bottom" constant="14" id="zTX-EP-fAs"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="fbLogin" destination="FE5-a6-jSj" id="zLr-f7-019"/>
+                        <outlet property="landPageText" destination="Xv8-kh-A6U" id="nFL-YR-G2q"/>
                         <segue destination="LTN-Mh-dAI" kind="showDetail" identifier="registrationScene1" id="A3h-um-zG7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="99U-Zb-7Mc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3468" y="187"/>
+            <point key="canvasLocation" x="3468" y="181.5"/>
         </scene>
         <!--DiaBTech - Basics : Registration-->
         <scene sceneID="ATw-g9-FOi">
@@ -75,7 +102,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="iJJ-Qz-Ach" kind="presentation" id="eXO-Ir-sAN"/>
+                                    <segue destination="iJJ-Qz-Ach" kind="showDetail" id="snD-sZ-Vbm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0H4-S6-Tok">
@@ -588,56 +615,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y74-KN-G3r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5724" y="187"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="CFM-1m-z5a">
-            <objects>
-                <viewController id="jTB-pd-r5v" customClass="ViewController" customModule="diaBTech_Basics" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="sEB-tv-14Y"/>
-                        <viewControllerLayoutGuide type="bottom" id="2oC-Vc-Ydu"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="3va-Ec-6Kq">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZU-6T-DWi">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <color key="barTintColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <items>
-                                    <navigationItem title="Achievements" id="3Ka-eH-hrY">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="FJw-pk-EOi">
-                                            <color key="tintColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <segue destination="UPO-ct-TnV" kind="showDetail" id="Hya-EU-KIr"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="EhY-TL-KPo">
-                                <rect key="frame" x="0.0" y="44" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.6470588235294118" green="0.70196078431372544" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="zZU-6T-DWi" firstAttribute="trailing" secondItem="EhY-TL-KPo" secondAttribute="trailing" id="AT7-Iv-RSz"/>
-                            <constraint firstAttribute="trailing" secondItem="zZU-6T-DWi" secondAttribute="trailing" id="V90-MV-4j2"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="EhY-TL-KPo" secondAttribute="bottom" constant="-44" id="dNQ-pn-T0Q"/>
-                            <constraint firstItem="zZU-6T-DWi" firstAttribute="top" secondItem="3va-Ec-6Kq" secondAttribute="top" id="dfG-2T-22p"/>
-                            <constraint firstItem="zZU-6T-DWi" firstAttribute="leading" secondItem="EhY-TL-KPo" secondAttribute="leading" id="e7m-Mj-dc2"/>
-                            <constraint firstItem="zZU-6T-DWi" firstAttribute="leading" secondItem="3va-Ec-6Kq" secondAttribute="leading" id="izb-Vy-nZh"/>
-                            <constraint firstItem="EhY-TL-KPo" firstAttribute="top" secondItem="zZU-6T-DWi" secondAttribute="bottom" id="qSh-Jv-2Bt"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="achievementTable" destination="EhY-TL-KPo" id="Hrj-i2-XMl"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LVm-Kd-fwh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7014" y="-249"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="1Ze-5s-id4">
@@ -1720,6 +1697,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="wBR-0O-bTs"/>
-        <segue reference="dCN-VJ-Jj6"/>
+        <segue reference="et2-x2-vVl"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -20,9 +20,9 @@
 		1E7B3E941A8BD06500541A19 /* ResourcesIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E7B3E8C1A8BD06500541A19 /* ResourcesIcon.png */; };
 		1E7B3E951A8BD06500541A19 /* SCIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E7B3E8D1A8BD06500541A19 /* SCIcon.png */; };
 		1E7B3E971A8BD34A00541A19 /* ActivityLogIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E7B3E961A8BD34A00541A19 /* ActivityLogIcon.png */; };
+		1E830A761AC24B980089BCAB /* diaBTech_Basics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1EF0E52A1A76C06C0089649F /* diaBTech_Basics.xcdatamodeld */; };
 		1ED9936A1AC082F50069DA45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ED993681AC082F50069DA45 /* Main.storyboard */; };
 		1EF0E5291A76C06C0089649F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF0E5281A76C06C0089649F /* AppDelegate.swift */; };
-		1EF0E52C1A76C06C0089649F /* diaBTech_Basics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1EF0E52A1A76C06C0089649F /* diaBTech_Basics.xcdatamodeld */; };
 		1EF0E52E1A76C06C0089649F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF0E52D1A76C06C0089649F /* ViewController.swift */; };
 		1EF0E5331A76C06D0089649F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EF0E5321A76C06D0089649F /* Images.xcassets */; };
 		1EF0E5361A76C06D0089649F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EF0E5341A76C06D0089649F /* LaunchScreen.xib */; };
@@ -206,6 +206,7 @@
 				TargetAttributes = {
 					1EF0E5221A76C06C0089649F = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = Z455YDYXS9;
 					};
 					1EF0E53A1A76C06D0089649F = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -266,9 +267,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E830A761AC24B980089BCAB /* diaBTech_Basics.xcdatamodeld in Sources */,
 				1EF0E52E1A76C06C0089649F /* ViewController.swift in Sources */,
 				1E7B3CBA1A89AA9100541A19 /* Facebook.swift in Sources */,
-				1EF0E52C1A76C06C0089649F /* diaBTech_Basics.xcdatamodeld in Sources */,
 				1E4B8F8B1A9E640F002D2CFE /* user-A1C.swift in Sources */,
 				1E58ED311A774555007C320F /* user-idTable.swift in Sources */,
 				1E58ED331A77465C007C320F /* user-health.swift in Sources */,
@@ -398,14 +399,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Mercedes/Documents/FacebookSDK,
-					/Users/Mercedes/Documents/FacebookSDK/FBAudienceNetwork,
 				);
 				INFOPLIST_FILE = "diaBTech-Basics/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/Mercedes/Documents/FacebookSDK/FacebookSDK.framework/Versions/A,
-				);
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "diaBTech-Basics/Bridging-header.h";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -419,14 +416,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Mercedes/Documents/FacebookSDK,
-					/Users/Mercedes/Documents/FacebookSDK/FBAudienceNetwork,
 				);
 				INFOPLIST_FILE = "diaBTech-Basics/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/Mercedes/Documents/FacebookSDK/FacebookSDK.framework/Versions/A,
-				);
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "diaBTech-Basics/Bridging-header.h";
 				TARGETED_DEVICE_FAMILY = 1;

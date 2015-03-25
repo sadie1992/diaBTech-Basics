@@ -13,7 +13,7 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
 
     var userItems = [useridTable]()
     var userData = [userhealth]()
-    var userA1CData = [userA1C]()
+    var userA1CData = [UserA1C]()
     
     
     //all outlets for an Activity (non-a1c)
@@ -68,6 +68,10 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     @IBOutlet weak var achievementTable: UITableView!
     
     @IBOutlet weak var fbLogin: FBLoginView!
+    var hasSession: Boolean!
+    
+    @IBOutlet weak var landPageText: UILabel!
+    
     
 
     //managedObjectContext var
@@ -84,29 +88,33 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         if(FB.hasActiveSession()){
             println("FACEBOOK HAS ACTIVE SESSION")
-            performSegueWithIdentifier("registrationScene1", sender: fbLogin)
         }
         else{
             println("FACEBOOK DOES NOT HAVE ACTIVE SESSION.")
         }
-        
-        fbLogin.delegate = self;
-        fbLogin.sizeToFit();
-        
-        
- //       self.drTable.delegate = self
- //       self.drTable.dataSource = self
+
   
         //manually put in a object
       //  if let moc = self.managedObjectContext {
             //userData.createInManagedObjectHealth(moc, )
        // }
-        
-       // self.fbLogin.readPermissions = [@"public_profile", @"email", @"user_friends"];
 
         
+        
+        
+    }
+    @IBAction func regMenu(sender: AnyObject) {
+        if(FB.hasActiveSession()){
+            performSegueWithIdentifier("registrationScene1", sender: nil)
+            println("HasSession is true");
+        }
+        else{
+            //show error message
+            println("HasSession is false");
+        }
         
     }
     
@@ -138,7 +146,7 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         var dateA1C: NSDate = dateTimeA1C.date
         var readingDouble : Double  = NSString(string: readingA1C.text).doubleValue
         if let moc = self.managedObjectContext {
-            userA1C.createInManagedObjectContextA1C(moc, dT: dateA1C, reading: readingDouble)
+            UserA1C.createInManagedObjectContextA1C(moc, dT: dateA1C, reading: readingDouble)
         }
     }
     
@@ -149,20 +157,7 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         println("Has session: ", FBSession.activeSession());
         println("User Logged In");
     }
-    /**
-    func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
-        nameLabel.text = "Hey \(user.name)!"
-    }
-    
-    func loginViewShowingLoggedOutUser(loginView: FBLoginView!) {
-        println("User Logged Out")
-    }
-    
-    func loginView(loginView: FBLoginView!, handleError error: NSError!) {
-        println("Error : \(error.localizedDescription)")
-    }*/
-    
-    //end of FB edit
+
 
 
     override func didReceiveMemoryWarning() {

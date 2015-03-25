@@ -9,12 +9,12 @@
 import Foundation
 import CoreData
 
-class userA1C: NSManagedObject {
+class UserA1C: NSManagedObject {
     @NSManaged var dateTime: NSDate
     @NSManaged var a1c: Double
     
-    class func createInManagedObjectContextA1C(moc: NSManagedObjectContext, dT: NSDate, reading: Double) -> userA1C{
-        let newA1C = NSEntityDescription.insertNewObjectForEntityForName("userA1C" , inManagedObjectContext: moc) as userA1C
+    class func createInManagedObjectContextA1C(moc: NSManagedObjectContext, dT: NSDate, reading: Double) -> UserA1C{
+        let newA1C = NSEntityDescription.insertNewObjectForEntityForName("UserA1C" , inManagedObjectContext: moc) as UserA1C
         newA1C.dateTime = dT
         newA1C.a1c = reading
         return newA1C

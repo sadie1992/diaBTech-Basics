@@ -35,7 +35,9 @@ class Facebook {
     
     func login(callback: () -> Void){
         
-        let permission = ["basic_info", "email", "user_work_history", "user_education_history", "user_location"];
+        let permission = ["public_profile", "email"];
+        println(permission[0]);
+        println("SHOW STUFF");
         
         let activeSession = FBSession.activeSession();
         let fbsessionState = activeSession.state;
