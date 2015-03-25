@@ -86,16 +86,15 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         }
     }()*/
     
+    @IBOutlet var regView: UIView!
+    @IBOutlet weak var regScroll: UIScrollView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+    }
 
-    }
-    
-    override func viewDidLayoutSubviews() {
-       
-    }
     @IBAction func regMenu(sender: AnyObject) {
         if(FB.hasActiveSession()){
             performSegueWithIdentifier("registrationScene1", sender: nil)
