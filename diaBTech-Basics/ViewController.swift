@@ -54,6 +54,7 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     //outlets for comments
     @IBOutlet weak var comments: UITextView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     
     //table for Diabetic Resources
     //for links: https://www.youtube.com/watch?v=gMR0cvVToNc 
@@ -89,8 +90,11 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         super.viewDidLoad()
 
         
-        
-        
+
+    }
+    
+    override func viewDidLayoutSubviews() {
+       
     }
     @IBAction func regMenu(sender: AnyObject) {
         if(FB.hasActiveSession()){
