@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import CoreData
+import CoreData //https://github.com/jquave/Core-Data-In-Swift-Tutorial/blob/Part2/MyLog/ViewController.swift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

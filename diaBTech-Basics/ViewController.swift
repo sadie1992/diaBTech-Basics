@@ -15,66 +15,67 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     var userData = [Userhealth]()
     var userA1CData = [UserA1C]()
     
+    //all outlets for registration 
+    @IBOutlet weak var endEmail: UITextField!
+    @IBOutlet weak var aptDate: UIDatePicker!
+    @IBOutlet weak var minGoal: UITextField!
+    @IBOutlet weak var maxGoal: UITextField!
+    @IBOutlet weak var breakfMeal: UIDatePicker!
+    @IBOutlet weak var lunchMeal: UIDatePicker!
+    @IBOutlet weak var dinnerMeal: UIDatePicker!
+    @IBOutlet weak var snack1Meal: UIDatePicker!
+    @IBOutlet weak var snack2Meal: UIDatePicker!
+    
     
     //all outlets for an Activity (non-a1c)
-    
     @IBOutlet weak var nameLabel: UILabel!
-    
     @IBOutlet weak var dateActivity: UIDatePicker!
-    
     @IBOutlet weak var readingActivity: UITextField!
-    
     @IBOutlet weak var ccActivity: UITextField!
-    
     @IBOutlet weak var insulinActivity: UITextField!
-    
     @IBOutlet weak var notesActivity: UITextView!
     
     //all outlets for an A1C 
     @IBOutlet weak var dateTimeA1C: UIDatePicker!
-    
     @IBOutlet weak var readingA1C: UITextField!
-    
     
     //outlets for graphing
     @IBOutlet weak var startDateGraph: UIDatePicker!
-    
     @IBOutlet weak var endDateGraph: UIDatePicker!
-    
     @IBOutlet weak var a1cGraph: UISwitch!
     
     //outlets for exporting
     @IBOutlet weak var startDateExport: UIDatePicker!
-    
     @IBOutlet weak var endDateExport: UIDatePicker!
-    
     @IBOutlet weak var a1cExport: UISwitch!
     
     
     //outlets for comments
     @IBOutlet weak var comments: UITextView!
-    
     @IBOutlet weak var scrollView: UIScrollView!
     
     //table for Diabetic Resources
     //for links: https://www.youtube.com/watch?v=gMR0cvVToNc 
-    @IBOutlet weak var drTable: UITableView!
-    var links: [String]  = ["one", "two",
-        "three", "four", "five"]
-    
+
     //table for Activity Log
     @IBOutlet weak var logTable: UITableView!
     
-    //achievement table
-    @IBOutlet weak var achievementTable: UITableView!
-    
+    //Facebook & Session outlets
     @IBOutlet weak var fbLogin: FBLoginView!
     var hasSession: Boolean!
-    
     @IBOutlet weak var landPageText: UILabel!
     
+    //Register outlets
+    @IBOutlet weak var endoEmail: UITextField!
+    @IBOutlet weak var minBG: UITextField!
+    @IBOutlet weak var maxBG: UITextField!
+    @IBOutlet weak var morningMealT: UIDatePicker!
+    @IBOutlet weak var lunchMealT: UIDatePicker!
+    @IBOutlet weak var dinnerMealT: UIDatePicker!
+    @IBOutlet weak var snackT1: UIDatePicker!
+    @IBOutlet weak var snackT2: UIDatePicker!
     
-
+    
     //managedObjectContext var
     /*lazy var managedObjectContext : NSManagedObjectContext? = {
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
@@ -92,8 +93,14 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        /*var viewFrame = self.view.frame
+        viewFrame.origin.y += 20
+        viewFrame.size.height  -= 20
+        logTable.frame = viewFrame
+        self.view.addSubview(logTable)
+        logTable.registerClass(UITableView.classForCoder(), forCellReuseIdentifier: "UserHealth")*/
     }
+    
 
     @IBAction func regMenu(sender: AnyObject) {
         if(FB.hasActiveSession()){
@@ -122,19 +129,22 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         var appDel:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate);
         var context:NSManagedObjectContext = appDel.managedObjectContext!
         var newHealth = NSEntityDescription.insertNewObjectForEntityForName("UserHealth", inManagedObjectContext: context) as NSManagedObject
-        
         newHealth.setValue(dateActivity.date, forKey: "dateTime")
         newHealth.setValue(doubleII, forKey: "insulinInTake")
         newHealth.setValue(doubleCC, forKey: "estCarbCount")
         newHealth.setValue(readingActivity.text.toInt(), forKey: "bloodSugarReading")
         newHealth.setValue(notesActivity.text, forKey: "notes")
         
+
+        
         context.save(nil);
         
         var viewFrame = self.view.frame
         viewFrame.origin.y += 20
-        
+        println(context.save(nil))
+        println(context.hasChanges)
     }
+    
     
     @IBAction func addRegister(sender: AnyObject) {
       //  if let moc = self.managedObjectContext {
@@ -163,32 +173,54 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         println("User Logged In");
     }
 
+    @IBAction func viewLogs(sender: AnyObject) {
+        //tableView = logTable
+        var appDel:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate);
+        var context:NSManagedObjectContext = appDel.managedObjectContext!
+        let fetchReq = NSFetchRequest(entityName: "UserHealth");
+        
+        
+        let sortDesc = NSSortDescriptor(key: "dateTime", ascending: true)
+        fetchReq.sortDescriptors = [sortDesc]
+        
+        if let fetchResults = context.executeFetchRequest(fetchReq, error: nil) as? [Userhealth]{
+            userData = fetchResults
+        }
+        println(userData.count)
+    }
+    
+    
+    // MARK: UITableViewDataSource
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // How many rows are there in this section?
+        // There's only 1 section, and it has a number of rows
+        // equal to the number of logItems, so return the count
+        return userData.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = logTable.dequeueReusableCellWithIdentifier("Userhealth") as UITableViewCell
+        
+        // Get the LogItem for this index
+        let logItem = userData[indexPath.row]
+        
+        // Set the title of the cell to be the title of the logItem
+       // cell.textLabel?.text = logItem.
+        return cell
+    }
+    
+    // MARK: UITableViewDelegate
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let logItem = userData[indexPath.row]
+        println(logItem.bloodSugarReading)
+    }
+    
 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int
-    {
-        return self.links.count;
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
-    {
-        var cell = drTable.dequeueReusableCellWithIdentifier("cell") as? UITableViewCell
-        
-        if (cell == nil) {
-            cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "CELL")
-        }
-        
-        cell?.textLabel?.text = NSString(format: "%d", indexPath.row)
-        //cell="row#\(indexPath.row)"
-        // cell.detailTextLabel.text="subtitle#\(indexPath.row)"
-        
-        return cell!
-    }
-
+   
 }
 

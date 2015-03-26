@@ -10,7 +10,6 @@ import Foundation
 import CoreData
 
 class Userhealth: NSManagedObject {
-    @NSManaged var userid: Int
     @NSManaged var dateTime: NSDate
     @NSManaged var bloodSugarReading: Int
     @NSManaged var estCarbCount: Double
