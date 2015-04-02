@@ -134,24 +134,27 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         newHealth.setValue(doubleCC, forKey: "estCarbCount")
         newHealth.setValue(readingActivity.text.toInt(), forKey: "bloodSugarReading")
         newHealth.setValue(notesActivity.text, forKey: "notes")
-        
 
         
-        context.save(nil);
-        
-        var viewFrame = self.view.frame
-        viewFrame.origin.y += 20
-        println(context.save(nil))
+        println("Did newHealth change? ", newHealth.hasChanges);
+
         println(context.hasChanges)
     }
     
     
     @IBAction func addRegister(sender: AnyObject) {
       //  if let moc = self.managedObjectContext {
+        var appDel:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate);
+        var context:NSManagedObjectContext = appDel.managedObjectContext!
+        var newUser = NSEntityDescription.insertNewObjectForEntityForName("userid", inManagedObjectContext: context) as NSManagedObject
             var fbFirstName = "First"
             var fbLastName = "Last"
        
-       // }
+        
+        println("Did newUser change? ", newUser.hasChanges);
+        
+        println(context.hasChanges)
+       
     }
     
     @IBAction func addA1C(sender: AnyObject) {
@@ -162,7 +165,9 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         newA1C.setValue(dateTimeA1C.date, forKey: "dateTime")
         newA1C.setValue(readingDouble, forKey: "a1c")
         
-        context.save(nil);
+        println("Did newA1C change? ", newA1C.hasChanges);
+        
+        println(context.hasChanges)
     }
     
     
@@ -221,6 +226,9 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
    
 }
 

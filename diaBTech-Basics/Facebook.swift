@@ -24,6 +24,7 @@ class Facebook {
         if ( fbsessionState == FBSessionState.Open
             || fbsessionState == FBSessionState.OpenTokenExtended ){
                 self.fbSession = FBSession.activeSession();
+                
                 println("Signed in: true")
                 return true;
         }
@@ -82,12 +83,15 @@ class Facebook {
             if(error != nil){
                 println("Error Getting ME: \(error)");
             }
-            
+            let userData = NSDictionary (objectsAndKeys: result);
+            let fbName: NSString? = userData["name"] as? NSString;
             println("\(result)");
+            println("Username is: ", fbName);
             
             
         });
     }
+    
     
     func handleDidBecomeActive(){
         FBAppCall.handleDidBecomeActive();
