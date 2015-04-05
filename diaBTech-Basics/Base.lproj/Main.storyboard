@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RBU-Kn-ZeK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RBU-Kn-ZeK">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -1018,6 +1018,10 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AV8-lz-8Lk">
+                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </sceneKitView>
                         </subviews>
                         <color key="backgroundColor" red="0.6470588235294118" green="0.70196078431372544" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1196,10 +1200,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="A3R-uU-qFZ">
-                                <rect key="frame" x="0.0" y="44" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AVY-fQ-fQJ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <color key="barTintColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1214,21 +1214,213 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QDe-EX-4fd">
+                                <rect key="frame" x="21" y="44" width="559" height="556"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To find counselors or therapists near you: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujN-YQ-st7">
+                                        <rect key="frame" x="21" y="21" width="322" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYW-fF-Jcp">
+                                        <rect key="frame" x="69" y="81" width="211" height="30"/>
+                                        <state key="normal" title="Psychology Today - Therapists">
+                                            <color key="titleColor" red="0.70296868859999995" green="1" blue="0.6788773857" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="psychTodayLink:" destination="uxh-sN-oIY" eventType="touchUpInside" id="0i7-jI-DCg"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="General/scientific information about diabetes:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJS-3A-ADR">
+                                        <rect key="frame" x="21" y="115" width="349" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some available social network communities for diabetics:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55h-5E-3CM">
+                                        <rect key="frame" x="21" y="210" width="440" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help with lowering costs for medical supplies:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGf-gg-uzL">
+                                        <rect key="frame" x="21" y="340" width="352" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diabetic life hacks &amp; travel tips:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTw-Lv-4rg">
+                                        <rect key="frame" x="21" y="435" width="240" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5b-2O-E02">
+                                        <rect key="frame" x="69" y="51" width="274" height="30"/>
+                                        <state key="normal" title="National Board For Certified Counselors">
+                                            <color key="titleColor" red="0.70296868859999995" green="1" blue="0.6788773857" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nbccLink:" destination="uxh-sN-oIY" eventType="touchUpInside" id="oc9-sP-sjm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OW3-A6-bBI">
+                                        <rect key="frame" x="69" y="140" width="213" height="30"/>
+                                        <state key="normal" title="American Diabetes Association">
+                                            <color key="titleColor" red="0.70296868859999995" green="1" blue="0.6788773857" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="abaLink:" destination="uxh-sN-oIY" eventType="touchUpInside" id="k64-zF-b0j"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Td-mT-Edc">
+                                        <rect key="frame" x="69" y="170" width="144" height="30"/>
+                                        <state key="normal" title="ABA's Diabetes Care">
+                                            <color key="titleColor" red="0.70296868859999995" green="1" blue="0.6788773857" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="diabCareLink:" destination="uxh-sN-oIY" eventType="touchUpInside" id="mBQ-ta-2Tz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugl-u0-gOV">
+                                        <rect key="frame" x="69" y="240" width="265" height="30"/>
+                                        <state key="normal" title="Facebook's Top Diabetic Communities">
+                                            <color key="titleColor" red="0.70296868859999995" green="1" blue="0.6788773857" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="fbLink:" destination="uxh-sN-oIY" eventType="touchUpInside" id="2FS-Hx-1PH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Su-bf-xXf">
+                                        <rect key="frame" x="69" y="270" width="112" height="30"/>
+                                        <state key="normal" title="Diabetes Sisters">
+                                            <color key="titleColor" red="0.70296868859999995" green="1" blue="0.6788773857" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sisterLink:" destination="uxh-sN-oIY" eventType="touchUpInside" id="who-pA-Rfd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJF-EG-WXE">
+                                        <rect key="frame" x="69" y="300" width="136" height="30"/>
+                                        <state key="normal" title="Diabulemia Helpline">
+                                            <color key="titleColor" red="0.70296868859999995" green="1" blue="0.6788773857" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="diabulemiaLink:" destination="uxh-sN-oIY" eventType="touchUpInside" id="vei-Sv-A1q"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qa3-AZ-D32">
+                                        <rect key="frame" x="69" y="370" width="231" height="30"/>
+                                        <state key="normal" title="Lilly Cares Assistance Application">
+                                            <color key="titleColor" red="0.70296868859999995" green="1" blue="0.6788773857" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="lilyLink:" destination="uxh-sN-oIY" eventType="touchUpInside" id="odV-Jg-cqA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQn-dk-8UD">
+                                        <rect key="frame" x="69" y="400" width="116" height="30"/>
+                                        <state key="normal" title="CoPay Programs">
+                                            <color key="titleColor" red="0.70296868859999995" green="1" blue="0.6788773857" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="copayLink:" destination="uxh-sN-oIY" eventType="touchUpInside" id="f1K-AX-hpi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64a-Oe-3sk">
+                                        <rect key="frame" x="69" y="465" width="148" height="30"/>
+                                        <state key="normal" title="Healthline - life hacks">
+                                            <color key="titleColor" red="0.70296868859999995" green="1" blue="0.6788773857" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="lifehackLink:" destination="uxh-sN-oIY" eventType="touchUpInside" id="IGv-LZ-pqP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2X-cf-Qwi">
+                                        <rect key="frame" x="69" y="498" width="137" height="30"/>
+                                        <state key="normal" title="Domestic travel tips">
+                                            <color key="titleColor" red="0.70296868859999995" green="1" blue="0.6788773857" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="domesticLink:" destination="uxh-sN-oIY" eventType="touchUpInside" id="LrX-Cl-b5a"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocC-6h-DWu">
+                                        <rect key="frame" x="273" y="498" width="157" height="30"/>
+                                        <state key="normal" title="International travel tips">
+                                            <color key="titleColor" red="0.70296868859999995" green="1" blue="0.6788773857" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="internationalLink:" destination="uxh-sN-oIY" eventType="touchUpInside" id="64j-sU-KxW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="XJF-EG-WXE" firstAttribute="top" secondItem="2Su-bf-xXf" secondAttribute="bottom" id="0lx-bO-2Lh"/>
+                                    <constraint firstItem="AJS-3A-ADR" firstAttribute="top" secondItem="oYW-fF-Jcp" secondAttribute="bottom" constant="4" id="1GE-sF-ef8"/>
+                                    <constraint firstItem="2Su-bf-xXf" firstAttribute="leading" secondItem="XJF-EG-WXE" secondAttribute="leading" id="6du-ak-ooj"/>
+                                    <constraint firstItem="N5b-2O-E02" firstAttribute="top" secondItem="ujN-YQ-st7" secondAttribute="bottom" constant="9" id="8Qg-59-zaQ"/>
+                                    <constraint firstItem="55h-5E-3CM" firstAttribute="top" secondItem="2Td-mT-Edc" secondAttribute="bottom" constant="10" id="9dq-SZ-ZMP"/>
+                                    <constraint firstItem="64a-Oe-3sk" firstAttribute="top" secondItem="aTw-Lv-4rg" secondAttribute="bottom" constant="9" id="BLV-zi-xdo"/>
+                                    <constraint firstItem="2Td-mT-Edc" firstAttribute="top" secondItem="OW3-A6-bBI" secondAttribute="bottom" id="BhE-Uh-5xy"/>
+                                    <constraint firstAttribute="trailing" secondItem="55h-5E-3CM" secondAttribute="trailing" constant="98" id="EK2-Rx-4q1"/>
+                                    <constraint firstItem="OW3-A6-bBI" firstAttribute="leading" secondItem="2Td-mT-Edc" secondAttribute="leading" id="Evu-jx-QpD"/>
+                                    <constraint firstItem="N5b-2O-E02" firstAttribute="leading" secondItem="oYW-fF-Jcp" secondAttribute="leading" id="FFw-iP-GAo"/>
+                                    <constraint firstItem="ujN-YQ-st7" firstAttribute="top" secondItem="QDe-EX-4fd" secondAttribute="top" constant="21" id="H8K-Xv-v9x"/>
+                                    <constraint firstAttribute="bottom" secondItem="Z2X-cf-Qwi" secondAttribute="bottom" constant="28" id="KJl-eS-ltE"/>
+                                    <constraint firstItem="2Su-bf-xXf" firstAttribute="leading" secondItem="ugl-u0-gOV" secondAttribute="leading" id="MiC-Dk-tpW"/>
+                                    <constraint firstItem="ugl-u0-gOV" firstAttribute="leading" secondItem="2Td-mT-Edc" secondAttribute="leading" id="Ocq-Zf-UY4"/>
+                                    <constraint firstItem="Z2X-cf-Qwi" firstAttribute="top" secondItem="64a-Oe-3sk" secondAttribute="bottom" constant="3" id="PW0-Zs-cRR"/>
+                                    <constraint firstItem="aTw-Lv-4rg" firstAttribute="top" secondItem="LQn-dk-8UD" secondAttribute="bottom" constant="5" id="RDU-6o-Rsx"/>
+                                    <constraint firstItem="OW3-A6-bBI" firstAttribute="leading" secondItem="oYW-fF-Jcp" secondAttribute="leading" id="TSe-UE-U8O"/>
+                                    <constraint firstItem="Qa3-AZ-D32" firstAttribute="top" secondItem="eGf-gg-uzL" secondAttribute="bottom" constant="9" id="VwW-vk-QAa"/>
+                                    <constraint firstItem="64a-Oe-3sk" firstAttribute="leading" secondItem="LQn-dk-8UD" secondAttribute="leading" id="Wkm-gB-81H"/>
+                                    <constraint firstItem="oYW-fF-Jcp" firstAttribute="top" secondItem="N5b-2O-E02" secondAttribute="bottom" id="XLN-7V-UaE"/>
+                                    <constraint firstItem="2Su-bf-xXf" firstAttribute="top" secondItem="ugl-u0-gOV" secondAttribute="bottom" id="ayn-yd-N73"/>
+                                    <constraint firstItem="64a-Oe-3sk" firstAttribute="leading" secondItem="Z2X-cf-Qwi" secondAttribute="leading" id="dSv-lZ-O0Y"/>
+                                    <constraint firstItem="aTw-Lv-4rg" firstAttribute="leading" secondItem="eGf-gg-uzL" secondAttribute="leading" id="dhb-0x-m6A"/>
+                                    <constraint firstItem="ocC-6h-DWu" firstAttribute="leading" secondItem="Z2X-cf-Qwi" secondAttribute="trailing" constant="67" id="eRZ-70-oBw"/>
+                                    <constraint firstItem="eGf-gg-uzL" firstAttribute="top" secondItem="XJF-EG-WXE" secondAttribute="bottom" constant="10" id="eqZ-NW-DqP"/>
+                                    <constraint firstItem="ocC-6h-DWu" firstAttribute="top" secondItem="Qa3-AZ-D32" secondAttribute="bottom" constant="98" id="hWr-E7-CKm"/>
+                                    <constraint firstItem="ujN-YQ-st7" firstAttribute="leading" secondItem="QDe-EX-4fd" secondAttribute="leading" constant="21" id="hyZ-tQ-0TU"/>
+                                    <constraint firstItem="ocC-6h-DWu" firstAttribute="baseline" secondItem="Z2X-cf-Qwi" secondAttribute="baseline" id="kZZ-Zy-Ww2"/>
+                                    <constraint firstItem="N5b-2O-E02" firstAttribute="trailing" secondItem="ujN-YQ-st7" secondAttribute="trailing" id="lep-NZ-Gzs"/>
+                                    <constraint firstItem="ugl-u0-gOV" firstAttribute="top" secondItem="55h-5E-3CM" secondAttribute="bottom" constant="9" id="nGb-jT-IzT"/>
+                                    <constraint firstItem="eGf-gg-uzL" firstAttribute="leading" secondItem="55h-5E-3CM" secondAttribute="leading" id="rIc-2S-tFe"/>
+                                    <constraint firstItem="AJS-3A-ADR" firstAttribute="leading" secondItem="55h-5E-3CM" secondAttribute="leading" id="raG-Oo-gEP"/>
+                                    <constraint firstItem="OW3-A6-bBI" firstAttribute="top" secondItem="AJS-3A-ADR" secondAttribute="bottom" constant="4" id="rzU-FN-FVY"/>
+                                    <constraint firstItem="Qa3-AZ-D32" firstAttribute="leading" secondItem="LQn-dk-8UD" secondAttribute="leading" id="sxc-7J-uyt"/>
+                                    <constraint firstItem="AJS-3A-ADR" firstAttribute="leading" secondItem="ujN-YQ-st7" secondAttribute="leading" id="uyx-5m-De8"/>
+                                    <constraint firstItem="XJF-EG-WXE" firstAttribute="leading" secondItem="Qa3-AZ-D32" secondAttribute="leading" id="wJn-x4-XmX"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.70588235290000001" green="0.75294117650000003" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="A3R-uU-qFZ" firstAttribute="trailing" secondItem="AVY-fQ-fQJ" secondAttribute="trailing" id="Icg-S0-RXL"/>
-                            <constraint firstItem="A3R-uU-qFZ" firstAttribute="top" secondItem="AVY-fQ-fQJ" secondAttribute="bottom" id="MO5-Hu-dXL"/>
-                            <constraint firstItem="AVY-fQ-fQJ" firstAttribute="leading" secondItem="A3R-uU-qFZ" secondAttribute="leading" id="Osy-04-oPK"/>
-                            <constraint firstItem="AVY-fQ-fQJ" firstAttribute="leading" secondItem="Mke-9w-awa" secondAttribute="leading" id="aaE-qQ-pWx"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="A3R-uU-qFZ" secondAttribute="bottom" constant="-44" id="fis-Oy-Gog"/>
-                            <constraint firstItem="AVY-fQ-fQJ" firstAttribute="top" secondItem="Mke-9w-awa" secondAttribute="top" id="qcD-uZ-8BU"/>
-                            <constraint firstAttribute="trailing" secondItem="AVY-fQ-fQJ" secondAttribute="trailing" id="rgq-ry-PPR"/>
+                            <constraint firstItem="QDe-EX-4fd" firstAttribute="centerX" secondItem="AVY-fQ-fQJ" secondAttribute="centerX" id="06G-v2-izp"/>
+                            <constraint firstItem="AVY-fQ-fQJ" firstAttribute="leading" secondItem="Mke-9w-awa" secondAttribute="leading" id="3ug-sW-P6i"/>
+                            <constraint firstItem="AVY-fQ-fQJ" firstAttribute="top" secondItem="Mke-9w-awa" secondAttribute="top" id="Fj7-OK-ECs"/>
+                            <constraint firstItem="QDe-EX-4fd" firstAttribute="top" secondItem="AVY-fQ-fQJ" secondAttribute="bottom" id="KjD-zm-cKf"/>
+                            <constraint firstItem="QDe-EX-4fd" firstAttribute="leading" secondItem="Mke-9w-awa" secondAttribute="leading" constant="21" id="QLs-hS-YL5"/>
+                            <constraint firstItem="QDe-EX-4fd" firstAttribute="bottom" secondItem="DHR-ia-M6F" secondAttribute="top" id="SFX-rd-hNb"/>
+                            <constraint firstAttribute="trailing" secondItem="AVY-fQ-fQJ" secondAttribute="trailing" id="rtz-14-mBb"/>
+                            <constraint firstItem="QDe-EX-4fd" firstAttribute="leading" secondItem="Mke-9w-awa" secondAttribute="leadingMargin" constant="5" id="s5H-Mu-APz"/>
+                            <constraint firstItem="AVY-fQ-fQJ" firstAttribute="leading" secondItem="Mke-9w-awa" secondAttribute="leading" id="u9E-rd-8TE"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="drTable" destination="A3R-uU-qFZ" id="eUd-no-95l"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BwQ-DC-zdP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2069,6 +2261,6 @@ Cg
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="wBR-0O-bTs"/>
-        <segue reference="Ihr-UO-NIB"/>
+        <segue reference="Qel-Bj-pqd"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -188,6 +188,10 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         let sortDesc = NSSortDescriptor(key: "dateTime", ascending: true)
         fetchReq.sortDescriptors = [sortDesc]
         
+        let predicate = NSPredicate(format: "dateTime == %@", "");
+        
+        fetchReq.predicate = predicate;
+        
         if let fetchResults = context.executeFetchRequest(fetchReq, error: nil) as? [Userhealth]{
             userData = fetchResults
         }
@@ -210,7 +214,7 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         let logItem = userData[indexPath.row]
         
         // Set the title of the cell to be the title of the logItem
-       // cell.textLabel?.text = logItem.
+        //cell.textLabel?.text = logItem.dateTime.
         return cell
     }
     
@@ -228,6 +232,78 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     }
     
     
+    @IBAction func nbccLink(sender: AnyObject) {
+        if let url = NSURL(string: "http://www.nbcc.org/CounselorFind") {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
+    
+    @IBAction func psychTodayLink(sender: AnyObject) {
+        if let url = NSURL(string: "https://therapists.psychologytoday.com/rms/prof_search.php") {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
+    
+    @IBAction func abaLink(sender: AnyObject) {
+        if let url = NSURL(string: "http://www.diabetes.org/") {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
+    
+    @IBAction func diabCareLink(sender: AnyObject) {
+        if let url = NSURL(string: "http://care.diabetesjournals.org/") {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
+    
+    
+    @IBAction func fbLink(sender: AnyObject) {
+        if let url = NSURL(string: "https://www.facebook.com/search/str/diabetes/keywords_top") {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
+    
+    @IBAction func sisterLink(sender: AnyObject) {
+        if let url = NSURL(string: "https://diabetessisters.org/") {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
+    
+    @IBAction func diabulemiaLink(sender: AnyObject) {
+        if let url = NSURL(string: "http://www.diabulimiahelpline.org/") {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
+    
+    @IBAction func lilyLink(sender: AnyObject) {
+        if let url = NSURL(string: "http://www.lillytruassist.com/_assets/pdf/lillycares_application.pdf") {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
+    
+    @IBAction func copayLink(sender: AnyObject) {
+        if let url = NSURL(string: "http://www.needymeds.org/copay_diseases.taf?_function=summary&disease_eng=Diabetes") {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
+    
+    @IBAction func lifehackLink(sender: AnyObject) {
+        if let url = NSURL(string: "http://www.healthline.com/diabetesmine/d-blog-week-going-all-macgyver-with-diabetes-life-hacks") {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
+    
+    @IBAction func domesticLink(sender: AnyObject) {
+        if let url = NSURL(string: "https://www.joslin.org/info/diabetes_and_travel_10_tips_for_a_safe_trip.html") {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
+    
+    @IBAction func internationalLink(sender: AnyObject) {
+        if let url = NSURL(string: "http://www.diabetesselfmanagement.com/about-diabetes/diabetes-basics/traveling-with-diabetes/planning-for-international-travel/") {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
     
    
 }
