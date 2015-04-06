@@ -64,6 +64,7 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     @IBOutlet weak var fbLogin: FBLoginView!
     var hasSession: Boolean!
     @IBOutlet weak var landPageText: UILabel!
+    @IBOutlet weak var widthConst: NSLayoutConstraint!
     
     //Register outlets
     @IBOutlet weak var endoEmail: UITextField!
@@ -101,7 +102,19 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         logTable.registerClass(UITableView.classForCoder(), forCellReuseIdentifier: "UserHealth")*/
     }
     
+    override func viewWillAppear(animated: Bool) {
+       // updateLabelWidths()
+    }
 
+    
+    func updateLabelWidths() {
+        // force views to layout in viewWillAppear so we can adjust widths of labels before the view is visible
+        view.layoutIfNeeded()
+        landPageText.resizeHeightToFit(widthConst)
+       
+    }
+    
+    
     @IBAction func regMenu(sender: AnyObject) {
         if(FB.hasActiveSession()){
             performSegueWithIdentifier("registrationScene1", sender: nil)

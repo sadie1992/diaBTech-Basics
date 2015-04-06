@@ -13,6 +13,7 @@
 		1E7B3CBA1A89AA9100541A19 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7B3CB91A89AA9100541A19 /* Facebook.swift */; };
 		1E7B3E4D1A89B0E600541A19 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7B3E4C1A89B0E600541A19 /* FacebookSDK.framework */; };
 		1E830A761AC24B980089BCAB /* diaBTech_Basics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1EF0E52A1A76C06C0089649F /* diaBTech_Basics.xcdatamodeld */; };
+		1EC23DB31AD20D9000A312CC /* resizeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC23DB21AD20D9000A312CC /* resizeLabel.swift */; };
 		1ECF367C1AD1E10F00CD3705 /* splashImage.001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1ECF367B1AD1E10F00CD3705 /* splashImage.001.jpg */; };
 		1ECF367E1AD1E1A000CD3705 /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ECF367D1AD1E1A000CD3705 /* assets.xcassets */; };
 		1ED9936A1AC082F50069DA45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ED993681AC082F50069DA45 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		1E7B3CB31A89A55F00541A19 /* Bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-header.h"; sourceTree = "<group>"; };
 		1E7B3CB91A89AA9100541A19 /* Facebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
 		1E7B3E4C1A89B0E600541A19 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		1EC23DB21AD20D9000A312CC /* resizeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resizeLabel.swift; sourceTree = "<group>"; };
 		1ECF367B1AD1E10F00CD3705 /* splashImage.001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = splashImage.001.jpg; path = ../../../Desktop/splashImage/splashImage.001.jpg; sourceTree = "<group>"; };
 		1ECF367D1AD1E1A000CD3705 /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assets.xcassets; sourceTree = "<group>"; };
 		1ED993691AC082F50069DA45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				1EF0E5281A76C06C0089649F /* AppDelegate.swift */,
 				1ED993681AC082F50069DA45 /* Main.storyboard */,
 				1EF0E52D1A76C06C0089649F /* ViewController.swift */,
+				1EC23DB21AD20D9000A312CC /* resizeLabel.swift */,
 				1E58ED301A774555007C320F /* user-idTable.swift */,
 				1E58ED321A77465C007C320F /* user-health.swift */,
 				1EF0E5321A76C06D0089649F /* Images.xcassets */,
@@ -249,6 +252,7 @@
 				1E4B8F8B1A9E640F002D2CFE /* user-A1C.swift in Sources */,
 				1E58ED311A774555007C320F /* user-idTable.swift in Sources */,
 				1E58ED331A77465C007C320F /* user-health.swift in Sources */,
+				1EC23DB31AD20D9000A312CC /* resizeLabel.swift in Sources */,
 				1EF0E5291A76C06C0089649F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
