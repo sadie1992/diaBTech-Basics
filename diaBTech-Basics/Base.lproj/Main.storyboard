@@ -1403,15 +1403,15 @@
             </objects>
             <point key="canvasLocation" x="7014" y="-2073"/>
         </scene>
-        <!--View Controller-->
+        <!--GraphVC-->
         <scene sceneID="g08-E5-3WF">
             <objects>
-                <viewController id="ObZ-gf-U6Q" sceneMemberID="viewController">
+                <viewController id="ObZ-gf-U6Q" customClass="GraphVC" customModule="diaBTech_Basics" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kFO-km-Ljp"/>
                         <viewControllerLayoutGuide type="bottom" id="y0u-s5-piY"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DGQ-Ne-kca">
+                    <view key="view" contentMode="scaleToFill" id="DGQ-Ne-kca" customClass="ViewC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1430,18 +1430,57 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AV8-lz-8Lk">
-                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5d1-GX-xAh">
+                                <rect key="frame" x="16" y="563" width="568" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="fBM-Mt-Mmh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jT-lh-qeM">
+                                <rect key="frame" x="-1" y="289" width="64" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="tZd-jR-5Ce"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Reading">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ERD-A7-WIQ" customClass="JBLineChartView">
+                                <rect key="frame" x="44" y="44" width="556" height="511"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </sceneKitView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.6470588235294118" green="0.70196078431372544" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="cTd-5W-7WP" firstAttribute="leading" secondItem="DGQ-Ne-kca" secondAttribute="leading" id="1SJ-Bd-fjn"/>
+                            <constraint firstItem="5d1-GX-xAh" firstAttribute="top" secondItem="ERD-A7-WIQ" secondAttribute="bottom" constant="8" symbolic="YES" id="1of-EG-QLU"/>
+                            <constraint firstItem="2jT-lh-qeM" firstAttribute="leading" secondItem="DGQ-Ne-kca" secondAttribute="leadingMargin" constant="-11" id="3za-fr-Edm"/>
                             <constraint firstAttribute="trailing" secondItem="cTd-5W-7WP" secondAttribute="trailing" id="4x5-e3-JKJ"/>
+                            <constraint firstItem="ERD-A7-WIQ" firstAttribute="top" secondItem="cTd-5W-7WP" secondAttribute="bottom" id="I4f-ud-JFG"/>
                             <constraint firstItem="cTd-5W-7WP" firstAttribute="top" secondItem="DGQ-Ne-kca" secondAttribute="top" id="LCP-MS-z8h"/>
+                            <constraint firstItem="y0u-s5-piY" firstAttribute="top" secondItem="5d1-GX-xAh" secondAttribute="bottom" constant="8" symbolic="YES" id="LOI-OP-waw"/>
+                            <constraint firstItem="ERD-A7-WIQ" firstAttribute="leading" secondItem="DGQ-Ne-kca" secondAttribute="leadingMargin" constant="28" id="Y2i-Pd-8Tx"/>
+                            <constraint firstItem="ERD-A7-WIQ" firstAttribute="centerY" secondItem="2jT-lh-qeM" secondAttribute="centerY" id="bUC-4R-teR"/>
+                            <constraint firstItem="5d1-GX-xAh" firstAttribute="leading" secondItem="DGQ-Ne-kca" secondAttribute="leadingMargin" id="kLx-bB-myQ"/>
+                            <constraint firstItem="ERD-A7-WIQ" firstAttribute="trailing" secondItem="cTd-5W-7WP" secondAttribute="trailing" id="mgV-kw-7uN"/>
+                            <constraint firstItem="5d1-GX-xAh" firstAttribute="centerX" secondItem="cTd-5W-7WP" secondAttribute="centerX" id="xhf-WQ-tg7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lineGraph" destination="ERD-A7-WIQ" id="PQc-vC-hqP"/>
+                        <outlet property="readingLabel" destination="2jT-lh-qeM" id="QMe-3d-MI0"/>
+                        <outlet property="timeLabel" destination="5d1-GX-xAh" id="IhA-rc-eEb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RaC-MJ-c8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2692,7 +2731,7 @@ Cg
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MQY-DP-32R"/>
-        <segue reference="Ihr-UO-NIB"/>
+        <segue reference="bbs-Gj-2my"/>
+        <segue reference="z1i-d3-ZfG"/>
     </inferredMetricsTieBreakers>
 </document>

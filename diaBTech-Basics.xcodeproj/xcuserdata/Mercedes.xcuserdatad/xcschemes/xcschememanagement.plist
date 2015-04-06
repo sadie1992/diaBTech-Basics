@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>JBChart.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>diaBTech-Basics.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,26 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>1EC23DFA1AD304F900A312CC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1EC23E041AD304F900A312CC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1EC23E1F1AD3069600A312CC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1EC23E291AD3069600A312CC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1EF0E5221A76C06C0089649F</key>
 		<dict>
 			<key>primary</key>

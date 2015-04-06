@@ -34,6 +34,20 @@
                ReferencedContainer = "container:diaBTech-Basics.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1EC23E041AD304F900A312CC"
+               BuildableName = "JBChartTests.xctest"
+               BlueprintName = "JBChartTests"
+               ReferencedContainer = "container:diaBTech-Basics.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -49,6 +63,16 @@
                BlueprintIdentifier = "1EF0E53A1A76C06D0089649F"
                BuildableName = "diaBTech-BasicsTests.xctest"
                BlueprintName = "diaBTech-BasicsTests"
+               ReferencedContainer = "container:diaBTech-Basics.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1EC23E041AD304F900A312CC"
+               BuildableName = "JBChartTests.xctest"
+               BlueprintName = "JBChartTests"
                ReferencedContainer = "container:diaBTech-Basics.xcodeproj">
             </BuildableReference>
          </TestableReference>

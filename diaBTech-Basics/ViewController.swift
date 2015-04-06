@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+
 class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate, UITableViewDataSource {
 
     var userItems = [useridTable]()
@@ -53,9 +54,6 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     //outlets for comments
     @IBOutlet weak var comments: UITextView!
     @IBOutlet weak var scrollView: UIScrollView!
-    
-    //table for Diabetic Resources
-    //for links: https://www.youtube.com/watch?v=gMR0cvVToNc 
 
     //table for Activity Log
     @IBOutlet weak var logTable: UITableView!
@@ -76,6 +74,7 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     @IBOutlet weak var snackT1: UIDatePicker!
     @IBOutlet weak var snackT2: UIDatePicker!
     
+
     
     //managedObjectContext var
     /*lazy var managedObjectContext : NSManagedObjectContext? = {
