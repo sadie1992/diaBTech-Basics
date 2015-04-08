@@ -15,18 +15,18 @@ class useridTable: NSManagedObject {
     @NSManaged var fbemail: String
     @NSManaged var endoemail: String
     @NSManaged var nextendoapt: NSDate
-    @NSManaged var morningmealtime: TimeRecord
-    @NSManaged var lunchmealtime: TimeRecord
-    @NSManaged var dinnermealtime: TimeRecord
-    @NSManaged var snack1mealtime: TimeRecord
-    @NSManaged var snack2mealtime: TimeRecord
+    @NSManaged var morningmealtime: NSDate
+    @NSManaged var lunchmealtime: NSDate
+    @NSManaged var dinnermealtime: NSDate
+    @NSManaged var snack1mealtime: NSDate
+    @NSManaged var snack2mealtime: NSDate
     @NSManaged var minGoalBS: Int
     @NSManaged var maxGoalBS: Int
     
     
     class func createInManagedObjectContextID(moc: NSManagedObjectContext, fbUserFN: String, fbUserLN: String, userEmail: String, endoEmail:String, nextAPPT: NSDate, morningMT: TimeRecord, lunchMT: TimeRecord, dinnerMT: TimeRecord, snack1MT: TimeRecord, snack2MT: TimeRecord, minBS: Int, maxBS: Int) -> useridTable {
         let newItem = NSEntityDescription.insertNewObjectForEntityForName("useridTable", inManagedObjectContext: moc) as useridTable
-        newItem.fbuserfname = fbUserFN
+     /*   newItem.fbuserfname = fbUserFN
         newItem.fbuserlname = fbUserLN
         newItem.fbemail = userEmail
         newItem.endoemail = endoEmail
@@ -37,7 +37,7 @@ class useridTable: NSManagedObject {
         newItem.snack1mealtime = snack1MT
         newItem.snack2mealtime = snack2MT
         newItem.minGoalBS = minBS
-        newItem.maxGoalBS = maxBS
+        newItem.maxGoalBS = maxBS*/
         return newItem
     }
 }

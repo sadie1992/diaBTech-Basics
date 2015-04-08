@@ -455,8 +455,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="MUI-vS-N0r">
-                                <rect key="frame" x="16" y="55" width="568" height="1450"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MUI-vS-N0r">
+                                <rect key="frame" x="16" y="50" width="568" height="1450"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Le-IJ-eep">
                                         <rect key="frame" x="0.0" y="0.0" width="568" height="1500"/>
@@ -668,10 +668,10 @@
                         <color key="backgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="MUI-vS-N0r" firstAttribute="centerX" secondItem="GAM-dn-3uU" secondAttribute="centerX" id="GaY-2e-oai"/>
-                            <constraint firstItem="gR2-DY-qhm" firstAttribute="top" secondItem="MUI-vS-N0r" secondAttribute="bottom" constant="45" id="OWm-41-aay"/>
+                            <constraint firstItem="gR2-DY-qhm" firstAttribute="top" secondItem="MUI-vS-N0r" secondAttribute="bottom" constant="50" id="OWm-41-aay"/>
                             <constraint firstItem="MUI-vS-N0r" firstAttribute="leading" secondItem="2TF-tl-Oba" secondAttribute="leadingMargin" id="PVQ-YE-cmA"/>
                             <constraint firstItem="GAM-dn-3uU" firstAttribute="top" secondItem="2TF-tl-Oba" secondAttribute="top" id="Xk6-Az-nNp"/>
-                            <constraint firstItem="MUI-vS-N0r" firstAttribute="top" secondItem="GAM-dn-3uU" secondAttribute="bottom" constant="11" id="lTs-7o-IMG"/>
+                            <constraint firstItem="MUI-vS-N0r" firstAttribute="top" secondItem="GAM-dn-3uU" secondAttribute="bottom" constant="6" id="lTs-7o-IMG"/>
                             <constraint firstItem="GAM-dn-3uU" firstAttribute="leading" secondItem="2TF-tl-Oba" secondAttribute="leading" id="mEx-hJ-izj"/>
                             <constraint firstAttribute="trailing" secondItem="GAM-dn-3uU" secondAttribute="trailing" id="z7W-wX-wpj"/>
                         </constraints>
@@ -774,19 +774,6 @@
                                     <segue destination="uxh-sN-oIY" kind="showDetail" id="szu-hc-GmT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAb-zU-kNg">
-                                <rect key="frame" x="222" y="465" width="157" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="UUh-vH-3Lc"/>
-                                </constraints>
-                                <state key="normal" title="Submit a Comment">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="YE1-UG-st8" kind="showDetail" id="KYl-NT-kUG"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voe-sx-l4A">
                                 <rect key="frame" x="243" y="405" width="114" height="34"/>
                                 <state key="normal" title="Edit Settings">
@@ -804,8 +791,6 @@
                             <constraint firstItem="R4x-QC-iSc" firstAttribute="top" secondItem="Jgs-JM-8DI" secondAttribute="bottom" constant="61" id="8do-Jg-MhB"/>
                             <constraint firstAttribute="trailing" secondItem="Jgs-JM-8DI" secondAttribute="trailing" id="AOI-9B-530"/>
                             <constraint firstItem="CBk-8c-baK" firstAttribute="top" secondItem="BIF-7T-ajD" secondAttribute="bottom" constant="26" id="Csz-Hx-MEk"/>
-                            <constraint firstItem="voe-sx-l4A" firstAttribute="centerX" secondItem="VAb-zU-kNg" secondAttribute="centerX" id="DOF-pi-eZw"/>
-                            <constraint firstItem="VAb-zU-kNg" firstAttribute="top" secondItem="voe-sx-l4A" secondAttribute="bottom" constant="26" id="DU6-Cm-pOH"/>
                             <constraint firstItem="voe-sx-l4A" firstAttribute="top" secondItem="CBk-8c-baK" secondAttribute="bottom" constant="26" id="Hv2-HO-Wbn"/>
                             <constraint firstItem="Jgs-JM-8DI" firstAttribute="leading" secondItem="wbW-Lk-NBn" secondAttribute="leading" id="JV7-CL-Rbe"/>
                             <constraint firstItem="Jgs-JM-8DI" firstAttribute="top" secondItem="wbW-Lk-NBn" secondAttribute="top" id="MEf-eg-5NK"/>
@@ -2066,7 +2051,7 @@ Cg
                         <viewControllerLayoutGuide type="bottom" id="eW0-HV-rfs"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pPh-Uf-ksu">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TWY-Tb-e3N">
@@ -2085,7 +2070,7 @@ Cg
                                 </items>
                             </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sxj-AU-PjF">
-                                <rect key="frame" x="0.0" y="44" width="600" height="568"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="1568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <mutableString key="text">By accepting this terms of service for the application, you (the ‘user’) will follow all the guidelines for correct usage of this application. Any use outside of those listed here are considered incorrect use of the application.
 
@@ -2119,87 +2104,6 @@ Any export of activity logs should be limited to the ‘user’, the ‘users’
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gEl-QE-A7b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7808" y="2696"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="fb6-Wd-0nt">
-            <objects>
-                <viewController storyboardIdentifier="editsettings" id="YE1-UG-st8" customClass="ViewController" customModule="diaBTech_Basics" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="b17-Cr-meO"/>
-                        <viewControllerLayoutGuide type="bottom" id="5S6-Ty-fnb"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="zKE-HJ-THW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMY-ck-SfG">
-                                <rect key="frame" x="463" y="550" width="121" height="30"/>
-                                <state key="normal" title="Submit Comment">
-                                    <color key="titleColor" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GNl-3K-BXr">
-                                <rect key="frame" x="16" y="151" width="568" height="391"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes" keyboardAppearance="light"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Directions:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzE-DG-VyQ">
-                                <rect key="frame" x="16" y="56" width="82" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHw-FS-ysX">
-                                <rect key="frame" x="16" y="77" width="430" height="99"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="430" id="Sbf-ee-QmE"/>
-                                </constraints>
-                                <string key="text">Enter below any comments about the application, how well it works/doesn't work, bugs you've encountered. Please be specific about any issue you have witnessed or functionality that you feel needs further work. </string>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jTB-9K-z1H">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <color key="barTintColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <items>
-                                    <navigationItem title="Comments" id="Ddz-fh-Y9F">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="h8g-f4-tIL">
-                                            <color key="tintColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <segue destination="UPO-ct-TnV" kind="showDetail" id="dCN-VJ-Jj6"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="aMY-ck-SfG" firstAttribute="top" secondItem="GNl-3K-BXr" secondAttribute="bottom" constant="8" symbolic="YES" id="5oE-KO-g3y"/>
-                            <constraint firstItem="GNl-3K-BXr" firstAttribute="trailing" secondItem="aMY-ck-SfG" secondAttribute="trailing" id="DbR-63-NA6"/>
-                            <constraint firstItem="5S6-Ty-fnb" firstAttribute="top" secondItem="gHw-FS-ysX" secondAttribute="bottom" constant="424" id="E2f-0I-tEk"/>
-                            <constraint firstItem="GNl-3K-BXr" firstAttribute="leading" secondItem="zKE-HJ-THW" secondAttribute="leadingMargin" id="Jpe-LW-EcL"/>
-                            <constraint firstItem="jTB-9K-z1H" firstAttribute="leading" secondItem="zKE-HJ-THW" secondAttribute="leading" id="N9m-Zf-6rU"/>
-                            <constraint firstItem="GNl-3K-BXr" firstAttribute="centerX" secondItem="jTB-9K-z1H" secondAttribute="centerX" id="QGf-4v-gC0"/>
-                            <constraint firstItem="GNl-3K-BXr" firstAttribute="top" secondItem="tzE-DG-VyQ" secondAttribute="bottom" constant="74" id="W1e-Pp-vDx"/>
-                            <constraint firstItem="gHw-FS-ysX" firstAttribute="leading" secondItem="tzE-DG-VyQ" secondAttribute="leading" id="fDA-7J-L1A"/>
-                            <constraint firstItem="jTB-9K-z1H" firstAttribute="top" secondItem="zKE-HJ-THW" secondAttribute="top" id="grp-4z-es2"/>
-                            <constraint firstAttribute="bottom" secondItem="aMY-ck-SfG" secondAttribute="bottom" constant="20" symbolic="YES" id="li0-d5-pso"/>
-                            <constraint firstAttribute="trailing" secondItem="jTB-9K-z1H" secondAttribute="trailing" id="wfT-uq-9n4"/>
-                            <constraint firstItem="GNl-3K-BXr" firstAttribute="leading" secondItem="gHw-FS-ysX" secondAttribute="leading" id="xTX-ei-Q7D"/>
-                            <constraint firstItem="tzE-DG-VyQ" firstAttribute="top" secondItem="jTB-9K-z1H" secondAttribute="bottom" constant="12" id="xfH-0d-DV3"/>
-                            <constraint firstItem="gHw-FS-ysX" firstAttribute="top" secondItem="tzE-DG-VyQ" secondAttribute="bottom" id="xmK-ZD-fa1"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="comments" destination="GNl-3K-BXr" id="sG4-ML-qQh"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3mT-ja-Gd1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7014" y="4305"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="VxD-79-CIz">
@@ -2495,8 +2399,8 @@ Any export of activity logs should be limited to the ‘user’, the ‘users’
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aft-mC-cmG"/>
-        <segue reference="VEC-vc-YL7"/>
-        <segue reference="QMB-Yc-e40"/>
+        <segue reference="Ihr-UO-NIB"/>
+        <segue reference="0mB-sC-Ha7"/>
+        <segue reference="wBR-0O-bTs"/>
     </inferredMetricsTieBreakers>
 </document>

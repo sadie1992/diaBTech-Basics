@@ -88,9 +88,8 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-
+    
     
     func updateLabelWidths() {
         // force views to layout in viewWillAppear so we can adjust widths of labels before the view is visible
@@ -142,7 +141,7 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     
     @IBAction func addRegister(sender: AnyObject) {
         if(self.email == nil){
-            //error
+            println("Email was nill.")
         }
         else {
             var appDel:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate);
@@ -152,10 +151,10 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
             newUser.setValue(lastName, forKey: "fbuserlname")
             newUser.setValue(endoEmail.text, forKey: "endoemail")
             newUser.setValue(breakMeal.date, forKey: "morningmealtime") //
-            newUser.setValue(lunchMeal, forKey: "lunchmealtime")
-            newUser.setValue(dinnerMeal, forKey: "dinnermealtime")
-            newUser.setValue(snack1Meal, forKey: "snack1mealtime")
-            newUser.setValue(snack2Meal, forKey: "snack2mealtime")
+            newUser.setValue(lunchMeal.date, forKey: "lunchmealtime")
+            newUser.setValue(dinnerMeal.date, forKey: "dinnermealtime")
+            newUser.setValue(snack1Meal.date, forKey: "snack1mealtime")
+            newUser.setValue(snack2Meal.date, forKey: "snack2mealtime")
             newUser.setValue(minGoal, forKey: "minGoalBS")
             newUser.setValue(maxGoal, forKey: "maxGoalBS")
             
@@ -206,6 +205,7 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         // How many rows are there in this section?
         // There's only 1 section, and it has a number of rows
         // equal to the number of logItems, so return the count
+        println("Number of entries for userData: ", userData.count)
         return userData.count
     }
     
@@ -324,14 +324,6 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         }
         println("Email:  \(self.email)")
 
-    }
-    
-    func loginViewShowingLoggedOutUser(loginView: FBLoginView!) {
-        
-    }
-    
-    func loginView(loginView: FBLoginView!, handleError error: NSError!) {
-        
     }
     
     @IBAction func disagreeTOS(sender: AnyObject) {
