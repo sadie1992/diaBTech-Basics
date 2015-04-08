@@ -17,11 +17,11 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     var userA1CData = [UserA1C]()
     
     //all outlets for registration 
-    @IBOutlet weak var endEmail: UITextField!
+    @IBOutlet weak var endoEmail: UITextField!
     @IBOutlet weak var aptDate: UIDatePicker!
     @IBOutlet weak var minGoal: UITextField!
     @IBOutlet weak var maxGoal: UITextField!
-    @IBOutlet weak var breakfMeal: UIDatePicker!
+    @IBOutlet weak var breakMeal: UIDatePicker!
     @IBOutlet weak var lunchMeal: UIDatePicker!
     @IBOutlet weak var dinnerMeal: UIDatePicker!
     @IBOutlet weak var snack1Meal: UIDatePicker!
@@ -60,19 +60,14 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     
     //Facebook & Session outlets
     @IBOutlet weak var fbLogin: FBLoginView!
+    var firstName: String!
+    var lastName: String!
+    var email: String!
     var hasSession: Boolean!
     @IBOutlet weak var landPageText: UILabel!
     @IBOutlet weak var widthConst: NSLayoutConstraint!
     
-    //Register outlets
-    @IBOutlet weak var endoEmail: UITextField!
-    @IBOutlet weak var minBG: UITextField!
-    @IBOutlet weak var maxBG: UITextField!
-    @IBOutlet weak var morningMealT: UIDatePicker!
-    @IBOutlet weak var lunchMealT: UIDatePicker!
-    @IBOutlet weak var dinnerMealT: UIDatePicker!
-    @IBOutlet weak var snackT1: UIDatePicker!
-    @IBOutlet weak var snackT2: UIDatePicker!
+
     
 
     
@@ -93,16 +88,7 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*var viewFrame = self.view.frame
-        viewFrame.origin.y += 20
-        viewFrame.size.height  -= 20
-        logTable.frame = viewFrame
-        self.view.addSubview(logTable)
-        logTable.registerClass(UITableView.classForCoder(), forCellReuseIdentifier: "UserHealth")*/
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-       // updateLabelWidths()
+
     }
 
     
@@ -155,18 +141,29 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     
     
     @IBAction func addRegister(sender: AnyObject) {
-      //  if let moc = self.managedObjectContext {
-        var appDel:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate);
-        var context:NSManagedObjectContext = appDel.managedObjectContext!
-        var newUser = NSEntityDescription.insertNewObjectForEntityForName("userid", inManagedObjectContext: context) as NSManagedObject
-            var fbFirstName = "First"
-            var fbLastName = "Last"
+        if(self.email == nil){
+            //error
+        }
+        else {
+            var appDel:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate);
+            var context:NSManagedObjectContext = appDel.managedObjectContext!
+            var newUser = NSEntityDescription.insertNewObjectForEntityForName("userid", inManagedObjectContext: context) as NSManagedObject
+            newUser.setValue(firstName, forKey: "fbuserfname")
+            newUser.setValue(lastName, forKey: "fbuserlname")
+            newUser.setValue(endoEmail.text, forKey: "endoemail")
+            newUser.setValue(breakMeal.date, forKey: "morningmealtime") //
+            newUser.setValue(lunchMeal, forKey: "lunchmealtime")
+            newUser.setValue(dinnerMeal, forKey: "dinnermealtime")
+            newUser.setValue(snack1Meal, forKey: "snack1mealtime")
+            newUser.setValue(snack2Meal, forKey: "snack2mealtime")
+            newUser.setValue(minGoal, forKey: "minGoalBS")
+            newUser.setValue(maxGoal, forKey: "maxGoalBS")
+            
        
+            println("Did newUser change? ", newUser.hasChanges);
         
-        println("Did newUser change? ", newUser.hasChanges);
-        
-        println(context.hasChanges)
-       
+            println(context.hasChanges)
+        }
     }
     
     @IBAction func addA1C(sender: AnyObject) {
@@ -182,13 +179,6 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         println(context.hasChanges)
     }
     
-    
-    //FB delegate methods
-    
-    func loginViewShowingLoggedInUser(loginView: FBLoginView!) {
-        println("Has session: ", FBSession.activeSession());
-        println("User Logged In");
-    }
 
     @IBAction func viewLogs(sender: AnyObject) {
         //tableView = logTable
@@ -317,6 +307,48 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         }
     }
     
+    func loginViewShowingLoggedInUser(loginView: FBLoginView!) {
+        println("User Logged In")
+        println("")
+    }
    
+    func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
+        println("Username: \(user.first_name) \(user.last_name)")
+        firstName = user.first_name
+        lastName = user.last_name
+        
+        FBRequestConnection.startForMeWithCompletionHandler{
+            (connection, user, error) -> Void in
+            self.email = user.objectForKey("email") as String
+            //println("Email: \(self.email)")
+        }
+        println("Email:  \(self.email)")
+
+    }
+    
+    func loginViewShowingLoggedOutUser(loginView: FBLoginView!) {
+        
+    }
+    
+    func loginView(loginView: FBLoginView!, handleError error: NSError!) {
+        
+    }
+    
+    @IBAction func disagreeTOS(sender: AnyObject) {
+        let alert = UIAlertView()
+        alert.title = "Alert"
+        alert.message = "In order to use this application, you must agree with the terms of service. Please review the terms above."
+        alert.addButtonWithTitle("Ok")
+        alert.show()
+    }
+    
+    @IBAction func exportLogs(sender: AnyObject) {
+        let alert = UIAlertView()
+        alert.title = "Alert"
+        alert.message = "This functionality is currently in progress. Exporting will be released in a future update. My apologies."
+        alert.addButtonWithTitle("Ok")
+        alert.show()
+    }
+    
 }
 

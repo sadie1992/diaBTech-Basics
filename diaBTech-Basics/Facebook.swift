@@ -11,6 +11,7 @@ import Foundation
 
 let FB = Facebook();
 
+
 class Facebook {
     
     var fbSession:FBSession?;
@@ -20,11 +21,12 @@ class Facebook {
     }
     
     func hasActiveSession() -> Bool{
+
         let fbsessionState = FBSession.activeSession().state;
         if ( fbsessionState == FBSessionState.Open
             || fbsessionState == FBSessionState.OpenTokenExtended ){
                 self.fbSession = FBSession.activeSession();
-                
+
                 println("Signed in: true")
                 return true;
         }
@@ -37,8 +39,8 @@ class Facebook {
     func login(callback: () -> Void){
         
         let permission = ["public_profile", "email"];
-        println(permission[0]);
-        println("SHOW STUFF");
+ 
+
         
         let activeSession = FBSession.activeSession();
         let fbsessionState = activeSession.state;
@@ -77,16 +79,16 @@ class Facebook {
         self.fbSession?.close();
     }
     
-    func getInfo(){
-        FBRequest.requestForMe()?.startWithCompletionHandler({(connection:FBRequestConnection!, result:AnyObject!, error:NSError!) in
+    func getInfo(user: FBGraphUser){
+            FBRequest.requestForMe()?.startWithCompletionHandler({(connection:FBRequestConnection!, result:AnyObject!, error:NSError!) in
             
             if(error != nil){
                 println("Error Getting ME: \(error)");
             }
-            let userData = NSDictionary (objectsAndKeys: result);
-            let fbName: NSString? = userData["name"] as? NSString;
+            
+           // let fbName: NSString? = userData["name"] as? NSString;
             println("\(result)");
-            println("Username is: ", fbName);
+      //      println("Username is: ", fbName);
             
             
         });
