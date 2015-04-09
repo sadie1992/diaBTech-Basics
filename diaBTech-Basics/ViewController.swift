@@ -301,12 +301,7 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         println("Username: \(user.first_name) \(user.last_name)")
         firstName = user.first_name
         lastName = user.last_name
-        
-        FBRequestConnection.startForMeWithCompletionHandler{
-            (connection, user, error) -> Void in
-            self.email = user.objectForKey("email") as String
-            //println("Email: \(self.email)")
-        }
+        email = user.objectForKey("email") as String
         println("Email:  \(self.email)")
 
     }
