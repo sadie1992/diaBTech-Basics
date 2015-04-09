@@ -834,19 +834,22 @@
                                                 <segue destination="UPO-ct-TnV" kind="showDetail" id="63Z-0h-spV"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" id="TJg-7H-w4G">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Nde-Co-IGp">
+                                                <rect key="frame" x="516" y="246" width="84" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Export!">
+                                                    <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="exportLogs:" destination="2GV-9y-zSY" eventType="touchUpInside" id="SH6-m3-SKh"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nde-Co-IGp">
-                                <rect key="frame" x="538" y="550" width="50" height="30"/>
-                                <state key="normal" title="Export!">
-                                    <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="exportLogs:" destination="2GV-9y-zSY" eventType="touchUpInside" id="SH6-m3-SKh"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpC-9Q-U31">
                                 <rect key="frame" x="16" y="341" width="74" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -868,14 +871,14 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Sq3-v0-KlC">
                                 <rect key="frame" x="530" y="462" width="51" height="31"/>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Include A1C: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJT-hz-bTB">
-                                <rect key="frame" x="264" y="467" width="104" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start date: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqg-qT-wmX">
+                                <rect key="frame" x="16" y="135" width="86" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start date: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqg-qT-wmX">
-                                <rect key="frame" x="16" y="135" width="86" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Include A1C: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJT-hz-bTB">
+                                <rect key="frame" x="264" y="467" width="104" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -883,23 +886,21 @@
                         </subviews>
                         <color key="backgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="wpC-9Q-U31" firstAttribute="leading" secondItem="uAG-NO-ybn" secondAttribute="leadingMargin" id="2xu-IQ-Dd6"/>
-                            <constraint firstItem="AWV-4x-WOM" firstAttribute="leading" secondItem="nuA-2w-9a3" secondAttribute="leading" id="AWD-Ke-q1e"/>
-                            <constraint firstItem="nuA-2w-9a3" firstAttribute="leading" secondItem="nJT-hz-bTB" secondAttribute="leading" id="Alh-TY-8zx"/>
-                            <constraint firstItem="0OI-t4-28S" firstAttribute="leading" secondItem="uAG-NO-ybn" secondAttribute="leading" id="Fdz-Ge-sU3"/>
-                            <constraint firstAttribute="trailing" secondItem="0OI-t4-28S" secondAttribute="trailing" id="IeR-OS-3fa"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Sq3-v0-KlC" secondAttribute="trailing" constant="5" id="JWp-Kt-NQc"/>
-                            <constraint firstItem="AWV-4x-WOM" firstAttribute="top" secondItem="0OI-t4-28S" secondAttribute="bottom" constant="21" id="KrE-P9-Ue4"/>
-                            <constraint firstItem="AWV-4x-WOM" firstAttribute="trailing" secondItem="uAG-NO-ybn" secondAttribute="trailingMargin" id="P0z-2u-X9p"/>
-                            <constraint firstItem="Sq3-v0-KlC" firstAttribute="top" secondItem="nuA-2w-9a3" secondAttribute="bottom" constant="29" id="SBB-dv-ngx"/>
-                            <constraint firstItem="nJT-hz-bTB" firstAttribute="centerY" secondItem="Sq3-v0-KlC" secondAttribute="centerY" id="SIN-p4-DWQ"/>
-                            <constraint firstItem="vqg-qT-wmX" firstAttribute="leading" secondItem="uAG-NO-ybn" secondAttribute="leadingMargin" id="TK0-t3-DWj"/>
-                            <constraint firstItem="vqg-qT-wmX" firstAttribute="top" secondItem="0OI-t4-28S" secondAttribute="bottom" constant="91" id="Tx4-fi-d4L"/>
-                            <constraint firstItem="0OI-t4-28S" firstAttribute="top" secondItem="uAG-NO-ybn" secondAttribute="top" id="eem-td-yWR"/>
-                            <constraint firstItem="eJR-Tl-Thz" firstAttribute="top" secondItem="wpC-9Q-U31" secondAttribute="bottom" constant="238" id="ouM-e5-BxY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Nde-Co-IGp" secondAttribute="trailing" constant="-4" id="qdz-A8-bbI"/>
-                            <constraint firstItem="nuA-2w-9a3" firstAttribute="top" secondItem="AWV-4x-WOM" secondAttribute="bottom" constant="44" id="rip-4H-geq"/>
-                            <constraint firstAttribute="bottom" secondItem="Nde-Co-IGp" secondAttribute="bottom" constant="20" symbolic="YES" id="xHg-bB-AiU"/>
+                            <constraint firstItem="vqg-qT-wmX" firstAttribute="top" secondItem="0OI-t4-28S" secondAttribute="bottom" constant="91" id="7ye-hn-rgY"/>
+                            <constraint firstItem="Sq3-v0-KlC" firstAttribute="top" secondItem="nuA-2w-9a3" secondAttribute="bottom" constant="29" id="IlT-jm-jwb"/>
+                            <constraint firstItem="nuA-2w-9a3" firstAttribute="trailing" secondItem="uAG-NO-ybn" secondAttribute="trailingMargin" id="M1P-A7-Kon"/>
+                            <constraint firstItem="0OI-t4-28S" firstAttribute="top" secondItem="uAG-NO-ybn" secondAttribute="top" id="MwU-Fz-nop"/>
+                            <constraint firstItem="nJT-hz-bTB" firstAttribute="leading" secondItem="nuA-2w-9a3" secondAttribute="leading" id="O1N-LB-CwN"/>
+                            <constraint firstItem="AWV-4x-WOM" firstAttribute="leading" secondItem="nuA-2w-9a3" secondAttribute="leading" id="Q3j-3K-zBz"/>
+                            <constraint firstItem="wpC-9Q-U31" firstAttribute="leading" secondItem="uAG-NO-ybn" secondAttribute="leadingMargin" id="WIg-fH-M4e"/>
+                            <constraint firstAttribute="trailing" secondItem="0OI-t4-28S" secondAttribute="trailing" id="YDx-Dy-sol"/>
+                            <constraint firstItem="eJR-Tl-Thz" firstAttribute="top" secondItem="wpC-9Q-U31" secondAttribute="bottom" constant="238" id="kef-tG-adS"/>
+                            <constraint firstItem="AWV-4x-WOM" firstAttribute="top" secondItem="0OI-t4-28S" secondAttribute="bottom" constant="21" id="kiv-rg-CIX"/>
+                            <constraint firstItem="nuA-2w-9a3" firstAttribute="top" secondItem="AWV-4x-WOM" secondAttribute="bottom" constant="44" id="okE-MG-BN0"/>
+                            <constraint firstItem="0OI-t4-28S" firstAttribute="leading" secondItem="uAG-NO-ybn" secondAttribute="leading" id="rLH-W3-1Ey"/>
+                            <constraint firstItem="vqg-qT-wmX" firstAttribute="leading" secondItem="wpC-9Q-U31" secondAttribute="leading" id="rVt-D1-J7n"/>
+                            <constraint firstItem="Sq3-v0-KlC" firstAttribute="centerY" secondItem="nJT-hz-bTB" secondAttribute="centerY" id="uGt-rN-jRi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Sq3-v0-KlC" secondAttribute="trailing" constant="5" id="z90-2I-FSU"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1013,7 +1014,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oau-Vw-Lhm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7014" y="-2073"/>
+            <point key="canvasLocation" x="7024" y="-2078"/>
         </scene>
         <!--GraphVC-->
         <scene sceneID="g08-E5-3WF">
@@ -1204,7 +1205,9 @@
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aXa-pp-MzJ">
                                 <rect key="frame" x="0.0" y="44" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLd-pa-3xW">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -2399,8 +2402,8 @@ Any export of activity logs should be limited to the ‘user’, the ‘users’
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ihr-UO-NIB"/>
+        <segue reference="63Z-0h-spV"/>
         <segue reference="0mB-sC-Ha7"/>
-        <segue reference="wBR-0O-bTs"/>
+        <segue reference="l5t-cO-nOX"/>
     </inferredMetricsTieBreakers>
 </document>

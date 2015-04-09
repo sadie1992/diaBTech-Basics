@@ -68,20 +68,6 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     @IBOutlet weak var widthConst: NSLayoutConstraint!
     
 
-    
-
-    
-    //managedObjectContext var
-    /*lazy var managedObjectContext : NSManagedObjectContext? = {
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-        if let managedObjectContext = appDelegate.managedObjectContext {
-            return managedObjectContext
-        }
-        else {
-            return nil
-        }
-    }()*/
-    
     @IBOutlet var regView: UIView!
     @IBOutlet weak var regScroll: UIScrollView!
     
@@ -189,9 +175,9 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         let sortDesc = NSSortDescriptor(key: "dateTime", ascending: true)
         fetchReq.sortDescriptors = [sortDesc]
         
-        let predicate = NSPredicate(format: "dateTime == %@", "");
+        //let predicate = NSPredicate(format: "dateTime == %@", "");
         
-        fetchReq.predicate = predicate;
+        //fetchReq.predicate = predicate;
         
         if let fetchResults = context.executeFetchRequest(fetchReq, error: nil) as? [Userhealth]{
             userData = fetchResults
@@ -309,7 +295,6 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     
     func loginViewShowingLoggedInUser(loginView: FBLoginView!) {
         println("User Logged In")
-        println("")
     }
    
     func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
@@ -341,6 +326,9 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         alert.addButtonWithTitle("Ok")
         alert.show()
     }
+
+    
+    
     
 }
 

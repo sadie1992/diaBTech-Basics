@@ -18,8 +18,8 @@ class GraphVC: UIViewController, JBLineChartViewDelegate, JBLineChartViewDataSou
     @IBOutlet weak var lineGraph: JBLineChartView!
     
     var chartLegend = ["11-14", "11-15", "11-16", "11-17", "11-18", "11-19", "11-20"]
-    var chartData = [70, 80, 76, 88, 90, 69, 74]
-    var lastYearChartData = [75, 88, 79, 95, 72, 55, 90]
+    var chartBGData = [130, 80, 115, 145, 103, 172, 121]
+    var chartA1CData = [7, 8, 8.5, 7.8, 7.9, 7, 7.2]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +33,7 @@ class GraphVC: UIViewController, JBLineChartViewDelegate, JBLineChartViewDataSou
         lineGraph.dataSource = self
         lineGraph.minimumValue = 55
         lineGraph.maximumValue = 100
-        
         lineGraph.reloadData()
-        
         lineGraph.setState(.Collapsed, animated: false)
     }
     
@@ -61,7 +59,7 @@ class GraphVC: UIViewController, JBLineChartViewDelegate, JBLineChartViewDataSou
         var header = UILabel(frame: CGRectMake(0, 0, lineGraph.frame.width, 50))
         header.textColor = UIColor.whiteColor()
         header.font = UIFont.systemFontOfSize(24)
-        header.text = "Weather: San Jose, CA"
+        header.text = ""
         header.textAlignment = NSTextAlignment.Center
         
         lineGraph.footerView = footerView
@@ -98,9 +96,9 @@ class GraphVC: UIViewController, JBLineChartViewDelegate, JBLineChartViewDataSou
     
     func lineChartView(lineChartView: JBLineChartView!, numberOfVerticalValuesAtLineIndex lineIndex: UInt) -> UInt {
         if (lineIndex == 0) {
-            return UInt(chartData.count)
+            return UInt(chartBGData.count)
         } else if (lineIndex == 1) {
-            return UInt(lastYearChartData.count)
+            return UInt(chartA1CData.count)
         }
         
         return 0
@@ -108,9 +106,9 @@ class GraphVC: UIViewController, JBLineChartViewDelegate, JBLineChartViewDataSou
     
     func lineChartView(lineChartView: JBLineChartView!, verticalValueForHorizontalIndex horizontalIndex: UInt, atLineIndex lineIndex: UInt) -> CGFloat {
         if (lineIndex == 0) {
-            return CGFloat(chartData[Int(horizontalIndex)])
+            return CGFloat(chartBGData[Int(horizontalIndex)])
         } else if (lineIndex == 1) {
-            return CGFloat(lastYearChartData[Int(horizontalIndex)])
+            return CGFloat(chartA1CData[Int(horizontalIndex)])
         }
         
         return 0
@@ -118,9 +116,9 @@ class GraphVC: UIViewController, JBLineChartViewDelegate, JBLineChartViewDataSou
     
     func lineChartView(lineChartView: JBLineChartView!, colorForLineAtLineIndex lineIndex: UInt) -> UIColor! {
         if (lineIndex == 0) {
-            return UIColor.lightGrayColor()
+            return UIColor.greenColor()
         } else if (lineIndex == 1) {
-            return UIColor.whiteColor()
+            return UIColor.yellowColor()
         }
         
         return UIColor.lightGrayColor()
@@ -134,7 +132,7 @@ class GraphVC: UIViewController, JBLineChartViewDelegate, JBLineChartViewDataSou
     }
     
     func lineChartView(lineChartView: JBLineChartView!, colorForDotAtHorizontalIndex horizontalIndex: UInt, atLineIndex lineIndex: UInt) -> UIColor! {
-        return UIColor.lightGrayColor()
+        return UIColor.greenColor()
     }
     
     func lineChartView(lineChartView: JBLineChartView!, smoothLineAtLineIndex lineIndex: UInt) -> Bool {
@@ -146,13 +144,13 @@ class GraphVC: UIViewController, JBLineChartViewDelegate, JBLineChartViewDataSou
     
     func lineChartView(lineChartView: JBLineChartView!, didSelectLineAtIndex lineIndex: UInt, horizontalIndex: UInt) {
         if (lineIndex == 0) {
-            let data = chartData[Int(horizontalIndex)]
+            let data = chartBGData[Int(horizontalIndex)]
             let key = chartLegend[Int(horizontalIndex)]
-            timeLabel.text = "Weather on \(key): \(data)"
+            timeLabel.text = "Reading on \(key): \(data)"
         } else if (lineIndex == 1) {
-            let data = lastYearChartData[Int(horizontalIndex)]
+            let data = chartA1CData[Int(horizontalIndex)]
             let key = chartLegend[Int(horizontalIndex)]
-            timeLabel.text = "Weather last year on \(key): \(data)"
+            timeLabel.text = "A1C on \(key): \(data)"
         }
     }
     
