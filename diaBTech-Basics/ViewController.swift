@@ -12,7 +12,7 @@ import CoreData
 
 class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate, UITableViewDataSource {
 
-    var userItems = [useridTable]()
+    var userItems = [userID]()
     var userData = [Userhealth]()
     var userA1CData = [UserA1C]()
     
@@ -60,6 +60,11 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     
     //Facebook & Session outlets
     @IBOutlet weak var fbLogin: FBLoginView!
+    struct fbStuff {
+        static var fName = ""
+        static var lName = ""
+        static var email = ""
+    }
     var firstName: String!
     var lastName: String!
     var email: String!
@@ -93,25 +98,24 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         else{
             //show error message
             println("HasSession is false");
+            let alert = UIAlertView()
+            alert.title = "Sign In Alert"
+            alert.message = "In order to navigate further, you must sign into Facebook."
+            alert.addButtonWithTitle("Ok")
+            alert.show()
         }
         
     }
     
     @IBAction func addLog(sender: AnyObject) {
-        /*if let moc = self.managedObjectContext {
-            var dateAA: NSDate = dateActivity.date
-            var doubleII : Double = NSString(string: insulinActivity.text).doubleValue
-            var doubleCC : Double = NSString(string: ccActivity.text).doubleValue
-            let readingInt:Int = readingActivity.text.toInt()!
-            let noteString:NSString = notesActivity.text!
-            userhealth.createInManagedObjectContextHealth(moc, dT: dateAA, BSreading: readingInt, estCC: doubleCC, II: doubleII, note: noteString)
-        }*/
+        
         var doubleII : Double = NSString(string: insulinActivity.text).doubleValue
         var doubleCC : Double = NSString(string: ccActivity.text).doubleValue
         
         var appDel:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate);
         var context:NSManagedObjectContext = appDel.managedObjectContext!
         var newHealth = NSEntityDescription.insertNewObjectForEntityForName("UserHealth", inManagedObjectContext: context) as NSManagedObject
+        
         newHealth.setValue(dateActivity.date, forKey: "dateTime")
         newHealth.setValue(doubleII, forKey: "insulinInTake")
         newHealth.setValue(doubleCC, forKey: "estCarbCount")
@@ -126,29 +130,66 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     
     
     @IBAction func addRegister(sender: AnyObject) {
-        if(self.email == nil){
-            println("Email was nill.")
-        }
-        else {
+        
+       // if(fbStuff.email == nil){
+            println("Name:" + fbStuff.fName + " " + fbStuff.lName)
+            println("Email: " + fbStuff.email)
+       // }
+       // else {
             var appDel:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate);
             var context:NSManagedObjectContext = appDel.managedObjectContext!
-            var newUser = NSEntityDescription.insertNewObjectForEntityForName("userid", inManagedObjectContext: context) as NSManagedObject
-            newUser.setValue(firstName, forKey: "fbuserfname")
-            newUser.setValue(lastName, forKey: "fbuserlname")
-            newUser.setValue(endoEmail.text, forKey: "endoemail")
-            newUser.setValue(breakMeal.date, forKey: "morningmealtime") //
-            newUser.setValue(lunchMeal.date, forKey: "lunchmealtime")
-            newUser.setValue(dinnerMeal.date, forKey: "dinnermealtime")
-            newUser.setValue(snack1Meal.date, forKey: "snack1mealtime")
-            newUser.setValue(snack2Meal.date, forKey: "snack2mealtime")
-            newUser.setValue(minGoal, forKey: "minGoalBS")
-            newUser.setValue(maxGoal, forKey: "maxGoalBS")
+            var newUser = NSEntityDescription.insertNewObjectForEntityForName("UserID", inManagedObjectContext: context) as NSManagedObject
+            newUser.setValue(fbStuff.fName, forKey: "fbUserFname")
+            println("User First Name: " + fbStuff.fName)
             
+            newUser.setValue(fbStuff.lName, forKey: "fbUserLname")
+            println("User Last Name: " + fbStuff.lName)
+            
+            newUser.setValue(endoEmail.text, forKey: "endoEmail")
+            println("Endo Email: " + endoEmail.text)
+        
+            newUser.setValue(fbStuff.email, forKey: "fbEmail")
+            println("Email: " + fbStuff.email)
+            //getting times:
+            var outputFormat = NSDateFormatter()
+            outputFormat.locale = NSLocale(localeIdentifier:"en_US")
+            outputFormat.dateFormat = "HH:mm"
+            
+            
+            var apttD = (outputFormat.stringFromDate(aptDate.date))
+            newUser.setValue(apttD, forKey: "nextEndoApt")
+            println("Apt Date: " + apttD)
+            
+            var bM = (outputFormat.stringFromDate(breakMeal.date))
+            newUser.setValue(bM, forKey: "morningMealTime")
+            println("Breakfast Time: " + bM)
+            
+            var lM = (outputFormat.stringFromDate(lunchMeal.date))
+            newUser.setValue(lM, forKey: "lunchMealTime")
+            println("Lunch Time: " + lM)
+            
+            var dM = (outputFormat.stringFromDate(dinnerMeal.date))
+            newUser.setValue(dM, forKey: "dinnerMealTime")
+            println("Dinner Time: " + dM)
+            
+            var sM1 = (outputFormat.stringFromDate(snack1Meal.date))
+            newUser.setValue(sM1, forKey: "snack1MealTime")
+            println("Snack 1 Time: " + sM1)
+            
+            var sM2 = (outputFormat.stringFromDate(snack2Meal.date))
+            newUser.setValue(sM2, forKey: "snack2MealTime")
+            println("Snack 2 Time: " + sM2)
+            
+            newUser.setValue(minGoal.text.toInt(), forKey: "minGoalBS")
+            println("Min Goal: " + minGoal.text)
+            
+            newUser.setValue(maxGoal.text.toInt(), forKey: "maxGoalBS")
+            println("Max Goal: " + maxGoal.text)
        
             println("Did newUser change? ", newUser.hasChanges);
         
             println(context.hasChanges)
-        }
+       // }
     }
     
     @IBAction func addA1C(sender: AnyObject) {
@@ -299,10 +340,10 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
    
     func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
         println("Username: \(user.first_name) \(user.last_name)")
-        firstName = user.first_name
-        lastName = user.last_name
-        email = user.objectForKey("email") as String
-        println("Email:  \(self.email)")
+        fbStuff.fName = user.first_name
+        fbStuff.lName = user.last_name
+        fbStuff.email = user.objectForKey("email") as String!
+        println("Email:  \(fbStuff.email)")
 
     }
     
@@ -321,8 +362,6 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         alert.addButtonWithTitle("Ok")
         alert.show()
     }
-
-    
     
     
 }

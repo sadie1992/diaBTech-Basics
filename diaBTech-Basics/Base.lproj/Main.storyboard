@@ -24,6 +24,15 @@
                                     <outlet property="delegate" destination="RBU-Kn-ZeK" id="EuK-cP-PXb"/>
                                 </connections>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Once you've signed into Facebook, you may continue by clicking 'Next'" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xv8-kh-A6U">
+                                <rect key="frame" x="96" y="329" width="408" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="cs4-6A-DpV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rxJ-Re-WWj">
                                 <rect key="frame" x="280" y="446" width="40" height="33"/>
                                 <state key="normal">
@@ -40,15 +49,6 @@
                                     <action selector="regMenu:" destination="RBU-Kn-ZeK" eventType="touchUpInside" id="ChX-bi-WHW"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Once you've signed into Facebook, you may continue by clicking 'Next'" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xv8-kh-A6U">
-                                <rect key="frame" x="96" y="329" width="408" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="cs4-6A-DpV"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.3411764705882353" green="0.37254901960784315" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
                         <accessibility key="accessibilityConfiguration">
@@ -442,14 +442,15 @@
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="ovy-D3-STg">
                                             <color key="tintColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="UPO-ct-TnV" kind="showDetail" id="Ihr-UO-NIB"/>
+                                                <action selector="addRegister:" destination="iJJ-Qz-Ach" id="xix-ah-7tF"/>
+                                                <segue destination="UPO-ct-TnV" kind="showDetail" id="TCh-p5-yCL"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <scrollView clipsSubviews="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MUI-vS-N0r">
-                                <rect key="frame" x="16" y="44" width="568" height="1450"/>
+                                <rect key="frame" x="16" y="56" width="568" height="1450"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Le-IJ-eep">
                                         <rect key="frame" x="0.0" y="0.0" width="568" height="1500"/>
@@ -663,10 +664,10 @@
                         <color key="backgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="MUI-vS-N0r" firstAttribute="centerX" secondItem="GAM-dn-3uU" secondAttribute="centerX" id="GaY-2e-oai"/>
-                            <constraint firstItem="gR2-DY-qhm" firstAttribute="top" secondItem="MUI-vS-N0r" secondAttribute="bottom" constant="56" id="OWm-41-aay"/>
+                            <constraint firstItem="gR2-DY-qhm" firstAttribute="top" secondItem="MUI-vS-N0r" secondAttribute="bottom" constant="44" id="OWm-41-aay"/>
                             <constraint firstItem="MUI-vS-N0r" firstAttribute="leading" secondItem="2TF-tl-Oba" secondAttribute="leadingMargin" id="PVQ-YE-cmA"/>
                             <constraint firstItem="GAM-dn-3uU" firstAttribute="top" secondItem="2TF-tl-Oba" secondAttribute="top" id="Xk6-Az-nNp"/>
-                            <constraint firstItem="MUI-vS-N0r" firstAttribute="top" secondItem="GAM-dn-3uU" secondAttribute="bottom" id="lTs-7o-IMG"/>
+                            <constraint firstItem="MUI-vS-N0r" firstAttribute="top" secondItem="GAM-dn-3uU" secondAttribute="bottom" constant="12" id="lTs-7o-IMG"/>
                             <constraint firstItem="GAM-dn-3uU" firstAttribute="leading" secondItem="2TF-tl-Oba" secondAttribute="leading" id="mEx-hJ-izj"/>
                             <constraint firstAttribute="trailing" secondItem="GAM-dn-3uU" secondAttribute="trailing" id="z7W-wX-wpj"/>
                         </constraints>
@@ -682,9 +683,7 @@
                         <outlet property="lunchMeal" destination="bNz-Ao-vGW" id="yG9-av-Xac"/>
                         <outlet property="maxGoal" destination="v1n-eC-6EK" id="YtC-oq-qwu"/>
                         <outlet property="minGoal" destination="sl8-XP-xP7" id="ucU-0R-sNI"/>
-                        <outlet property="regScroll" destination="MUI-vS-N0r" id="j3V-cq-Tq6"/>
                         <outlet property="regView" destination="2TF-tl-Oba" id="ET6-Yk-nFU"/>
-                        <outlet property="scrollView" destination="MUI-vS-N0r" id="5cJ-wz-SAa"/>
                         <outlet property="snack1Meal" destination="ihY-yl-HUw" id="WSY-B8-tv3"/>
                         <outlet property="snack2Meal" destination="wAO-Ij-hsN" id="Cay-FI-nn8"/>
                     </connections>
@@ -2398,8 +2397,8 @@ Any export of activity logs should be limited to the ‘user’, the ‘users’
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="l5t-cO-nOX"/>
-        <segue reference="Ihr-UO-NIB"/>
+        <segue reference="TCh-p5-yCL"/>
+        <segue reference="wBR-0O-bTs"/>
         <segue reference="0mB-sC-Ha7"/>
     </inferredMetricsTieBreakers>
 </document>

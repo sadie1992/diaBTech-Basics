@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E4B8F8B1A9E640F002D2CFE /* user-A1C.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4B8F8A1A9E640F002D2CFE /* user-A1C.swift */; };
-		1E58ED311A774555007C320F /* user-idTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E58ED301A774555007C320F /* user-idTable.swift */; };
+		1E58ED311A774555007C320F /* userID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E58ED301A774555007C320F /* userID.swift */; };
 		1E58ED331A77465C007C320F /* user-health.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E58ED321A77465C007C320F /* user-health.swift */; };
 		1E7B3CBA1A89AA9100541A19 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7B3CB91A89AA9100541A19 /* Facebook.swift */; };
 		1E7B3E4D1A89B0E600541A19 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7B3E4C1A89B0E600541A19 /* FacebookSDK.framework */; };
@@ -81,7 +81,7 @@
 
 /* Begin PBXFileReference section */
 		1E4B8F8A1A9E640F002D2CFE /* user-A1C.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "user-A1C.swift"; sourceTree = "<group>"; };
-		1E58ED301A774555007C320F /* user-idTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "user-idTable.swift"; sourceTree = "<group>"; };
+		1E58ED301A774555007C320F /* userID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userID.swift; sourceTree = "<group>"; };
 		1E58ED321A77465C007C320F /* user-health.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "user-health.swift"; sourceTree = "<group>"; };
 		1E7B3CB91A89AA9100541A19 /* Facebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
 		1E7B3E4C1A89B0E600541A19 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
@@ -227,7 +227,7 @@
 				1EC23E4E1AD308BF00A312CC /* GraphVC.swift */,
 				1EF0E52D1A76C06C0089649F /* ViewController.swift */,
 				1EC23DB21AD20D9000A312CC /* resizeLabel.swift */,
-				1E58ED301A774555007C320F /* user-idTable.swift */,
+				1E58ED301A774555007C320F /* userID.swift */,
 				1E58ED321A77465C007C320F /* user-health.swift */,
 				1EF0E5321A76C06D0089649F /* Images.xcassets */,
 				1EF0E5341A76C06D0089649F /* LaunchScreen.xib */,
@@ -465,7 +465,7 @@
 				1EF0E52E1A76C06C0089649F /* ViewController.swift in Sources */,
 				1E7B3CBA1A89AA9100541A19 /* Facebook.swift in Sources */,
 				1E4B8F8B1A9E640F002D2CFE /* user-A1C.swift in Sources */,
-				1E58ED311A774555007C320F /* user-idTable.swift in Sources */,
+				1E58ED311A774555007C320F /* userID.swift in Sources */,
 				1E58ED331A77465C007C320F /* user-health.swift in Sources */,
 				1EC23DB31AD20D9000A312CC /* resizeLabel.swift in Sources */,
 				1EC23E4F1AD308BF00A312CC /* GraphVC.swift in Sources */,
