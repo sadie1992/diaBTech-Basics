@@ -92,6 +92,26 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     
     @IBAction func regMenu(sender: AnyObject) {
         if(FB.hasActiveSession()){
+            var appDel:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate);
+            var context:NSManagedObjectContext = appDel.managedObjectContext!
+            let fetchReq = NSFetchRequest(entityName: "UserID");
+            
+            
+            let sortDesc = NSSortDescriptor(key: "fbEmail", ascending: true)
+            fetchReq.sortDescriptors = [sortDesc]
+            
+            let predicate = NSPredicate(format: "fbEmail == %@", fbStuff.email);
+            
+            fetchReq.predicate = predicate;
+            
+            if let fetchResults = context.executeFetchRequest(fetchReq, error: nil) as? [userID]{
+                userItems = fetchResults
+            }
+            
+            println("Has user registered that email: " , userItems.count)
+            
+            
+            
             performSegueWithIdentifier("registrationScene1", sender: nil)
             println("HasSession is true");
         }
