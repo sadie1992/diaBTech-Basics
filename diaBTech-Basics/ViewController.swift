@@ -110,6 +110,9 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
             
             println("Has user registered that email: " , userItems.count)
             
+            if(userItems.count == 1){
+                performSegueWithIdentifier("mainmenuScene", sender: nil)
+            }
             
             
             performSegueWithIdentifier("registrationScene1", sender: nil)
@@ -149,6 +152,11 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     }
     
     
+    @IBAction func addRegist(sender: UIBarButtonItem) {
+        println("Name:" + fbStuff.fName + " " + fbStuff.lName)
+        println("Email: " + fbStuff.email)
+        
+    }
     @IBAction func addRegister(sender: AnyObject) {
         
        // if(fbStuff.email == nil){
