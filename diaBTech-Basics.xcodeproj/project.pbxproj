@@ -26,7 +26,7 @@
 		1EC23E4C1AD3070400A312CC /* JBLineChartView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EC23E461AD3070400A312CC /* JBLineChartView.h */; };
 		1EC23E4D1AD3070400A312CC /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC23E471AD3070400A312CC /* JBLineChartView.m */; };
 		1EC23E4F1AD308BF00A312CC /* GraphVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC23E4E1AD308BF00A312CC /* GraphVC.swift */; };
-		1ED9936A1AC082F50069DA45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ED993681AC082F50069DA45 /* Main.storyboard */; };
+		1EE103241AE57674002B5718 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EE103221AE57674002B5718 /* Main.storyboard */; };
 		1EF0E5291A76C06C0089649F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF0E5281A76C06C0089649F /* AppDelegate.swift */; };
 		1EF0E52E1A76C06C0089649F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF0E52D1A76C06C0089649F /* ViewController.swift */; };
 		1EF0E5331A76C06D0089649F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EF0E5321A76C06D0089649F /* Images.xcassets */; };
@@ -99,7 +99,7 @@
 		1EC23E461AD3070400A312CC /* JBLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLineChartView.h; sourceTree = "<group>"; };
 		1EC23E471AD3070400A312CC /* JBLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLineChartView.m; sourceTree = "<group>"; };
 		1EC23E4E1AD308BF00A312CC /* GraphVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphVC.swift; sourceTree = "<group>"; };
-		1ED993691AC082F50069DA45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1EE103231AE57674002B5718 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1EF0E5231A76C06C0089649F /* diaBTech-Basics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "diaBTech-Basics.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EF0E5271A76C06C0089649F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EF0E5281A76C06C0089649F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -223,12 +223,12 @@
 			isa = PBXGroup;
 			children = (
 				1EF0E5281A76C06C0089649F /* AppDelegate.swift */,
-				1ED993681AC082F50069DA45 /* Main.storyboard */,
 				1EC23E4E1AD308BF00A312CC /* GraphVC.swift */,
 				1EF0E52D1A76C06C0089649F /* ViewController.swift */,
 				1EC23DB21AD20D9000A312CC /* resizeLabel.swift */,
 				1E58ED301A774555007C320F /* userID.swift */,
 				1E58ED321A77465C007C320F /* user-health.swift */,
+				1EE103221AE57674002B5718 /* Main.storyboard */,
 				1EF0E5321A76C06D0089649F /* Images.xcassets */,
 				1EF0E5341A76C06D0089649F /* LaunchScreen.xib */,
 				1EF0E52A1A76C06C0089649F /* diaBTech_Basics.xcdatamodeld */,
@@ -423,7 +423,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1ED9936A1AC082F50069DA45 /* Main.storyboard in Resources */,
+				1EE103241AE57674002B5718 /* Main.storyboard in Resources */,
 				1EF0E5361A76C06D0089649F /* LaunchScreen.xib in Resources */,
 				1EF0E5331A76C06D0089649F /* Images.xcassets in Resources */,
 			);
@@ -507,10 +507,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1ED993681AC082F50069DA45 /* Main.storyboard */ = {
+		1EE103221AE57674002B5718 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1ED993691AC082F50069DA45 /* Base */,
+				1EE103231AE57674002B5718 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

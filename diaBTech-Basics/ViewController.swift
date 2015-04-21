@@ -11,11 +11,11 @@ import CoreData
 
 
 class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate, UITableViewDataSource {
-
     var userItems = [userID]()
     var userData = [Userhealth]()
     var userA1CData = [UserA1C]()
     
+    @IBOutlet weak var nextBTN: UIButton!
     //all outlets for registration 
     @IBOutlet weak var endoEmail: UITextField!
     @IBOutlet weak var aptDate: UIDatePicker!
@@ -49,14 +49,10 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     @IBOutlet weak var startDateExport: UIDatePicker!
     @IBOutlet weak var endDateExport: UIDatePicker!
     @IBOutlet weak var a1cExport: UISwitch!
-    
-    
-    //outlets for comments
-    @IBOutlet weak var comments: UITextView!
-    @IBOutlet weak var scrollView: UIScrollView!
 
     //table for Activity Log
     @IBOutlet weak var logTable: UITableView!
+    
     
     //Facebook & Session outlets
     @IBOutlet weak var fbLogin: FBLoginView!
@@ -65,58 +61,30 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         static var lName = ""
         static var email = ""
     }
-    var firstName: String!
-    var lastName: String!
-    var email: String!
-    var hasSession: Boolean!
-    @IBOutlet weak var landPageText: UILabel!
-    @IBOutlet weak var widthConst: NSLayoutConstraint!
-    
-
-    @IBOutlet var regView: UIView!
-    @IBOutlet weak var regScroll: UIScrollView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //logTable.dataSource = self
+        //logTable.delegate = self
     }
     
-    
-    func updateLabelWidths() {
-        // force views to layout in viewWillAppear so we can adjust widths of labels before the view is visible
-        view.layoutIfNeeded()
-        landPageText.resizeHeightToFit(widthConst)
-       
+    override func viewDidAppear(animated: Bool) {
     }
-    
     
     @IBAction func regMenu(sender: AnyObject) {
         if(FB.hasActiveSession()){
-            var appDel:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate);
-            var context:NSManagedObjectContext = appDel.managedObjectContext!
-            let fetchReq = NSFetchRequest(entityName: "UserID");
-            
-            
-            let sortDesc = NSSortDescriptor(key: "fbEmail", ascending: true)
-            fetchReq.sortDescriptors = [sortDesc]
-            
-            let predicate = NSPredicate(format: "fbEmail == %@", fbStuff.email);
-            
-            fetchReq.predicate = predicate;
-            
-            if let fetchResults = context.executeFetchRequest(fetchReq, error: nil) as? [userID]{
-                userItems = fetchResults
+            if(!shouldPerformSegueWithIdentifier("toMenu", sender: nil)){
+                performSegueWithIdentifier("registrationScene1", sender: nil)
             }
             
-            println("Has user registered that email: " , userItems.count)
-            
-            if(userItems.count == 1){
-                performSegueWithIdentifier("mainmenuScene", sender: nil)
+            /*if(userItems.count == 0){
+                performSegueWithIdentifier("registrationScene1", sender: nil)
             }
+            else if (userItems.count > 0){
+                performSegueWithIdentifier("toMenu", sender: nil)
+            }*/
             
-            
-            performSegueWithIdentifier("registrationScene1", sender: nil)
-            println("HasSession is true");
         }
         else{
             //show error message
@@ -128,6 +96,34 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
             alert.show()
         }
         
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+        var appDel:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate);
+        var context:NSManagedObjectContext = appDel.managedObjectContext!
+        var fetReq = NSFetchRequest(entityName: "UserID")
+        let predicate = NSPredicate(format: "fbEmail == %@", fbStuff.email);
+        
+        fetReq.predicate = predicate;
+        
+        let userItems: [userID] = context.executeFetchRequest(fetReq, error: nil) as [userID]!
+        
+        println("Can find a user in CD: ", userItems.count)
+
+        
+        if identifier == "toMenu" { // you define it in the storyboard (click on the segue, then Attributes' inspector > Identifier
+            
+            var segueShouldOccur = (userItems.count > 0)
+            
+            if !segueShouldOccur {
+                println("*** NOPE, segue wont occur")
+                return false
+            }
+            else {
+                println("*** YEP, segue will occur")
+            }
+        }
+        return true
     }
     
     @IBAction func addLog(sender: AnyObject) {
@@ -151,12 +147,7 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         println(context.hasChanges)
     }
     
-    
-    @IBAction func addRegist(sender: UIBarButtonItem) {
-        println("Name:" + fbStuff.fName + " " + fbStuff.lName)
-        println("Email: " + fbStuff.email)
-        
-    }
+   
     @IBAction func addRegister(sender: AnyObject) {
         
        // if(fbStuff.email == nil){
@@ -213,11 +204,14 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
             
             newUser.setValue(maxGoal.text.toInt(), forKey: "maxGoalBS")
             println("Max Goal: " + maxGoal.text)
-       
-            println("Did newUser change? ", newUser.hasChanges);
+            //context.save(nil)
+        
+            //println("Did newUser change? ", newUser.didSave());
         
             println(context.hasChanges)
-       // }
+    
+        
+        
     }
     
     @IBAction func addA1C(sender: AnyObject) {
@@ -235,23 +229,22 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     
 
     @IBAction func viewLogs(sender: AnyObject) {
-        //tableView = logTable
         var appDel:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate);
         var context:NSManagedObjectContext = appDel.managedObjectContext!
-        let fetchReq = NSFetchRequest(entityName: "UserHealth");
+        let fetchReq = NSFetchRequest(entityName: "UserHealth")
+        
         
         
         let sortDesc = NSSortDescriptor(key: "dateTime", ascending: true)
         fetchReq.sortDescriptors = [sortDesc]
         
-        //let predicate = NSPredicate(format: "dateTime == %@", "");
-        
-        //fetchReq.predicate = predicate;
-        
-        if let fetchResults = context.executeFetchRequest(fetchReq, error: nil) as? [Userhealth]{
+        if let fetchResults = context.executeFetchRequest(fetchReq, error: nil) as? [Userhealth] {
             userData = fetchResults
         }
-        println(userData.count)
+        
+      //  var fetchResults = context.executeFetchRequest(fetchReq, error: nil) as [Userhealth]
+      //  userData = fetchResults
+        println("Number of logs: ", userData.count)
     }
     
     
@@ -260,18 +253,24 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         // How many rows are there in this section?
         // There's only 1 section, and it has a number of rows
         // equal to the number of logItems, so return the count
-        println("Number of entries for userData: ", userData.count)
+        //println("Number of entries for userData: ", userData.count)
         return userData.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = logTable.dequeueReusableCellWithIdentifier("Userhealth") as UITableViewCell
+        logTable.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "LogCell")
+        let cell = logTable.dequeueReusableCellWithIdentifier("LogCell") as UITableViewCell
         
         // Get the LogItem for this index
         let logItem = userData[indexPath.row]
         
+        var outputFormat = NSDateFormatter()
+        outputFormat.locale = NSLocale(localeIdentifier:"en_US")
+        outputFormat.dateFormat = "MM-dd-yyyy 'at' HH:mm"
+        var newDate = outputFormat.stringFromDate(logItem.dateTime)
         // Set the title of the cell to be the title of the logItem
-        //cell.textLabel?.text = logItem.dateTime.
+        cell.textLabel?.text = newDate
+        
         return cell
     }
     
