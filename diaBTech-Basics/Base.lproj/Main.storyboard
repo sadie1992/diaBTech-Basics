@@ -27,14 +27,14 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Once you've signed into Facebook, you may continue by clicking 'Next'" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xv8-kh-A6U">
                                 <rect key="frame" x="96" y="261" width="408" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="cs4-6A-DpV"/>
+                                    <constraint firstAttribute="height" constant="120" id="NsC-i3-Shh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rxJ-Re-WWj">
-                                <rect key="frame" x="281" y="399" width="40" height="33"/>
+                                <rect key="frame" x="280" y="428" width="40" height="33"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Next">
@@ -56,16 +56,14 @@
                             <accessibilityTraits key="traits" none="YES" button="YES"/>
                         </accessibility>
                         <constraints>
-                            <constraint firstItem="Xv8-kh-A6U" firstAttribute="leading" secondItem="yeU-DR-fZX" secondAttribute="leadingMargin" constant="80" id="9I8-xW-nQo"/>
-                            <constraint firstItem="Xv8-kh-A6U" firstAttribute="centerX" secondItem="yeU-DR-fZX" secondAttribute="centerX" id="AkA-fg-zdt"/>
-                            <constraint firstItem="FE5-a6-jSj" firstAttribute="top" secondItem="Ch2-1U-Tqz" secondAttribute="bottom" constant="107" id="Jnp-HA-MY2"/>
-                            <constraint firstItem="rxJ-Re-WWj" firstAttribute="leading" secondItem="yeU-DR-fZX" secondAttribute="leading" constant="281" id="RtQ-1B-DgU"/>
-                            <constraint firstItem="rxJ-Re-WWj" firstAttribute="top" secondItem="Xv8-kh-A6U" secondAttribute="bottom" constant="18" id="W4C-bB-h6t"/>
-                            <constraint firstItem="LhK-io-kFk" firstAttribute="top" secondItem="FE5-a6-jSj" secondAttribute="bottom" constant="347" id="cBf-aI-qDo"/>
-                            <constraint firstItem="LhK-io-kFk" firstAttribute="top" secondItem="Xv8-kh-A6U" secondAttribute="bottom" constant="219" id="h0P-SF-Ow5"/>
-                            <constraint firstItem="Xv8-kh-A6U" firstAttribute="top" secondItem="FE5-a6-jSj" secondAttribute="bottom" constant="8" id="luM-wH-xbp"/>
-                            <constraint firstItem="Xv8-kh-A6U" firstAttribute="centerX" secondItem="FE5-a6-jSj" secondAttribute="centerX" id="oM2-eQ-MaV"/>
-                            <constraint firstItem="FE5-a6-jSj" firstAttribute="top" secondItem="Ch2-1U-Tqz" secondAttribute="bottom" constant="107" id="sfr-Uo-CtP"/>
+                            <constraint firstItem="FE5-a6-jSj" firstAttribute="top" secondItem="Ch2-1U-Tqz" secondAttribute="bottom" constant="107" id="14y-Qc-EWV"/>
+                            <constraint firstItem="FE5-a6-jSj" firstAttribute="centerX" secondItem="yeU-DR-fZX" secondAttribute="centerX" id="4H1-GS-N2u"/>
+                            <constraint firstItem="rxJ-Re-WWj" firstAttribute="centerX" secondItem="Xv8-kh-A6U" secondAttribute="centerX" id="5fR-rj-34w"/>
+                            <constraint firstItem="rxJ-Re-WWj" firstAttribute="top" secondItem="Xv8-kh-A6U" secondAttribute="bottom" constant="47" id="Hk5-2C-Xjx"/>
+                            <constraint firstItem="Xv8-kh-A6U" firstAttribute="top" secondItem="FE5-a6-jSj" secondAttribute="bottom" constant="8" symbolic="YES" id="Mna-84-UY1"/>
+                            <constraint firstItem="FE5-a6-jSj" firstAttribute="centerX" secondItem="Xv8-kh-A6U" secondAttribute="centerX" id="exb-aQ-Osi"/>
+                            <constraint firstItem="Xv8-kh-A6U" firstAttribute="leading" secondItem="yeU-DR-fZX" secondAttribute="leadingMargin" constant="80" id="qDx-FT-ka9"/>
+                            <constraint firstItem="Xv8-kh-A6U" firstAttribute="top" secondItem="yeU-DR-fZX" secondAttribute="top" constant="261" id="yQV-lY-96X"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1217,17 +1215,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.6470588235294118" green="0.70196078431372544" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="aXa-pp-MzJ" firstAttribute="width" secondItem="t10-bA-L30" secondAttribute="width" id="FjZ-Fb-BrT"/>
-                            <constraint firstItem="aXa-pp-MzJ" firstAttribute="width" secondItem="t10-bA-L30" secondAttribute="width" id="Gaz-xl-5dF"/>
-                            <constraint firstItem="aXa-pp-MzJ" firstAttribute="leading" secondItem="t10-bA-L30" secondAttribute="leadingMargin" constant="-16" id="OKD-qj-EEr"/>
-                            <constraint firstItem="aXa-pp-MzJ" firstAttribute="leading" secondItem="BLd-pa-3xW" secondAttribute="leading" id="QTZ-W1-SOu"/>
-                            <constraint firstItem="BLd-pa-3xW" firstAttribute="trailing" secondItem="aXa-pp-MzJ" secondAttribute="trailing" id="RBO-Nb-NbN"/>
-                            <constraint firstItem="aXa-pp-MzJ" firstAttribute="leading" secondItem="t10-bA-L30" secondAttribute="leading" id="TpQ-6D-Wjr"/>
-                            <constraint firstItem="aXa-pp-MzJ" firstAttribute="bottom" secondItem="vmU-0Z-tkF" secondAttribute="top" id="VdP-0G-ybw"/>
-                            <constraint firstItem="aXa-pp-MzJ" firstAttribute="top" secondItem="BLd-pa-3xW" secondAttribute="bottom" constant="1" id="j0l-Eq-oJb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aXa-pp-MzJ" secondAttribute="trailing" constant="-16" id="pfG-GB-vgd"/>
-                            <constraint firstAttribute="trailing" secondItem="aXa-pp-MzJ" secondAttribute="trailing" id="uSE-sI-DoD"/>
-                            <constraint firstItem="BLd-pa-3xW" firstAttribute="top" secondItem="t10-bA-L30" secondAttribute="top" id="y94-WI-HY8"/>
+                            <constraint firstItem="aXa-pp-MzJ" firstAttribute="bottom" secondItem="vmU-0Z-tkF" secondAttribute="top" id="LeI-ey-Pto"/>
+                            <constraint firstAttribute="trailing" secondItem="BLd-pa-3xW" secondAttribute="trailing" id="Ndt-rr-5Pr"/>
+                            <constraint firstItem="aXa-pp-MzJ" firstAttribute="top" secondItem="BLd-pa-3xW" secondAttribute="bottom" constant="1" id="Sio-jF-0HV"/>
+                            <constraint firstItem="BLd-pa-3xW" firstAttribute="top" secondItem="t10-bA-L30" secondAttribute="top" id="ZyW-k3-V4X"/>
+                            <constraint firstItem="aXa-pp-MzJ" firstAttribute="trailing" secondItem="BLd-pa-3xW" secondAttribute="trailing" id="a29-UD-laW"/>
+                            <constraint firstItem="BLd-pa-3xW" firstAttribute="leading" secondItem="t10-bA-L30" secondAttribute="leading" id="fOH-rD-jxB"/>
+                            <constraint firstItem="BLd-pa-3xW" firstAttribute="leading" secondItem="aXa-pp-MzJ" secondAttribute="leading" id="xLb-Zd-3vg"/>
                         </constraints>
                     </view>
                     <toolbarItems/>

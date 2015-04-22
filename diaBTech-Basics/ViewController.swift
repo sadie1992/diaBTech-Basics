@@ -66,10 +66,11 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         //logTable.dataSource = self
-        //logTable.delegate = self
+        //self.logTable.delegate = self
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
+        //logTable.reloadData()
     }
     
     @IBAction func regMenu(sender: AnyObject) {
@@ -109,7 +110,6 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         let userItems: [userID] = context.executeFetchRequest(fetReq, error: nil) as [userID]!
         
         println("Can find a user in CD: ", userItems.count)
-
         
         if identifier == "toMenu" { // you define it in the storyboard (click on the segue, then Attributes' inspector > Identifier
             
@@ -206,7 +206,7 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
             println("Max Goal: " + maxGoal.text)
             //context.save(nil)
         
-            //println("Did newUser change? ", newUser.didSave());
+            println("Did newUser change? ", newUser.didSave());
         
             println(context.hasChanges)
     
@@ -250,26 +250,58 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     
     // MARK: UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       /*
+        var appDel:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate);
+        var context:NSManagedObjectContext = appDel.managedObjectContext!
+        let fetchReq = NSFetchRequest(entityName: "UserHealth")
+        
+        
+        
+        let sortDesc = NSSortDescriptor(key: "dateTime", ascending: true)
+        fetchReq.sortDescriptors = [sortDesc]
+        
+        if let fetchResults = context.executeFetchRequest(fetchReq, error: nil) as? [Userhealth] {
+            userData = fetchResults
+        }
+        
+        */
+        var appDel:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate);
+        var context:NSManagedObjectContext = appDel.managedObjectContext!
+        var fetReq = NSFetchRequest(entityName: "UserHealth")
+        //let predicate = NSPredicate(format: "fbEmail == %@", fbStuff.email);
+        
+        //fetReq.predicate = predicate;
+        
+        let userData: [Userhealth] = context.executeFetchRequest(fetReq, error: nil) as [Userhealth]!
+        
+        println("Can find a user in CD: ", userData.count)
+        
         // How many rows are there in this section?
         // There's only 1 section, and it has a number of rows
         // equal to the number of logItems, so return the count
-        //println("Number of entries for userData: ", userData.count)
+        println("Number of entries for userData: ", userData.count)
         return userData.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         logTable.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "LogCell")
-        let cell = logTable.dequeueReusableCellWithIdentifier("LogCell") as UITableViewCell
+        let cell:UITableViewCell = logTable.dequeueReusableCellWithIdentifier("LogCell") as UITableViewCell
+        logTable.dataSource = self
+        logTable.delegate = self
         
         // Get the LogItem for this index
-        let logItem = userData[indexPath.row]
+        let logItem = userData[indexPath.row].dateTime
+        let BGR = userData[indexPath.row].bloodSugarReading
         
         var outputFormat = NSDateFormatter()
         outputFormat.locale = NSLocale(localeIdentifier:"en_US")
         outputFormat.dateFormat = "MM-dd-yyyy 'at' HH:mm"
-        var newDate = outputFormat.stringFromDate(logItem.dateTime)
+        var newDate = outputFormat.stringFromDate(logItem)
         // Set the title of the cell to be the title of the logItem
         cell.textLabel?.text = newDate
+        cell.textLabel?.textColor = UIColor .blackColor()
+        cell.detailTextLabel?.text = String(BGR)
+        cell.detailTextLabel?.textColor = UIColor .redColor()
         
         return cell
     }
@@ -390,6 +422,13 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         alert.show()
     }
     
+    func getData() -> [Userhealth]{
+        return userData
+    }
+    
+    func getA1C() -> [UserA1C]{
+        return userA1CData
+    }
     
 }
 
