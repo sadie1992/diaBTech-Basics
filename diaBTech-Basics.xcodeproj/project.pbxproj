@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E4B8F8B1A9E640F002D2CFE /* user-A1C.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4B8F8A1A9E640F002D2CFE /* user-A1C.swift */; };
-		1E58ED311A774555007C320F /* userID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E58ED301A774555007C320F /* userID.swift */; };
-		1E58ED331A77465C007C320F /* user-health.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E58ED321A77465C007C320F /* user-health.swift */; };
+		1E4B8F8B1A9E640F002D2CFE /* UserA1C.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4B8F8A1A9E640F002D2CFE /* UserA1C.swift */; };
+		1E58ED311A774555007C320F /* UserID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E58ED301A774555007C320F /* UserID.swift */; };
+		1E58ED331A77465C007C320F /* UserHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E58ED321A77465C007C320F /* UserHealth.swift */; };
 		1E7B3CBA1A89AA9100541A19 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7B3CB91A89AA9100541A19 /* Facebook.swift */; };
 		1E7B3E4D1A89B0E600541A19 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7B3E4C1A89B0E600541A19 /* FacebookSDK.framework */; };
-		1E830A761AC24B980089BCAB /* diaBTech_Basics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1EF0E52A1A76C06C0089649F /* diaBTech_Basics.xcdatamodeld */; };
 		1EC23DB31AD20D9000A312CC /* resizeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC23DB21AD20D9000A312CC /* resizeLabel.swift */; };
 		1EC23E2B1AD3069600A312CC /* JBChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC23E201AD3069600A312CC /* JBChart.framework */; };
 		1EC23E341AD3069600A312CC /* JBChartTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC23E331AD3069600A312CC /* JBChartTests.m */; };
@@ -27,6 +26,7 @@
 		1EC23E4D1AD3070400A312CC /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC23E471AD3070400A312CC /* JBLineChartView.m */; };
 		1EC23E4F1AD308BF00A312CC /* GraphVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC23E4E1AD308BF00A312CC /* GraphVC.swift */; };
 		1EE103241AE57674002B5718 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EE103221AE57674002B5718 /* Main.storyboard */; };
+		1EE103281AE87721002B5718 /* diaBTech_Basics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1EE103251AE87600002B5718 /* diaBTech_Basics.xcdatamodeld */; };
 		1EF0E5291A76C06C0089649F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF0E5281A76C06C0089649F /* AppDelegate.swift */; };
 		1EF0E52E1A76C06C0089649F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF0E52D1A76C06C0089649F /* ViewController.swift */; };
 		1EF0E5331A76C06D0089649F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EF0E5321A76C06D0089649F /* Images.xcassets */; };
@@ -80,9 +80,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1E4B8F8A1A9E640F002D2CFE /* user-A1C.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "user-A1C.swift"; sourceTree = "<group>"; };
-		1E58ED301A774555007C320F /* userID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userID.swift; sourceTree = "<group>"; };
-		1E58ED321A77465C007C320F /* user-health.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "user-health.swift"; sourceTree = "<group>"; };
+		1E4B8F8A1A9E640F002D2CFE /* UserA1C.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserA1C.swift; sourceTree = "<group>"; };
+		1E58ED301A774555007C320F /* UserID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserID.swift; sourceTree = "<group>"; };
+		1E58ED321A77465C007C320F /* UserHealth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHealth.swift; sourceTree = "<group>"; };
 		1E7B3CB91A89AA9100541A19 /* Facebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
 		1E7B3E4C1A89B0E600541A19 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		1EC23DB21AD20D9000A312CC /* resizeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resizeLabel.swift; sourceTree = "<group>"; };
@@ -100,6 +100,7 @@
 		1EC23E471AD3070400A312CC /* JBLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLineChartView.m; sourceTree = "<group>"; };
 		1EC23E4E1AD308BF00A312CC /* GraphVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphVC.swift; sourceTree = "<group>"; };
 		1EE103231AE57674002B5718 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1EE103261AE87600002B5718 /* diaBTech_Basics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = diaBTech_Basics.xcdatamodel; sourceTree = "<group>"; };
 		1EF0E5231A76C06C0089649F /* diaBTech-Basics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "diaBTech-Basics.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EF0E5271A76C06C0089649F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EF0E5281A76C06C0089649F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -199,6 +200,7 @@
 		1EF0E51A1A76C06C0089649F = {
 			isa = PBXGroup;
 			children = (
+				1EE103251AE87600002B5718 /* diaBTech_Basics.xcdatamodeld */,
 				1E7B3E4C1A89B0E600541A19 /* FacebookSDK.framework */,
 				1EF0E5251A76C06C0089649F /* diaBTech-Basics */,
 				1EF0E53E1A76C06D0089649F /* diaBTech-BasicsTests */,
@@ -226,13 +228,13 @@
 				1EC23E4E1AD308BF00A312CC /* GraphVC.swift */,
 				1EF0E52D1A76C06C0089649F /* ViewController.swift */,
 				1EC23DB21AD20D9000A312CC /* resizeLabel.swift */,
-				1E58ED301A774555007C320F /* userID.swift */,
-				1E58ED321A77465C007C320F /* user-health.swift */,
+				1E58ED301A774555007C320F /* UserID.swift */,
+				1E58ED321A77465C007C320F /* UserHealth.swift */,
 				1EE103221AE57674002B5718 /* Main.storyboard */,
 				1EF0E5321A76C06D0089649F /* Images.xcassets */,
 				1EF0E5341A76C06D0089649F /* LaunchScreen.xib */,
 				1EF0E52A1A76C06C0089649F /* diaBTech_Basics.xcdatamodeld */,
-				1E4B8F8A1A9E640F002D2CFE /* user-A1C.swift */,
+				1E4B8F8A1A9E640F002D2CFE /* UserA1C.swift */,
 				1EF0E5261A76C06C0089649F /* Supporting Files */,
 				1E7B3CB91A89AA9100541A19 /* Facebook.swift */,
 			);
@@ -461,12 +463,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E830A761AC24B980089BCAB /* diaBTech_Basics.xcdatamodeld in Sources */,
+				1EE103281AE87721002B5718 /* diaBTech_Basics.xcdatamodeld in Sources */,
 				1EF0E52E1A76C06C0089649F /* ViewController.swift in Sources */,
 				1E7B3CBA1A89AA9100541A19 /* Facebook.swift in Sources */,
-				1E4B8F8B1A9E640F002D2CFE /* user-A1C.swift in Sources */,
-				1E58ED311A774555007C320F /* userID.swift in Sources */,
-				1E58ED331A77465C007C320F /* user-health.swift in Sources */,
+				1E4B8F8B1A9E640F002D2CFE /* UserA1C.swift in Sources */,
+				1E58ED311A774555007C320F /* UserID.swift in Sources */,
+				1E58ED331A77465C007C320F /* UserHealth.swift in Sources */,
 				1EC23DB31AD20D9000A312CC /* resizeLabel.swift in Sources */,
 				1EC23E4F1AD308BF00A312CC /* GraphVC.swift in Sources */,
 				1EF0E5291A76C06C0089649F /* AppDelegate.swift in Sources */,
@@ -808,6 +810,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		1EE103251AE87600002B5718 /* diaBTech_Basics.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1EE103261AE87600002B5718 /* diaBTech_Basics.xcdatamodel */,
+			);
+			currentVersion = 1EE103261AE87600002B5718 /* diaBTech_Basics.xcdatamodel */;
+			name = diaBTech_Basics.xcdatamodeld;
+			path = "diaBTech-Basics/diaBTech_Basics.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		1EF0E52A1A76C06C0089649F /* diaBTech_Basics.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

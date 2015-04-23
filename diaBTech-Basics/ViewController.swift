@@ -11,8 +11,8 @@ import CoreData
 
 
 class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate, UITableViewDataSource {
-    var userItems = [userID]()
-    var userData = [Userhealth]()
+    var userItems = [UserID]()
+    var userData = [UserHealth]()
     var userA1CData = [UserA1C]()
     
     @IBOutlet weak var nextBTN: UIButton!
@@ -62,11 +62,13 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         static var email = ""
     }
     
+    let managedObjectContext:NSManagedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //logTable.dataSource = self
-        //self.logTable.delegate = self
+        //if let moc = self.managedObjectContext {
+        
+        //}
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -74,40 +76,38 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     }
     
     @IBAction func regMenu(sender: AnyObject) {
-        if(FB.hasActiveSession()){
-            if(!shouldPerformSegueWithIdentifier("toMenu", sender: nil)){
-                performSegueWithIdentifier("registrationScene1", sender: nil)
-            }
-            
-            /*if(userItems.count == 0){
-                performSegueWithIdentifier("registrationScene1", sender: nil)
-            }
-            else if (userItems.count > 0){
-                performSegueWithIdentifier("toMenu", sender: nil)
-            }*/
-            
+
+        if(!shouldPerformSegueWithIdentifier("registrationScene1", sender: nil)){
+           // if(FB.hasActiveSession()){
+                shouldPerformSegueWithIdentifier("toMenu", sender: nil)
+            //}
         }
-        else{
-            //show error message
-            println("HasSession is false");
-            let alert = UIAlertView()
-            alert.title = "Sign In Alert"
-            alert.message = "In order to navigate further, you must sign into Facebook."
-            alert.addButtonWithTitle("Ok")
-            alert.show()
-        }
+            /*(else if (!shouldPerformSegueWithIdentifier("registrationScene1", sender: nil)){
+                
+                println("*** NOPE, segue will not occur")
+                //show error message
+                println("HasSession is false");
+                let alert = UIAlertView()
+                alert.title = "Sign In Alert"
+                alert.message = "In order to navigate further, you must sign into Facebook."
+                alert.addButtonWithTitle("Ok")
+                alert.show()
+            }
+        
+        
+            */
+        
         
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
-        var appDel:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate);
-        var context:NSManagedObjectContext = appDel.managedObjectContext!
+        
         var fetReq = NSFetchRequest(entityName: "UserID")
         let predicate = NSPredicate(format: "fbEmail == %@", fbStuff.email);
         
         fetReq.predicate = predicate;
         
-        let userItems: [userID] = context.executeFetchRequest(fetReq, error: nil) as [userID]!
+        let userItems: [UserID] = managedObjectContext.executeFetchRequest(fetReq, error: nil) as [UserID]!
         
         println("Can find a user in CD: ", userItems.count)
         
@@ -119,32 +119,44 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
                 println("*** NOPE, segue wont occur")
                 return false
             }
-            else {
-                println("*** YEP, segue will occur")
+            
+        }
+        else if (identifier == "registrationScene1") {
+            if !FB.hasActiveSession() {
+                println("*** NOPE, segue will not occur")
+                //show error message
+                println("HasSession is false");
+                let alert = UIAlertView()
+                alert.title = "Sign In Alert"
+                alert.message = "In order to navigate further, you must sign into Facebook."
+                alert.addButtonWithTitle("Ok")
+                alert.show()
+                return false
             }
         }
         return true
     }
+    
     
     @IBAction func addLog(sender: AnyObject) {
         
         var doubleII : Double = NSString(string: insulinActivity.text).doubleValue
         var doubleCC : Double = NSString(string: ccActivity.text).doubleValue
         
-        var appDel:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate);
-        var context:NSManagedObjectContext = appDel.managedObjectContext!
-        var newHealth = NSEntityDescription.insertNewObjectForEntityForName("UserHealth", inManagedObjectContext: context) as NSManagedObject
-        
+
+       // var newHealth = NSEntityDescription.insertNewObjectForEntityForName("UserHealth", inManagedObjectContext: context) as NSManagedObject
+       /*
         newHealth.setValue(dateActivity.date, forKey: "dateTime")
         newHealth.setValue(doubleII, forKey: "insulinInTake")
         newHealth.setValue(doubleCC, forKey: "estCarbCount")
         newHealth.setValue(readingActivity.text.toInt(), forKey: "bloodSugarReading")
         newHealth.setValue(notesActivity.text, forKey: "notes")
-
-        
+    */
+        var newHealth = UserHealth.createInManagedObjectContextHealth(managedObjectContext, dT: dateActivity.date, BSreading: readingActivity.text.toInt()!, estCC: doubleCC, II: doubleII, note: notesActivity.text)
+        save()
         println("Did newHealth change? ", newHealth.hasChanges);
 
-        println(context.hasChanges)
+        println(newHealth.hasChanges)
     }
     
    
@@ -155,19 +167,18 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
             println("Email: " + fbStuff.email)
        // }
        // else {
-            var appDel:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate);
-            var context:NSManagedObjectContext = appDel.managedObjectContext!
-            var newUser = NSEntityDescription.insertNewObjectForEntityForName("UserID", inManagedObjectContext: context) as NSManagedObject
-            newUser.setValue(fbStuff.fName, forKey: "fbUserFname")
+        
+           // var newUser = NSEntityDescription.insertNewObjectForEntityForName("UserID", inManagedObjectContext: managedObjectContext) as NSManagedObject
+           // newUser.setValue(fbStuff.fName, forKey: "fbUserFname")
             println("User First Name: " + fbStuff.fName)
             
-            newUser.setValue(fbStuff.lName, forKey: "fbUserLname")
+            //newUser.setValue(fbStuff.lName, forKey: "fbUserLname")
             println("User Last Name: " + fbStuff.lName)
             
-            newUser.setValue(endoEmail.text, forKey: "endoEmail")
+            //newUser.setValue(endoEmail.text, forKey: "endoEmail")
             println("Endo Email: " + endoEmail.text)
         
-            newUser.setValue(fbStuff.email, forKey: "fbEmail")
+            //newUser.setValue(fbStuff.email, forKey: "fbEmail")
             println("Email: " + fbStuff.email)
             //getting times:
             var outputFormat = NSDateFormatter()
@@ -176,39 +187,41 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
             
             
             var apttD = (outputFormat.stringFromDate(aptDate.date))
-            newUser.setValue(apttD, forKey: "nextEndoApt")
+            //newUser.setValue(apttD, forKey: "nextEndoApt")
             println("Apt Date: " + apttD)
             
             var bM = (outputFormat.stringFromDate(breakMeal.date))
-            newUser.setValue(bM, forKey: "morningMealTime")
+            //newUser.setValue(bM, forKey: "morningMealTime")
             println("Breakfast Time: " + bM)
             
             var lM = (outputFormat.stringFromDate(lunchMeal.date))
-            newUser.setValue(lM, forKey: "lunchMealTime")
+            //newUser.setValue(lM, forKey: "lunchMealTime")
             println("Lunch Time: " + lM)
             
             var dM = (outputFormat.stringFromDate(dinnerMeal.date))
-            newUser.setValue(dM, forKey: "dinnerMealTime")
+            //newUser.setValue(dM, forKey: "dinnerMealTime")
             println("Dinner Time: " + dM)
             
             var sM1 = (outputFormat.stringFromDate(snack1Meal.date))
-            newUser.setValue(sM1, forKey: "snack1MealTime")
+            //newUser.setValue(sM1, forKey: "snack1MealTime")
             println("Snack 1 Time: " + sM1)
             
             var sM2 = (outputFormat.stringFromDate(snack2Meal.date))
-            newUser.setValue(sM2, forKey: "snack2MealTime")
+            //newUser.setValue(sM2, forKey: "snack2MealTime")
             println("Snack 2 Time: " + sM2)
             
-            newUser.setValue(minGoal.text.toInt(), forKey: "minGoalBS")
+            //newUser.setValue(minGoal.text.toInt(), forKey: "minGoalBS")
             println("Min Goal: " + minGoal.text)
             
-            newUser.setValue(maxGoal.text.toInt(), forKey: "maxGoalBS")
+            //newUser.setValue(maxGoal.text.toInt(), forKey: "maxGoalBS")
             println("Max Goal: " + maxGoal.text)
             //context.save(nil)
         
-            println("Did newUser change? ", newUser.didSave());
+            var newUser = UserID.createInManagedObjectContextID(self.managedObjectContext, fbUserFN: fbStuff.fName, fbUserLN: fbStuff.lName, userEmail: fbStuff.email, endoEmail: endoEmail.text, nextAPPT: apttD, morningMT: bM, lunchMT: lM, dinnerMT: dM, snack1MT: sM1, snack2MT: sM2, minBS: minGoal.text.toInt()!, maxBS: maxGoal.text.toInt()!)
+            save()
+            println("Did newUser save? ", newUser.didSave())
         
-            println(context.hasChanges)
+            println(managedObjectContext.hasChanges)
     
         
         
@@ -216,29 +229,25 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     
     @IBAction func addA1C(sender: AnyObject) {
         var readingDouble : Double  = NSString(string: readingA1C.text).doubleValue
-        var appDel:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate);
-        var context:NSManagedObjectContext = appDel.managedObjectContext!
-       var newA1C = NSEntityDescription.insertNewObjectForEntityForName("UserA1C", inManagedObjectContext: context) as NSManagedObject
-        newA1C.setValue(dateTimeA1C.date, forKey: "dateTime")
-        newA1C.setValue(readingDouble, forKey: "a1c")
+        //var newA1C = NSEntityDescription.insertNewObjectForEntityForName("UserA1C", inManagedObjectContext: context) as NSManagedObject
+        //newA1C.setValue(dateTimeA1C.date, forKey: "dateTime")
+        //newA1C.setValue(readingDouble, forKey: "a1c")
+        var newA = UserA1C.createInManagedObjectContextA1C(managedObjectContext, dT: dateTimeA1C.date, reading: readingDouble)
+        save()
+        println("Did newA1C change? ", newA.hasChanges);
         
-        println("Did newA1C change? ", newA1C.hasChanges);
-        
-        println(context.hasChanges)
+        println(newA.hasChanges)
     }
     
 
     @IBAction func viewLogs(sender: AnyObject) {
-        var appDel:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate);
-        var context:NSManagedObjectContext = appDel.managedObjectContext!
+        
         let fetchReq = NSFetchRequest(entityName: "UserHealth")
-        
-        
         
         let sortDesc = NSSortDescriptor(key: "dateTime", ascending: true)
         fetchReq.sortDescriptors = [sortDesc]
         
-        if let fetchResults = context.executeFetchRequest(fetchReq, error: nil) as? [Userhealth] {
+        if let fetchResults = managedObjectContext.executeFetchRequest(fetchReq, error: nil) as? [UserHealth] {
             userData = fetchResults
         }
         
@@ -265,14 +274,9 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         }
         
         */
-        var appDel:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate);
-        var context:NSManagedObjectContext = appDel.managedObjectContext!
         var fetReq = NSFetchRequest(entityName: "UserHealth")
-        //let predicate = NSPredicate(format: "fbEmail == %@", fbStuff.email);
-        
-        //fetReq.predicate = predicate;
-        
-        let userData: [Userhealth] = context.executeFetchRequest(fetReq, error: nil) as [Userhealth]!
+    
+        let userData: [UserHealth] = managedObjectContext.executeFetchRequest(fetReq, error: nil) as [UserHealth]!
         
         println("Can find a user in CD: ", userData.count)
         
@@ -422,12 +426,11 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         alert.show()
     }
     
-    func getData() -> [Userhealth]{
-        return userData
-    }
-    
-    func getA1C() -> [UserA1C]{
-        return userA1CData
+    func save() {
+        var error : NSError?
+        if(managedObjectContext.save(&error) ) {
+            println(error?.localizedDescription)
+        }
     }
     
 }

@@ -20,7 +20,7 @@ class GraphVC: UIViewController, JBLineChartViewDelegate, JBLineChartViewDataSou
     var chartLegend = ["11-14", "11-15", "11-16", "11-17", "11-18", "11-19", "11-20"]
     var chartBGData = [130, 80, 115, 145, 103, 172, 121]
     var chartA1CData = [7, 8, 8.5, 7.8, 7.9, 7, 7.2]
-    var Data = [Userhealth]()
+    var Data = [UserHealth]()
     var a1c = [UserA1C]()
     
     override func viewDidLoad() {
