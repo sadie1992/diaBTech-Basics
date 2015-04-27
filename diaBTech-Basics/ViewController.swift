@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 
-class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     var userItems = [UserID]()
     var userData = [UserHealth]()
     var userA1CData = [UserA1C]()
@@ -26,7 +26,6 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     @IBOutlet weak var dinnerMeal: UIDatePicker!
     @IBOutlet weak var snack1Meal: UIDatePicker!
     @IBOutlet weak var snack2Meal: UIDatePicker!
-    
     
     //all outlets for an Activity (non-a1c)
     @IBOutlet weak var nameLabel: UILabel!
@@ -53,6 +52,16 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     //table for Activity Log
     @IBOutlet weak var logTable: UITableView!
     
+    //outlets for settings
+    @IBOutlet weak var setCurEndoEmail: UITextField!
+    @IBOutlet weak var setNextEndoApt: UIDatePicker!
+    @IBOutlet weak var setMinBG: UITextField!
+    @IBOutlet weak var setMaxBG: UITextField!
+    @IBOutlet weak var setMorningTime: UIDatePicker!
+    @IBOutlet weak var setLunchTime: UIDatePicker!
+    @IBOutlet weak var setDinnerTime: UIDatePicker!
+    @IBOutlet weak var setSnack1Time: UIDatePicker!
+    @IBOutlet weak var setSnack2Time: UIDatePicker!
     
     //Facebook & Session outlets
     @IBOutlet weak var fbLogin: FBLoginView!
@@ -73,6 +82,7 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     override func viewWillAppear(animated: Bool) {
 
         logTable = UITableView(frame: CGRectZero, style: .Plain)
+        
         
     }
     
@@ -139,20 +149,23 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     
    
     @IBAction func addRegister(sender: AnyObject) {
-        
             println("User is not registered, save info")
-
             println("User First Name: " + fbStuff.fName)
             println("User Last Name: " + fbStuff.lName)
             println("Endo Email: " + endoEmail.text)
             println("Email: " + fbStuff.email)
             //getting times:
+            var outF = NSDateFormatter()
+            outF.locale = NSLocale(localeIdentifier: "en_US")
+            outF.dateFormat = "MM-dd 'at' HH:mm"
+        
+        
             var outputFormat = NSDateFormatter()
             outputFormat.locale = NSLocale(localeIdentifier:"en_US")
             outputFormat.dateFormat = "HH:mm"
             
             
-            var apttD = (outputFormat.stringFromDate(aptDate.date))
+            var apttD = (outF.stringFromDate(aptDate.date))
             println("Apt Date: " + apttD)
             
             var bM = (outputFormat.stringFromDate(breakMeal.date))
@@ -369,5 +382,69 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         }
     }
     
-}
+    /**
+@IBOutlet weak var setCurEndoEmail: UITextField!
+@IBOutlet weak var setNextEndoApt: UIDatePicker!
+@IBOutlet weak var setMinBG: UITextField!
+@IBOutlet weak var setMaxBG: UITextField!
+@IBOutlet weak var setMorningTime: UIDatePicker!
+@IBOutlet weak var setLunchTime: UIDatePicker!
+@IBOutlet weak var setDinnerTime: UIDatePicker!
+@IBOutlet weak var setSnack1Time: UIDatePicker!
+@IBOutlet weak var setSnack2Time: UIDatePicker!
+    
+    if userItems.count != 0{
+    var managedObject = userItems[0]
+    managedObject.setValue("", forKey: "")*/
 
+    @IBAction func saveSetting(sender: AnyObject) {
+        if(setCurEndoEmail.text.isEmpty || setMinBG.text.isEmpty || setMaxBG.text.isEmpty){
+           println("Missing a parameter for setting, do not save")
+            let alert = UIAlertView()
+            alert.title = "Alert"
+            alert.message = "Missing an entry. Please fill in all the settings."
+            alert.addButtonWithTitle("Ok")
+            alert.show()
+        }
+        else{
+            var outF = NSDateFormatter()
+            outF.locale = NSLocale(localeIdentifier: "en_US")
+            outF.dateFormat = "MM-dd 'at' HH:mm"
+            
+            var outputFormat = NSDateFormatter()
+            outputFormat.locale = NSLocale(localeIdentifier:"en_US")
+            outputFormat.dateFormat = "HH:mm"
+            
+            var fetReq = NSFetchRequest(entityName: "UserID")
+            let predicate = NSPredicate(format: "fbEmail == %@", fbStuff.email);
+            fetReq.predicate = predicate;
+            
+            if let userItems = managedObjectContext.executeFetchRequest(fetReq, error: nil) as? [UserID] {
+                if userItems.count != 0{
+                    var managedObject = userItems[0]
+                    managedObject.setValue(setCurEndoEmail.text, forKey: "endoEmail")
+                    println("New Endo Email: " + setCurEndoEmail.text)
+                    managedObject.setValue(outF.stringFromDate(setNextEndoApt.date), forKey: "nextEndoApt")
+                    println("Apt Date: " + outF.stringFromDate(setNextEndoApt.date))
+                    managedObject.setValue(setMinBG.text.toInt(), forKey: "minGoalBS")
+                    println("New minBG: " + setMinBG.text)
+                    managedObject.setValue(setMaxBG.text.toInt(), forKey: "maxGoalBS")
+                    println("New maxBG: " + setMaxBG.text)
+                    managedObject.setValue(outputFormat.stringFromDate(setMorningTime.date), forKey: "morningMealTime")
+                    println("New morning: " + outputFormat.stringFromDate(setMorningTime.date))
+                    managedObject.setValue(outputFormat.stringFromDate(setLunchTime.date), forKey: "lunchMealTime")
+                    println("New lunch: " + outputFormat.stringFromDate(setLunchTime.date))
+                    managedObject.setValue(outputFormat.stringFromDate(setDinnerTime.date), forKey: "dinnerMealTime")
+                    println("New dinner: " + outputFormat.stringFromDate(setDinnerTime.date))
+                    managedObject.setValue(outputFormat.stringFromDate(setSnack1Time.date), forKey: "snack1MealTime")
+                    println("New Snack1: " + outputFormat.stringFromDate(setSnack1Time.date))
+                    managedObject.setValue(outputFormat.stringFromDate(setSnack2Time.date), forKey: "snack2MealTime")
+                    println("New Snack2: " + outputFormat.stringFromDate(setSnack2Time.date))
+               }
+            }
+            
+            
+        
+        }
+    }
+}

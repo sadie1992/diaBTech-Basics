@@ -1813,6 +1813,12 @@ Cg
                                                 <segue destination="UPO-ct-TnV" kind="showDetail" id="ICu-WB-xTZ"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Terms of Service" id="DLc-2F-R6f">
+                                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="Qx4-Wy-SiY" kind="presentation" id="Xwf-dr-231"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -1832,7 +1838,7 @@ Cg
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="laa-ck-9dt">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="laa-ck-9dt">
                                                 <rect key="frame" x="8" y="43" width="545" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -2043,19 +2049,8 @@ Cg
                                     <constraint firstItem="5RS-FM-ZZH" firstAttribute="centerX" secondItem="VZu-SF-Of4" secondAttribute="centerX" id="rHH-JZ-d3W"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGK-Ls-cdt">
-                                <rect key="frame" x="41" y="1550" width="250" height="30"/>
-                                <color key="backgroundColor" red="0.54951037830000005" green="0.60294490960000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="View Terms of Service">
-                                    <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Qx4-Wy-SiY" kind="show" id="3SE-eq-hBB"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8r-yO-I4f">
-                                <rect key="frame" x="317" y="1550" width="250" height="30"/>
+                                <rect key="frame" x="175" y="1550" width="250" height="30"/>
                                 <color key="backgroundColor" red="0.54951037830000005" green="0.60294490960000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Save Changes">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -2068,17 +2063,14 @@ Cg
                         </subviews>
                         <color key="backgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="VZu-SF-Of4" firstAttribute="centerX" secondItem="CGK-Ls-cdt" secondAttribute="centerX" constant="134" id="41w-QH-uh1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="L8r-yO-I4f" secondAttribute="trailing" constant="17" id="Ahk-7N-sEP"/>
-                            <constraint firstItem="L8r-yO-I4f" firstAttribute="leading" secondItem="CGK-Ls-cdt" secondAttribute="trailing" constant="26" id="DfN-kL-hVW"/>
-                            <constraint firstItem="CGK-Ls-cdt" firstAttribute="top" secondItem="VZu-SF-Of4" secondAttribute="bottom" constant="21" id="EaY-3S-p51"/>
-                            <constraint firstItem="CGK-Ls-cdt" firstAttribute="leading" secondItem="B5m-Cg-REZ" secondAttribute="leadingMargin" constant="25" id="RtA-E4-ZsH"/>
-                            <constraint firstAttribute="bottom" secondItem="CGK-Ls-cdt" secondAttribute="bottom" constant="20" symbolic="YES" id="WDZ-9d-6pi"/>
-                            <constraint firstItem="L8r-yO-I4f" firstAttribute="baseline" secondItem="CGK-Ls-cdt" secondAttribute="baseline" id="dZe-0a-4tL"/>
+                            <constraint firstItem="L8r-yO-I4f" firstAttribute="centerX" secondItem="VZu-SF-Of4" secondAttribute="centerX" id="9cU-ud-1GO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="L8r-yO-I4f" secondAttribute="trailing" constant="159" id="Ahk-7N-sEP"/>
+                            <constraint firstItem="L8r-yO-I4f" firstAttribute="top" secondItem="VZu-SF-Of4" secondAttribute="bottom" constant="21" id="WXW-uK-G6q"/>
                             <constraint firstItem="VZu-SF-Of4" firstAttribute="top" secondItem="ekT-Fd-UA8" secondAttribute="bottom" id="fcl-OS-FI8"/>
                             <constraint firstItem="ekT-Fd-UA8" firstAttribute="leading" secondItem="B5m-Cg-REZ" secondAttribute="leading" id="fxZ-H7-qZ2"/>
                             <constraint firstItem="ekT-Fd-UA8" firstAttribute="centerX" secondItem="VZu-SF-Of4" secondAttribute="centerX" id="lvS-hA-OCQ"/>
                             <constraint firstItem="ekT-Fd-UA8" firstAttribute="top" secondItem="B5m-Cg-REZ" secondAttribute="top" id="n6F-Wf-cx8"/>
+                            <constraint firstAttribute="bottom" secondItem="L8r-yO-I4f" secondAttribute="bottom" constant="20" symbolic="YES" id="njU-Cz-eVx"/>
                             <constraint firstItem="VZu-SF-Of4" firstAttribute="leading" secondItem="B5m-Cg-REZ" secondAttribute="leadingMargin" constant="4" id="onW-X2-EaS"/>
                             <constraint firstAttribute="trailing" secondItem="ekT-Fd-UA8" secondAttribute="trailing" id="ulU-VD-zDA"/>
                         </constraints>
@@ -2099,7 +2091,7 @@ Cg
                         <viewControllerLayoutGuide type="bottom" id="eW0-HV-rfs"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pPh-Uf-ksu">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="1600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TWY-Tb-e3N">
@@ -2118,7 +2110,7 @@ Cg
                                 </items>
                             </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sxj-AU-PjF">
-                                <rect key="frame" x="0.0" y="44" width="600" height="1568"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">By accepting this terms of service for the application, you (the ‘user’) will follow all the guidelines for correct usage of this application. Any use outside of those listed here are considered incorrect use of the application.
 
@@ -2447,8 +2439,8 @@ Any export of activity logs should be limited to the ‘user’, the ‘users’
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="h2g-dg-l6N"/>
         <segue reference="0mB-sC-Ha7"/>
+        <segue reference="ICu-WB-xTZ"/>
         <segue reference="l5t-cO-nOX"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -28,8 +28,6 @@ class UserID: NSManagedObject {
     class func createInManagedObjectContextID(moc: NSManagedObjectContext, fbUserFN: String, fbUserLN: String, userEmail: String, endoEmail:String, nextAPPT: String, morningMT: String, lunchMT: String, dinnerMT: String, snack1MT: String, snack2MT: String, minBS: Int, maxBS: Int) -> UserID {
         let newItem = NSEntityDescription.insertNewObjectForEntityForName("UserID", inManagedObjectContext: moc) as UserID
         
-        // var newUser = NSEntityDescription.insertNewObjectForEntityForName("UserID", inManagedObjectContext: managedObjectContext) as NSManagedObject
-        
         newItem.fbUserFname = fbUserFN
         newItem.fbUserLname = fbUserLN
         newItem.fbEmail = userEmail
