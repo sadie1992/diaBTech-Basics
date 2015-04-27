@@ -66,26 +66,28 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //if let moc = self.managedObjectContext {
         
-        //}
     }
+
     
     override func viewWillAppear(animated: Bool) {
-        //logTable.reloadData()
+
+        logTable = UITableView(frame: CGRectZero, style: .Plain)
+        
     }
     
     @IBAction func regMenu(sender: AnyObject) {
-
-        if(!shouldPerformSegueWithIdentifier("registrationScene1", sender: nil)){
-           // if(FB.hasActiveSession()){
-                shouldPerformSegueWithIdentifier("toMenu", sender: nil)
-            //}
+        var shouldPerformMenu = shouldPerformSegueWithIdentifier("toMenu", sender: nil)
+        if(shouldPerformMenu && FB.hasActiveSession()){
+            performSegueWithIdentifier("toMenu", sender: nil)
+            
         }
-            /*(else if (!shouldPerformSegueWithIdentifier("registrationScene1", sender: nil)){
-                
-                println("*** NOPE, segue will not occur")
-                //show error message
+        else {
+            if(FB.hasActiveSession()){
+                println("Should perform with toMenu returned false...")
+                performSegueWithIdentifier("toRegistration", sender: nil)
+            }
+            else{
                 println("HasSession is false");
                 let alert = UIAlertView()
                 alert.title = "Sign In Alert"
@@ -93,10 +95,7 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
                 alert.addButtonWithTitle("Ok")
                 alert.show()
             }
-        
-        
-            */
-        
+        }
         
     }
     
@@ -110,75 +109,42 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         let userItems: [UserID] = managedObjectContext.executeFetchRequest(fetReq, error: nil) as [UserID]!
         
         println("Can find a user in CD: ", userItems.count)
+        var segueShouldOccur = (userItems.count > 0)
+        println("Should segue occur: ", segueShouldOccur.boolValue)
         
-        if identifier == "toMenu" { // you define it in the storyboard (click on the segue, then Attributes' inspector > Identifier
-            
-            var segueShouldOccur = (userItems.count > 0)
-            
+        if (identifier == "toMenu") { // you define it in the storyboard (click on the segue, then Attributes' inspector > Identifier
+           println("Checking if to Menu should happen...")
             if !segueShouldOccur {
                 println("*** NOPE, segue wont occur")
                 return false
+                
             }
-            
-        }
-        else if (identifier == "registrationScene1") {
-            if !FB.hasActiveSession() {
-                println("*** NOPE, segue will not occur")
-                //show error message
-                println("HasSession is false");
-                let alert = UIAlertView()
-                alert.title = "Sign In Alert"
-                alert.message = "In order to navigate further, you must sign into Facebook."
-                alert.addButtonWithTitle("Ok")
-                alert.show()
-                return false
+            else{
+                println("*** Yes, segue will occur")
             }
         }
+        
         return true
     }
     
     
     @IBAction func addLog(sender: AnyObject) {
-        
         var doubleII : Double = NSString(string: insulinActivity.text).doubleValue
         var doubleCC : Double = NSString(string: ccActivity.text).doubleValue
         
-
-       // var newHealth = NSEntityDescription.insertNewObjectForEntityForName("UserHealth", inManagedObjectContext: context) as NSManagedObject
-       /*
-        newHealth.setValue(dateActivity.date, forKey: "dateTime")
-        newHealth.setValue(doubleII, forKey: "insulinInTake")
-        newHealth.setValue(doubleCC, forKey: "estCarbCount")
-        newHealth.setValue(readingActivity.text.toInt(), forKey: "bloodSugarReading")
-        newHealth.setValue(notesActivity.text, forKey: "notes")
-    */
         var newHealth = UserHealth.createInManagedObjectContextHealth(managedObjectContext, dT: dateActivity.date, BSreading: readingActivity.text.toInt()!, estCC: doubleCC, II: doubleII, note: notesActivity.text)
         save()
-        println("Did newHealth change? ", newHealth.hasChanges);
-
-        println(newHealth.hasChanges)
+        fetchLogs()
     }
     
    
     @IBAction func addRegister(sender: AnyObject) {
         
-       // if(fbStuff.email == nil){
-            println("Name:" + fbStuff.fName + " " + fbStuff.lName)
-            println("Email: " + fbStuff.email)
-       // }
-       // else {
-        
-           // var newUser = NSEntityDescription.insertNewObjectForEntityForName("UserID", inManagedObjectContext: managedObjectContext) as NSManagedObject
-           // newUser.setValue(fbStuff.fName, forKey: "fbUserFname")
+            println("User is not registered, save info")
+
             println("User First Name: " + fbStuff.fName)
-            
-            //newUser.setValue(fbStuff.lName, forKey: "fbUserLname")
             println("User Last Name: " + fbStuff.lName)
-            
-            //newUser.setValue(endoEmail.text, forKey: "endoEmail")
             println("Endo Email: " + endoEmail.text)
-        
-            //newUser.setValue(fbStuff.email, forKey: "fbEmail")
             println("Email: " + fbStuff.email)
             //getting times:
             var outputFormat = NSDateFormatter()
@@ -187,61 +153,46 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
             
             
             var apttD = (outputFormat.stringFromDate(aptDate.date))
-            //newUser.setValue(apttD, forKey: "nextEndoApt")
             println("Apt Date: " + apttD)
             
             var bM = (outputFormat.stringFromDate(breakMeal.date))
-            //newUser.setValue(bM, forKey: "morningMealTime")
             println("Breakfast Time: " + bM)
             
             var lM = (outputFormat.stringFromDate(lunchMeal.date))
-            //newUser.setValue(lM, forKey: "lunchMealTime")
             println("Lunch Time: " + lM)
             
             var dM = (outputFormat.stringFromDate(dinnerMeal.date))
-            //newUser.setValue(dM, forKey: "dinnerMealTime")
             println("Dinner Time: " + dM)
             
             var sM1 = (outputFormat.stringFromDate(snack1Meal.date))
-            //newUser.setValue(sM1, forKey: "snack1MealTime")
             println("Snack 1 Time: " + sM1)
             
             var sM2 = (outputFormat.stringFromDate(snack2Meal.date))
-            //newUser.setValue(sM2, forKey: "snack2MealTime")
             println("Snack 2 Time: " + sM2)
             
-            //newUser.setValue(minGoal.text.toInt(), forKey: "minGoalBS")
             println("Min Goal: " + minGoal.text)
             
-            //newUser.setValue(maxGoal.text.toInt(), forKey: "maxGoalBS")
             println("Max Goal: " + maxGoal.text)
-            //context.save(nil)
         
             var newUser = UserID.createInManagedObjectContextID(self.managedObjectContext, fbUserFN: fbStuff.fName, fbUserLN: fbStuff.lName, userEmail: fbStuff.email, endoEmail: endoEmail.text, nextAPPT: apttD, morningMT: bM, lunchMT: lM, dinnerMT: dM, snack1MT: sM1, snack2MT: sM2, minBS: minGoal.text.toInt()!, maxBS: maxGoal.text.toInt()!)
             save()
-            println("Did newUser save? ", newUser.didSave())
-        
-            println(managedObjectContext.hasChanges)
-    
-        
-        
     }
     
     @IBAction func addA1C(sender: AnyObject) {
         var readingDouble : Double  = NSString(string: readingA1C.text).doubleValue
-        //var newA1C = NSEntityDescription.insertNewObjectForEntityForName("UserA1C", inManagedObjectContext: context) as NSManagedObject
-        //newA1C.setValue(dateTimeA1C.date, forKey: "dateTime")
-        //newA1C.setValue(readingDouble, forKey: "a1c")
+        
         var newA = UserA1C.createInManagedObjectContextA1C(managedObjectContext, dT: dateTimeA1C.date, reading: readingDouble)
         save()
-        println("Did newA1C change? ", newA.hasChanges);
-        
-        println(newA.hasChanges)
+        fetchLogs()
     }
     
 
     @IBAction func viewLogs(sender: AnyObject) {
-        
+        fetchLogs()
+    }
+    
+    
+    func fetchLogs(){
         let fetchReq = NSFetchRequest(entityName: "UserHealth")
         
         let sortDesc = NSSortDescriptor(key: "dateTime", ascending: true)
@@ -251,47 +202,30 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
             userData = fetchResults
         }
         
-      //  var fetchResults = context.executeFetchRequest(fetchReq, error: nil) as [Userhealth]
-      //  userData = fetchResults
-        println("Number of logs: ", userData.count)
+        let aFetReq = NSFetchRequest(entityName: "UserA1C")
+        if let fetchARes = managedObjectContext.executeFetchRequest(aFetReq, error: nil) as? [UserA1C]{
+            userA1CData = fetchARes
+        }
+        
+        
+        println("New number of logs (reg): ", userData.count)
+        println("New number of logs (A1C): ", userA1CData.count)
     }
-    
     
     // MARK: UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       /*
-        var appDel:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate);
-        var context:NSManagedObjectContext = appDel.managedObjectContext!
-        let fetchReq = NSFetchRequest(entityName: "UserHealth")
-        
-        
-        
-        let sortDesc = NSSortDescriptor(key: "dateTime", ascending: true)
-        fetchReq.sortDescriptors = [sortDesc]
-        
-        if let fetchResults = context.executeFetchRequest(fetchReq, error: nil) as? [Userhealth] {
-            userData = fetchResults
-        }
-        
-        */
-        var fetReq = NSFetchRequest(entityName: "UserHealth")
-    
-        let userData: [UserHealth] = managedObjectContext.executeFetchRequest(fetReq, error: nil) as [UserHealth]!
-        
-        println("Can find a user in CD: ", userData.count)
-        
-        // How many rows are there in this section?
-        // There's only 1 section, and it has a number of rows
-        // equal to the number of logItems, so return the count
-        println("Number of entries for userData: ", userData.count)
-        return userData.count
+       // println("Can find a user in CD: ", userData.count)
+        println("Number of logs (reg): ", userData.count)
+        println("Number of logs (A1C): ", userA1CData.count)
+        return (userData.count + userA1CData.count)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        logTable.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "LogCell")
-        let cell:UITableViewCell = logTable.dequeueReusableCellWithIdentifier("LogCell") as UITableViewCell
         logTable.dataSource = self
         logTable.delegate = self
+        logTable.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "LogCell")
+        let cell:UITableViewCell = logTable.dequeueReusableCellWithIdentifier("LogCell", forIndexPath: indexPath) as UITableViewCell
+        //var cell:SwiftCell = self.tableView.dequeueReusableCellWithIdentifier(MainStoryboard.TableViewCellIdentifiers.swiftCell, forIndexPath: indexPath) as SwiftCell
         
         // Get the LogItem for this index
         let logItem = userData[indexPath.row].dateTime
@@ -312,11 +246,13 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     
     // MARK: UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let logItem = userData[indexPath.row]
-        println(logItem.bloodSugarReading)
+        let logItem = userData[indexPath.row].dateTime
+        var outputFormat = NSDateFormatter()
+        outputFormat.locale = NSLocale(localeIdentifier:"en_US")
+        outputFormat.dateFormat = "MM-dd-yyyy 'at' HH:mm"
+        var newDate = outputFormat.stringFromDate(logItem)
+        println(newDate)
     }
-    
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
