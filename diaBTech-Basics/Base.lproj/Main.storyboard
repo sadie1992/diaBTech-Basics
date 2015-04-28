@@ -965,7 +965,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ObZ-gf-U6Q" kind="showDetail" id="sao-Di-2uB"/>
+                                    <segue destination="ObZ-gf-U6Q" kind="showDetail" identifier="toGraph" id="sao-Di-2uB"/>
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="2hu-k6-blk">
@@ -1028,7 +1028,7 @@
                         <viewControllerLayoutGuide type="top" id="kFO-km-Ljp"/>
                         <viewControllerLayoutGuide type="bottom" id="y0u-s5-piY"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DGQ-Ne-kca" customClass="ViewC">
+                    <view key="view" contentMode="scaleToFill" id="DGQ-Ne-kca">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1547,7 +1547,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BwQ-DC-zdP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7014" y="1787"/>
+            <point key="canvasLocation" x="7014" y="1707"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tbO-7o-qRz">
@@ -2455,8 +2455,8 @@ Any export of activity logs should be limited to the ‘user’, the ‘users’
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0mB-sC-Ha7"/>
-        <segue reference="gQs-HB-hlP"/>
+        <segue reference="VEC-vc-YL7"/>
+        <segue reference="bbs-Gj-2my"/>
         <segue reference="wBR-0O-bTs"/>
     </inferredMetricsTieBreakers>
 </document>

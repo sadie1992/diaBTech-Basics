@@ -25,18 +25,32 @@ class GraphVC: UIViewController, JBLineChartViewDelegate, JBLineChartViewDataSou
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //check that A1C was passed correctly
+        /*
+        for every entry in the health array, 
+        add the date to chartLegend and 
+        the BGR to chart BGData 
+    */
+        var date =  Data[0].dateTime
+        var BGR =  Data[0].bloodSugarReading
         
-        
+        var dateForm = NSDateFormatter()
+        dateForm.dateFormat = "MM:dd"
+        var datee = dateForm.stringFromDate(date)
+        println("Date: " + datee)
+        let x : Int16 = BGR
+        var BGRString = String(x)
+        println("BGR: ", x)
         // Do any additional setup after loading the view, typically from a nib.
         
-        view.backgroundColor = UIColor.darkGrayColor()
+        view.backgroundColor = UIColor.lightGrayColor()
         
         // line chart setup
         lineGraph.backgroundColor = UIColor.darkGrayColor()
         lineGraph.delegate = self
         lineGraph.dataSource = self
-        lineGraph.minimumValue = 55
-        lineGraph.maximumValue = 100
+        lineGraph.minimumValue = 0
+        lineGraph.maximumValue = 600
         lineGraph.reloadData()
         lineGraph.setState(.Collapsed, animated: false)
     }

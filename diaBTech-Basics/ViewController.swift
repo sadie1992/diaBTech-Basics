@@ -271,7 +271,34 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "toGraph") {
+            var svc = segue.destinationViewController as GraphVC;
+            let fetchReq = NSFetchRequest(entityName: "UserHealth")
+            
+            let sortDesc = NSSortDescriptor(key: "dateTime", ascending: true)
+            fetchReq.sortDescriptors = [sortDesc]
+            
+            if let fetchResults = managedObjectContext.executeFetchRequest(fetchReq, error: nil) as? [UserHealth] {
+                userData = fetchResults
+            }
+            
+            /*
+            limit the reading only those within the date constraints
+
+*/
+            svc.Data = userData
+            
+            
+            let aFetReq = NSFetchRequest(entityName: "UserA1C")
+            if let fetchARes = managedObjectContext.executeFetchRequest(aFetReq, error: nil) as? [UserA1C]{
+                userA1CData = fetchARes
+            }
+            svc.a1c = userA1CData
+            
+        }
+    }
     
     @IBAction func nbccLink(sender: AnyObject) {
         if let url = NSURL(string: "http://www.nbcc.org/CounselorFind") {
@@ -381,21 +408,6 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
             println(error?.localizedDescription)
         }
     }
-    
-    /**
-@IBOutlet weak var setCurEndoEmail: UITextField!
-@IBOutlet weak var setNextEndoApt: UIDatePicker!
-@IBOutlet weak var setMinBG: UITextField!
-@IBOutlet weak var setMaxBG: UITextField!
-@IBOutlet weak var setMorningTime: UIDatePicker!
-@IBOutlet weak var setLunchTime: UIDatePicker!
-@IBOutlet weak var setDinnerTime: UIDatePicker!
-@IBOutlet weak var setSnack1Time: UIDatePicker!
-@IBOutlet weak var setSnack2Time: UIDatePicker!
-    
-    if userItems.count != 0{
-    var managedObject = userItems[0]
-    managedObject.setValue("", forKey: "")*/
 
     @IBAction func saveSetting(sender: AnyObject) {
         if(setCurEndoEmail.text.isEmpty || setMinBG.text.isEmpty || setMaxBG.text.isEmpty){
@@ -422,6 +434,7 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
             if let userItems = managedObjectContext.executeFetchRequest(fetReq, error: nil) as? [UserID] {
                 if userItems.count != 0{
                     var managedObject = userItems[0]
+                    println("Testing getting item: " + managedObject.endoEmail)
                     managedObject.setValue(setCurEndoEmail.text, forKey: "endoEmail")
                     println("New Endo Email: " + setCurEndoEmail.text)
                     managedObject.setValue(outF.stringFromDate(setNextEndoApt.date), forKey: "nextEndoApt")
@@ -440,6 +453,7 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
                     println("New Snack1: " + outputFormat.stringFromDate(setSnack1Time.date))
                     managedObject.setValue(outputFormat.stringFromDate(setSnack2Time.date), forKey: "snack2MealTime")
                     println("New Snack2: " + outputFormat.stringFromDate(setSnack2Time.date))
+                    println("Testing getting item: " + managedObject.endoEmail)
                     save()
                     performSegueWithIdentifier("toMenuFromSave", sender: nil)
                }
