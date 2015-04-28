@@ -1793,7 +1793,7 @@ Cg
         <!--View Controller-->
         <scene sceneID="Zxv-vq-pAa">
             <objects>
-                <viewController id="Jpd-C2-E62" sceneMemberID="viewController">
+                <viewController id="Jpd-C2-E62" customClass="ViewController" customModule="diaBTech_Basics" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yGS-Vk-z5d"/>
                         <viewControllerLayoutGuide type="bottom" id="aBz-wj-vYt"/>
@@ -1838,8 +1838,10 @@ Cg
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="laa-ck-9dt">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Not editable." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="laa-ck-9dt">
                                                 <rect key="frame" x="8" y="43" width="545" height="30"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -2052,35 +2054,49 @@ Cg
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8r-yO-I4f">
                                 <rect key="frame" x="175" y="1550" width="250" height="30"/>
                                 <color key="backgroundColor" red="0.54951037830000005" green="0.60294490960000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="1tq-PM-ugY"/>
+                                </constraints>
                                 <state key="normal" title="Save Changes">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="UPO-ct-TnV" kind="presentation" id="68c-qF-VSA"/>
+                                    <action selector="saveSetting:" destination="Jpd-C2-E62" eventType="touchUpInside" id="BVs-qC-QyN"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="L8r-yO-I4f" firstAttribute="centerX" secondItem="VZu-SF-Of4" secondAttribute="centerX" id="9cU-ud-1GO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="L8r-yO-I4f" secondAttribute="trailing" constant="159" id="Ahk-7N-sEP"/>
-                            <constraint firstItem="L8r-yO-I4f" firstAttribute="top" secondItem="VZu-SF-Of4" secondAttribute="bottom" constant="21" id="WXW-uK-G6q"/>
+                            <constraint firstAttribute="bottom" secondItem="L8r-yO-I4f" secondAttribute="bottom" constant="20" symbolic="YES" id="7Ze-xV-u1p"/>
+                            <constraint firstItem="L8r-yO-I4f" firstAttribute="top" secondItem="VZu-SF-Of4" secondAttribute="bottom" constant="21" id="Zu3-Sw-kve"/>
                             <constraint firstItem="VZu-SF-Of4" firstAttribute="top" secondItem="ekT-Fd-UA8" secondAttribute="bottom" id="fcl-OS-FI8"/>
                             <constraint firstItem="ekT-Fd-UA8" firstAttribute="leading" secondItem="B5m-Cg-REZ" secondAttribute="leading" id="fxZ-H7-qZ2"/>
                             <constraint firstItem="ekT-Fd-UA8" firstAttribute="centerX" secondItem="VZu-SF-Of4" secondAttribute="centerX" id="lvS-hA-OCQ"/>
                             <constraint firstItem="ekT-Fd-UA8" firstAttribute="top" secondItem="B5m-Cg-REZ" secondAttribute="top" id="n6F-Wf-cx8"/>
-                            <constraint firstAttribute="bottom" secondItem="L8r-yO-I4f" secondAttribute="bottom" constant="20" symbolic="YES" id="njU-Cz-eVx"/>
                             <constraint firstItem="VZu-SF-Of4" firstAttribute="leading" secondItem="B5m-Cg-REZ" secondAttribute="leadingMargin" constant="4" id="onW-X2-EaS"/>
+                            <constraint firstItem="L8r-yO-I4f" firstAttribute="centerX" secondItem="VZu-SF-Of4" secondAttribute="centerX" id="q9O-NB-CHs"/>
                             <constraint firstAttribute="trailing" secondItem="ekT-Fd-UA8" secondAttribute="trailing" id="ulU-VD-zDA"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="1600"/>
+                    <connections>
+                        <outlet property="setCurEndoEmail" destination="QZF-Le-50Y" id="RTF-KD-Tfg"/>
+                        <outlet property="setDinnerTime" destination="QWc-MN-zTT" id="1Be-J6-unD"/>
+                        <outlet property="setLunchTime" destination="Tg5-Xm-UxM" id="vEe-5A-oYG"/>
+                        <outlet property="setMaxBG" destination="ubN-Ur-ppI" id="7pI-bg-Afc"/>
+                        <outlet property="setMinBG" destination="Awd-mB-B3y" id="bxt-mB-F21"/>
+                        <outlet property="setMorningTime" destination="tRt-gW-d2b" id="sPn-ke-mln"/>
+                        <outlet property="setNextEndoApt" destination="a8T-DQ-T7G" id="yus-Ap-Gee"/>
+                        <outlet property="setSnack1Time" destination="OdM-WQ-tM0" id="ngw-Jl-PX7"/>
+                        <outlet property="setSnack2Time" destination="0Kq-5A-jFU" id="WBY-3J-fqb"/>
+                        <segue destination="UPO-ct-TnV" kind="presentation" identifier="toMenuFromSave" id="gQs-HB-hlP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8vI-OD-y0I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7014" y="2953"/>
+            <point key="canvasLocation" x="7014" y="3006"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="CbQ-qI-Nc3">
@@ -2440,7 +2456,7 @@ Any export of activity logs should be limited to the ‘user’, the ‘users’
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="0mB-sC-Ha7"/>
-        <segue reference="ICu-WB-xTZ"/>
-        <segue reference="l5t-cO-nOX"/>
+        <segue reference="gQs-HB-hlP"/>
+        <segue reference="wBR-0O-bTs"/>
     </inferredMetricsTieBreakers>
 </document>

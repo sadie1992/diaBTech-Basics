@@ -440,6 +440,8 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
                     println("New Snack1: " + outputFormat.stringFromDate(setSnack1Time.date))
                     managedObject.setValue(outputFormat.stringFromDate(setSnack2Time.date), forKey: "snack2MealTime")
                     println("New Snack2: " + outputFormat.stringFromDate(setSnack2Time.date))
+                    save()
+                    performSegueWithIdentifier("toMenuFromSave", sender: nil)
                }
             }
             
