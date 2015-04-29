@@ -855,56 +855,58 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpC-9Q-U31">
-                                <rect key="frame" x="16" y="341" width="74" height="21"/>
+                                <rect key="frame" x="16" y="256" width="74" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="AWV-4x-WOM">
-                                <rect key="frame" x="264" y="65" width="320" height="162"/>
+                                <rect key="frame" x="16" y="86" width="568" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="446346550.05340099">
                                     <!--2015-02-23 01:09:10 +0000-->
-                                </date>
-                            </datePicker>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nuA-2w-9a3">
-                                <rect key="frame" x="264" y="271" width="320" height="162"/>
-                                <date key="date" timeIntervalSinceReferenceDate="446346558.278579">
-                                    <!--2015-02-23 01:09:18 +0000-->
                                 </date>
                             </datePicker>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Sq3-v0-KlC">
                                 <rect key="frame" x="530" y="462" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start date: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqg-qT-wmX">
-                                <rect key="frame" x="16" y="135" width="86" height="21"/>
+                                <rect key="frame" x="16" y="57" width="86" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Include A1C: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJT-hz-bTB">
-                                <rect key="frame" x="264" y="467" width="104" height="21"/>
+                                <rect key="frame" x="16" y="467" width="104" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nuA-2w-9a3">
+                                <rect key="frame" x="16" y="276" width="568" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="446346558.278579">
+                                    <!--2015-02-23 01:09:18 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="vqg-qT-wmX" firstAttribute="top" secondItem="0OI-t4-28S" secondAttribute="bottom" constant="91" id="7ye-hn-rgY"/>
-                            <constraint firstItem="Sq3-v0-KlC" firstAttribute="top" secondItem="nuA-2w-9a3" secondAttribute="bottom" constant="29" id="IlT-jm-jwb"/>
-                            <constraint firstItem="nuA-2w-9a3" firstAttribute="trailing" secondItem="uAG-NO-ybn" secondAttribute="trailingMargin" id="M1P-A7-Kon"/>
-                            <constraint firstItem="0OI-t4-28S" firstAttribute="top" secondItem="uAG-NO-ybn" secondAttribute="top" id="MwU-Fz-nop"/>
-                            <constraint firstItem="nJT-hz-bTB" firstAttribute="leading" secondItem="nuA-2w-9a3" secondAttribute="leading" id="O1N-LB-CwN"/>
-                            <constraint firstItem="AWV-4x-WOM" firstAttribute="leading" secondItem="nuA-2w-9a3" secondAttribute="leading" id="Q3j-3K-zBz"/>
-                            <constraint firstItem="wpC-9Q-U31" firstAttribute="leading" secondItem="uAG-NO-ybn" secondAttribute="leadingMargin" id="WIg-fH-M4e"/>
-                            <constraint firstAttribute="trailing" secondItem="0OI-t4-28S" secondAttribute="trailing" id="YDx-Dy-sol"/>
-                            <constraint firstItem="eJR-Tl-Thz" firstAttribute="top" secondItem="wpC-9Q-U31" secondAttribute="bottom" constant="238" id="inu-DL-SFa"/>
-                            <constraint firstItem="AWV-4x-WOM" firstAttribute="top" secondItem="0OI-t4-28S" secondAttribute="bottom" constant="21" id="kiv-rg-CIX"/>
-                            <constraint firstItem="nuA-2w-9a3" firstAttribute="top" secondItem="AWV-4x-WOM" secondAttribute="bottom" constant="44" id="okE-MG-BN0"/>
-                            <constraint firstItem="0OI-t4-28S" firstAttribute="leading" secondItem="uAG-NO-ybn" secondAttribute="leading" id="rLH-W3-1Ey"/>
-                            <constraint firstItem="vqg-qT-wmX" firstAttribute="leading" secondItem="wpC-9Q-U31" secondAttribute="leading" id="rVt-D1-J7n"/>
-                            <constraint firstItem="Sq3-v0-KlC" firstAttribute="centerY" secondItem="nJT-hz-bTB" secondAttribute="centerY" id="uGt-rN-jRi"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Sq3-v0-KlC" secondAttribute="trailing" constant="5" id="z90-2I-FSU"/>
+                            <constraint firstItem="nuA-2w-9a3" firstAttribute="trailing" secondItem="AWV-4x-WOM" secondAttribute="trailing" id="4IQ-cn-uI2"/>
+                            <constraint firstItem="AWV-4x-WOM" firstAttribute="centerX" secondItem="0OI-t4-28S" secondAttribute="centerX" id="JRm-1j-zt1"/>
+                            <constraint firstItem="0OI-t4-28S" firstAttribute="top" secondItem="uAG-NO-ybn" secondAttribute="top" id="KVk-zd-nJj"/>
+                            <constraint firstItem="AWV-4x-WOM" firstAttribute="leading" secondItem="uAG-NO-ybn" secondAttribute="leadingMargin" id="LbE-QX-0bI"/>
+                            <constraint firstItem="nJT-hz-bTB" firstAttribute="centerY" secondItem="Sq3-v0-KlC" secondAttribute="centerY" id="RoL-k6-mjs"/>
+                            <constraint firstItem="AWV-4x-WOM" firstAttribute="leading" secondItem="wpC-9Q-U31" secondAttribute="leading" id="Uon-Sb-DN8"/>
+                            <constraint firstItem="nuA-2w-9a3" firstAttribute="leading" secondItem="nJT-hz-bTB" secondAttribute="leading" id="ZCl-9A-HHe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Sq3-v0-KlC" secondAttribute="trailing" constant="5" id="ZcD-Tl-lpg"/>
+                            <constraint firstAttribute="trailing" secondItem="0OI-t4-28S" secondAttribute="trailing" id="bd6-rm-vJv"/>
+                            <constraint firstItem="Sq3-v0-KlC" firstAttribute="top" secondItem="nuA-2w-9a3" secondAttribute="bottom" constant="24" id="e9D-EU-3bj"/>
+                            <constraint firstItem="nuA-2w-9a3" firstAttribute="top" secondItem="AWV-4x-WOM" secondAttribute="bottom" constant="28" id="fyJ-tj-Vdo"/>
+                            <constraint firstItem="0OI-t4-28S" firstAttribute="leading" secondItem="uAG-NO-ybn" secondAttribute="leading" id="gLo-cS-jYd"/>
+                            <constraint firstItem="AWV-4x-WOM" firstAttribute="top" secondItem="vqg-qT-wmX" secondAttribute="bottom" constant="8" symbolic="YES" id="hHi-hX-xnI"/>
+                            <constraint firstItem="AWV-4x-WOM" firstAttribute="leading" secondItem="vqg-qT-wmX" secondAttribute="leading" id="jmR-0t-We0"/>
+                            <constraint firstItem="vqg-qT-wmX" firstAttribute="top" secondItem="0OI-t4-28S" secondAttribute="bottom" constant="13" id="niE-ea-Q3j"/>
+                            <constraint firstItem="nuA-2w-9a3" firstAttribute="leading" secondItem="wpC-9Q-U31" secondAttribute="leading" id="rdE-eT-Yef"/>
+                            <constraint firstItem="wpC-9Q-U31" firstAttribute="top" secondItem="AWV-4x-WOM" secondAttribute="bottom" constant="8" symbolic="YES" id="xLR-gS-Jrp"/>
                         </constraints>
                     </view>
                     <connections>
@@ -943,21 +945,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start date: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riR-71-6jK">
-                                <rect key="frame" x="19" y="58" width="86" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="qTr-AF-2Lw">
-                                <rect key="frame" x="19" y="291" width="563" height="125"/>
-                                <date key="date" timeIntervalSinceReferenceDate="446346014.836236">
-                                    <!--2015-02-23 01:00:14 +0000-->
-                                </date>
-                            </datePicker>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qQA-jJ-4mW">
-                                <rect key="frame" x="530" y="478" width="51" height="31"/>
-                            </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvW-QY-j25">
                                 <rect key="frame" x="524" y="562" width="60" height="30"/>
                                 <state key="normal" title="Graph It!">
@@ -968,46 +955,76 @@
                                     <segue destination="ObZ-gf-U6Q" kind="showDetail" identifier="toGraph" id="sao-Di-2uB"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="2hu-k6-blk">
-                                <rect key="frame" x="19" y="87" width="563" height="162"/>
-                                <date key="date" timeIntervalSinceReferenceDate="446346004.81212002">
-                                    <!--2015-02-23 01:00:04 +0000-->
-                                </date>
-                            </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Include A1C: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJk-Ej-uvF">
-                                <rect key="frame" x="19" y="483" width="104" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End date: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOm-rx-HuT">
-                                <rect key="frame" x="19" y="262" width="79" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="REq-hV-tIj">
+                                <rect key="frame" x="16" y="53" width="568" height="501"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start date: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riR-71-6jK">
+                                        <rect key="frame" x="8" y="8" width="86" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="qTr-AF-2Lw">
+                                        <rect key="frame" x="3" y="236" width="563" height="162"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="446346014.836236">
+                                            <!--2015-02-23 01:00:14 +0000-->
+                                        </date>
+                                    </datePicker>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="2hu-k6-blk">
+                                        <rect key="frame" x="3" y="30" width="563" height="162"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="446346004.81212002">
+                                            <!--2015-02-23 01:00:04 +0000-->
+                                        </date>
+                                    </datePicker>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End date: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOm-rx-HuT">
+                                        <rect key="frame" x="8" y="207" width="79" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qQA-jJ-4mW">
+                                        <rect key="frame" x="511" y="412" width="51" height="31"/>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Include A1C: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJk-Ej-uvF">
+                                        <rect key="frame" x="8" y="417" width="104" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="qTr-AF-2Lw" firstAttribute="top" secondItem="dOm-rx-HuT" secondAttribute="bottom" constant="8" symbolic="YES" id="2HO-aa-pa2"/>
+                                    <constraint firstItem="qQA-jJ-4mW" firstAttribute="top" secondItem="qTr-AF-2Lw" secondAttribute="bottom" constant="14" id="2gC-sX-a9S"/>
+                                    <constraint firstItem="qTr-AF-2Lw" firstAttribute="trailing" secondItem="2hu-k6-blk" secondAttribute="trailing" id="7MM-M4-r3b"/>
+                                    <constraint firstItem="dOm-rx-HuT" firstAttribute="top" secondItem="2hu-k6-blk" secondAttribute="bottom" constant="15" id="HwX-aR-9c1"/>
+                                    <constraint firstItem="2hu-k6-blk" firstAttribute="leading" secondItem="qTr-AF-2Lw" secondAttribute="leading" id="HxW-0B-3Bp"/>
+                                    <constraint firstItem="qTr-AF-2Lw" firstAttribute="centerX" secondItem="REq-hV-tIj" secondAttribute="centerX" id="Loh-Wk-LPl"/>
+                                    <constraint firstItem="qQA-jJ-4mW" firstAttribute="trailing" secondItem="REq-hV-tIj" secondAttribute="trailingMargin" id="Qtp-7F-ph9"/>
+                                    <constraint firstItem="2hu-k6-blk" firstAttribute="leading" secondItem="REq-hV-tIj" secondAttribute="leading" constant="3" id="V9s-gQ-FTu"/>
+                                    <constraint firstItem="riR-71-6jK" firstAttribute="top" secondItem="REq-hV-tIj" secondAttribute="topMargin" id="mXh-dv-dWD"/>
+                                    <constraint firstItem="dOm-rx-HuT" firstAttribute="leading" secondItem="UJk-Ej-uvF" secondAttribute="leading" id="owC-zG-U7v"/>
+                                    <constraint firstItem="UJk-Ej-uvF" firstAttribute="leading" secondItem="REq-hV-tIj" secondAttribute="leadingMargin" id="pj6-S3-NeV"/>
+                                    <constraint firstItem="2hu-k6-blk" firstAttribute="top" secondItem="riR-71-6jK" secondAttribute="bottom" constant="1" id="pnr-ZN-25U"/>
+                                    <constraint firstItem="qQA-jJ-4mW" firstAttribute="centerY" secondItem="UJk-Ej-uvF" secondAttribute="centerY" id="uag-T6-Nuf"/>
+                                    <constraint firstAttribute="bottom" secondItem="qQA-jJ-4mW" secondAttribute="bottom" constant="58" id="v2Y-YM-1Ht"/>
+                                    <constraint firstItem="dOm-rx-HuT" firstAttribute="leading" secondItem="riR-71-6jK" secondAttribute="leading" id="xPR-EW-1KR"/>
+                                    <constraint firstAttribute="trailing" secondItem="2hu-k6-blk" secondAttribute="trailing" constant="2" id="yhp-yE-NQo"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="qvW-QY-j25" firstAttribute="trailing" secondItem="wU7-fe-CPu" secondAttribute="trailingMargin" id="0Oe-Xt-B1Y"/>
+                            <constraint firstItem="REq-hV-tIj" firstAttribute="top" secondItem="SEH-DT-pQX" secondAttribute="bottom" constant="9" id="2tK-8F-b01"/>
                             <constraint firstAttribute="trailing" secondItem="SEH-DT-pQX" secondAttribute="trailing" id="5iT-6b-W9p"/>
                             <constraint firstItem="79r-7l-nLg" firstAttribute="top" secondItem="qvW-QY-j25" secondAttribute="bottom" constant="8" symbolic="YES" id="CCk-iM-GKd"/>
-                            <constraint firstItem="dOm-rx-HuT" firstAttribute="leading" secondItem="qTr-AF-2Lw" secondAttribute="leading" id="CP5-hZ-Ldn"/>
-                            <constraint firstItem="dOm-rx-HuT" firstAttribute="top" secondItem="2hu-k6-blk" secondAttribute="bottom" constant="13" id="CrD-nf-q4v"/>
-                            <constraint firstItem="riR-71-6jK" firstAttribute="leading" secondItem="2hu-k6-blk" secondAttribute="leading" id="FJY-BO-ALZ"/>
-                            <constraint firstItem="riR-71-6jK" firstAttribute="top" secondItem="SEH-DT-pQX" secondAttribute="bottom" constant="14" id="H5Q-YW-FyC"/>
-                            <constraint firstItem="2hu-k6-blk" firstAttribute="centerX" secondItem="SEH-DT-pQX" secondAttribute="centerX" id="Rob-CC-TZ7"/>
-                            <constraint firstItem="qQA-jJ-4mW" firstAttribute="top" secondItem="qTr-AF-2Lw" secondAttribute="bottom" constant="25" id="aac-0i-fUE"/>
-                            <constraint firstItem="2hu-k6-blk" firstAttribute="leading" secondItem="dOm-rx-HuT" secondAttribute="leading" id="fVl-Dt-MDQ"/>
-                            <constraint firstItem="UJk-Ej-uvF" firstAttribute="leading" secondItem="qTr-AF-2Lw" secondAttribute="leading" id="fVy-Ff-YBm"/>
-                            <constraint firstItem="UJk-Ej-uvF" firstAttribute="centerY" secondItem="qQA-jJ-4mW" secondAttribute="centerY" id="hZa-7i-QBg"/>
-                            <constraint firstItem="2hu-k6-blk" firstAttribute="top" secondItem="riR-71-6jK" secondAttribute="bottom" constant="8" symbolic="YES" id="kKi-0O-TmG"/>
-                            <constraint firstItem="riR-71-6jK" firstAttribute="leading" secondItem="wU7-fe-CPu" secondAttribute="leadingMargin" constant="3" id="kNL-a3-vVV"/>
+                            <constraint firstItem="qvW-QY-j25" firstAttribute="top" secondItem="REq-hV-tIj" secondAttribute="bottom" constant="8" symbolic="YES" id="FaF-Rn-cf6"/>
+                            <constraint firstItem="REq-hV-tIj" firstAttribute="trailing" secondItem="qvW-QY-j25" secondAttribute="trailing" id="Kt4-jB-Flj"/>
+                            <constraint firstItem="REq-hV-tIj" firstAttribute="leading" secondItem="wU7-fe-CPu" secondAttribute="leadingMargin" id="VK0-e8-goU"/>
+                            <constraint firstItem="REq-hV-tIj" firstAttribute="trailing" secondItem="wU7-fe-CPu" secondAttribute="trailingMargin" id="XzN-Lz-fGj"/>
+                            <constraint firstItem="REq-hV-tIj" firstAttribute="centerX" secondItem="SEH-DT-pQX" secondAttribute="centerX" id="adt-Zh-Eae"/>
                             <constraint firstItem="SEH-DT-pQX" firstAttribute="top" secondItem="wU7-fe-CPu" secondAttribute="top" id="obf-1P-FLg"/>
-                            <constraint firstItem="qQA-jJ-4mW" firstAttribute="centerX" secondItem="qvW-QY-j25" secondAttribute="centerX" id="qo9-cB-82w"/>
-                            <constraint firstItem="qTr-AF-2Lw" firstAttribute="top" secondItem="dOm-rx-HuT" secondAttribute="bottom" constant="8" symbolic="YES" id="rUk-3z-5eE"/>
                             <constraint firstItem="SEH-DT-pQX" firstAttribute="leading" secondItem="wU7-fe-CPu" secondAttribute="leading" id="re7-6n-TrL"/>
-                            <constraint firstItem="2hu-k6-blk" firstAttribute="trailing" secondItem="qTr-AF-2Lw" secondAttribute="trailing" id="y6c-Pc-b9z"/>
                         </constraints>
                     </view>
                     <connections>
@@ -2455,7 +2472,7 @@ Any export of activity logs should be limited to the ‘user’, the ‘users’
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="5ER-ok-sPP"/>
+        <segue reference="63Z-0h-spV"/>
         <segue reference="wBR-0O-bTs"/>
         <segue reference="VEC-vc-YL7"/>
     </inferredMetricsTieBreakers>

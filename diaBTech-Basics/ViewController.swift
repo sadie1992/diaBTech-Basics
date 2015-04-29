@@ -285,14 +285,13 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
             let sortDesc = NSSortDescriptor(key: "dateTime", ascending: true)
             fetchReq.sortDescriptors = [sortDesc]
             
+            let predicate = NSPredicate(format: "dateTime >= %@ and dateTime <= %@", startDateGraph.date, endDateGraph.date)
+            
+            fetchReq.predicate = predicate
+            
             if let fetchResults = managedObjectContext.executeFetchRequest(fetchReq, error: nil) as? [UserHealth] {
                 userData = fetchResults
             }
-            
-            /*
-            limit the reading only those within the date constraints
-
-*/
             
             
             svc.Data = userData
@@ -301,6 +300,7 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
             svc.inclA1C = isOn
             
             let aFetReq = NSFetchRequest(entityName: "UserA1C")
+            aFetReq.predicate = predicate
             if let fetchARes = managedObjectContext.executeFetchRequest(aFetReq, error: nil) as? [UserA1C]{
                 userA1CData = fetchARes
             }
