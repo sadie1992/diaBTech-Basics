@@ -950,12 +950,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="qTr-AF-2Lw">
-                                <rect key="frame" x="19" y="291" width="563" height="162"/>
+                                <rect key="frame" x="19" y="291" width="563" height="125"/>
                                 <date key="date" timeIntervalSinceReferenceDate="446346014.836236">
                                     <!--2015-02-23 01:00:14 +0000-->
                                 </date>
                             </datePicker>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qQA-jJ-4mW">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qQA-jJ-4mW">
                                 <rect key="frame" x="530" y="478" width="51" height="31"/>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvW-QY-j25">
@@ -2455,8 +2455,8 @@ Any export of activity logs should be limited to the ‘user’, the ‘users’
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VEC-vc-YL7"/>
-        <segue reference="bbs-Gj-2my"/>
+        <segue reference="5ER-ok-sPP"/>
         <segue reference="wBR-0O-bTs"/>
+        <segue reference="VEC-vc-YL7"/>
     </inferredMetricsTieBreakers>
 </document>

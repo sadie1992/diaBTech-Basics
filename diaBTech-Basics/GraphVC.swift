@@ -17,11 +17,12 @@ class GraphVC: UIViewController, JBLineChartViewDelegate, JBLineChartViewDataSou
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var lineGraph: JBLineChartView!
     
-    var chartLegend = ["11-14", "11-15", "11-16", "11-17", "11-18", "11-19", "11-20"]
-    var chartBGData = [130, 80, 115, 145, 103, 172, 121]
-    var chartA1CData = [7, 8, 8.5, 7.8, 7.9, 7, 7.2]
+    var chartLegend = ["4-14 at 14:30"]
+    var chartBGData = [130]
+    var chartA1CData = [7.9]
     var Data = [UserHealth]()
     var a1c = [UserA1C]()
+    var inclA1C = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,16 +32,37 @@ class GraphVC: UIViewController, JBLineChartViewDelegate, JBLineChartViewDataSou
         add the date to chartLegend and 
         the BGR to chart BGData 
     */
-        var date =  Data[0].dateTime
-        var BGR =  Data[0].bloodSugarReading
+        for var i=0; i < Data.count; i++ {
+            var date =  Data[i].dateTime
+            var BGR =  Data[i].bloodSugarReading
         
-        var dateForm = NSDateFormatter()
-        dateForm.dateFormat = "MM:dd"
-        var datee = dateForm.stringFromDate(date)
-        println("Date: " + datee)
-        let x : Int16 = BGR
-        var BGRString = String(x)
-        println("BGR: ", x)
+            var dateForm = NSDateFormatter()
+            dateForm.dateFormat = "MM:dd 'at' HH:mm"
+            var datee = dateForm.stringFromDate(date)
+            println("Date: " + datee)
+            let x : Int = Int(BGR)
+            var BGRString = String(x)
+            println("BGR: ", x)
+            chartLegend.append(datee)
+            chartBGData.append(x)
+        }
+        if inclA1C {
+            for var j = 0; j < a1c.count; j++ {
+                var date = a1c[j].dateTime
+                var A1c = a1c[j].a1c
+            
+                var dateForm = NSDateFormatter()
+                dateForm.dateFormat = "MM:dd 'at' HH:mm"
+                var datee = dateForm.stringFromDate(date)
+                println("Date: " + datee)
+        
+                var c:String = String(format:"%.1f", A1c)
+                println("a1c: \(c)") // c: 1.5
+
+                chartLegend.append(datee)
+                chartA1CData.append(A1c)
+            }
+        }
         // Do any additional setup after loading the view, typically from a nib.
         
         view.backgroundColor = UIColor.lightGrayColor()

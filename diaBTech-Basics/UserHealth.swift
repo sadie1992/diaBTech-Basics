@@ -24,6 +24,7 @@ class UserHealth: NSManagedObject {
         let newEntry = UserHealth(entity: entity!, insertIntoManagedObjectContext: moc)
         //let newEntry = NSEntityDescription.insertNewObjectForEntityForName("UserHealth",  inManagedObjectContext: moc) as UserHealth
        // newEntry.userid = user
+        
         newEntry.dateTime = dT
         newEntry.bloodSugarReading = Int16(BSreading)
         newEntry.estCarbCount = estCC

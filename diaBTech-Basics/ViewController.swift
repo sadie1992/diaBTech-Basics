@@ -273,6 +273,11 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+     /*
+@IBOutlet weak var startDateGraph: UIDatePicker!
+@IBOutlet weak var endDateGraph: UIDatePicker!*/
+
         if (segue.identifier == "toGraph") {
             var svc = segue.destinationViewController as GraphVC;
             let fetchReq = NSFetchRequest(entityName: "UserHealth")
@@ -288,14 +293,19 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
             limit the reading only those within the date constraints
 
 */
+            
+            
             svc.Data = userData
             
+            var isOn =  a1cGraph.on
+            svc.inclA1C = isOn
             
             let aFetReq = NSFetchRequest(entityName: "UserA1C")
             if let fetchARes = managedObjectContext.executeFetchRequest(aFetReq, error: nil) as? [UserA1C]{
                 userA1CData = fetchARes
             }
             svc.a1c = userA1CData
+            
             
         }
     }
