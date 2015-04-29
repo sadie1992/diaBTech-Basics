@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 
-class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class ViewController: UIViewController, FBLoginViewDelegate {
     var userItems = [UserID]()
     var userData = [UserHealth]()
     var userA1CData = [UserA1C]()
@@ -48,9 +48,6 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     @IBOutlet weak var startDateExport: UIDatePicker!
     @IBOutlet weak var endDateExport: UIDatePicker!
     @IBOutlet weak var a1cExport: UISwitch!
-
-    //table for Activity Log
-    @IBOutlet weak var logTable: UITableView!
     
     //outlets for settings
     @IBOutlet weak var setCurEndoEmail: UITextField!
@@ -75,14 +72,6 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    }
-
-    
-    override func viewWillAppear(animated: Bool) {
-
-        logTable = UITableView(frame: CGRectZero, style: .Plain)
-        
         
     }
     
@@ -199,11 +188,6 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         fetchLogs()
     }
     
-
-    @IBAction func viewLogs(sender: AnyObject) {
-        fetchLogs()
-    }
-    
     
     func fetchLogs(){
         let fetchReq = NSFetchRequest(entityName: "UserHealth")
@@ -224,7 +208,7 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         println("New number of logs (reg): ", userData.count)
         println("New number of logs (A1C): ", userA1CData.count)
     }
-    
+    /*
     // MARK: UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        // println("Can find a user in CD: ", userData.count)
@@ -238,7 +222,6 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         logTable.delegate = self
         logTable.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "LogCell")
         let cell:UITableViewCell = logTable.dequeueReusableCellWithIdentifier("LogCell", forIndexPath: indexPath) as UITableViewCell
-        //var cell:SwiftCell = self.tableView.dequeueReusableCellWithIdentifier(MainStoryboard.TableViewCellIdentifiers.swiftCell, forIndexPath: indexPath) as SwiftCell
         
         // Get the LogItem for this index
         let logItem = userData[indexPath.row].dateTime
@@ -265,7 +248,8 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
         outputFormat.dateFormat = "MM-dd-yyyy 'at' HH:mm"
         var newDate = outputFormat.stringFromDate(logItem)
         println(newDate)
-    }
+    }*/
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -273,11 +257,6 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        
-     /*
-@IBOutlet weak var startDateGraph: UIDatePicker!
-@IBOutlet weak var endDateGraph: UIDatePicker!*/
-
         if (segue.identifier == "toGraph") {
             var svc = segue.destinationViewController as GraphVC;
             let fetchReq = NSFetchRequest(entityName: "UserHealth")
@@ -307,6 +286,25 @@ class ViewController: UIViewController, FBLoginViewDelegate, UITableViewDelegate
             svc.a1c = userA1CData
             
             
+        }
+        
+        else if(segue.identifier == "toTable"){
+            var svc = segue.destinationViewController as tableVC;
+            let fetchReq = NSFetchRequest(entityName: "UserHealth")
+            
+            let sortDesc = NSSortDescriptor(key: "dateTime", ascending: true)
+            fetchReq.sortDescriptors = [sortDesc]
+            if let fetchResults = managedObjectContext.executeFetchRequest(fetchReq, error: nil) as? [UserHealth] {
+                userData = fetchResults
+            }
+            
+            svc.Data = userData
+            
+            let aFetReq = NSFetchRequest(entityName: "UserA1C")
+            if let fetchARes = managedObjectContext.executeFetchRequest(aFetReq, error: nil) as? [UserA1C]{
+                userA1CData = fetchARes
+            }
+            svc.a1c = userA1CData
         }
     }
     

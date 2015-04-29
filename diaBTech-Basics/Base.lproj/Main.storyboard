@@ -1174,8 +1174,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="viewLogs:" destination="rrG-Ab-M8f" eventType="touchUpInside" id="wS1-mg-Hdg"/>
-                                    <segue destination="GQt-49-fE2" kind="presentation" id="ZGp-Hv-1te"/>
+                                    <segue destination="NnY-ua-Ip2" kind="showDetail" identifier="toTable" id="Ryn-sa-aNW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1197,77 +1196,15 @@
             </objects>
             <point key="canvasLocation" x="7024" y="-2908"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="NXd-ns-Cgl">
-            <objects>
-                <viewController id="GQt-49-fE2" customClass="ViewController" customModule="diaBTech_Basics" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="opt-Ef-6pF"/>
-                        <viewControllerLayoutGuide type="bottom" id="vmU-0Z-tkF"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="t10-bA-L30">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLd-pa-3xW">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <color key="barTintColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <items>
-                                    <navigationItem title="View Logs" id="LGe-w5-3DA">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="T0D-E7-LmH">
-                                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <segue destination="rrG-Ab-M8f" kind="showDetail" id="l5t-cO-nOX"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aXa-pp-MzJ">
-                                <rect key="frame" x="0.0" y="45" width="600" height="555"/>
-                                <color key="backgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <color key="sectionIndexBackgroundColor" red="0.3411764706" green="0.37254901959999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LogCell" id="GKD-ZO-VX6">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GKD-ZO-VX6" id="8yn-mq-QNZ">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.6470588235294118" green="0.70196078431372544" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="aXa-pp-MzJ" firstAttribute="bottom" secondItem="vmU-0Z-tkF" secondAttribute="top" id="LeI-ey-Pto"/>
-                            <constraint firstAttribute="trailing" secondItem="BLd-pa-3xW" secondAttribute="trailing" id="Ndt-rr-5Pr"/>
-                            <constraint firstItem="aXa-pp-MzJ" firstAttribute="top" secondItem="BLd-pa-3xW" secondAttribute="bottom" constant="1" id="Sio-jF-0HV"/>
-                            <constraint firstItem="BLd-pa-3xW" firstAttribute="top" secondItem="t10-bA-L30" secondAttribute="top" id="ZyW-k3-V4X"/>
-                            <constraint firstItem="aXa-pp-MzJ" firstAttribute="trailing" secondItem="BLd-pa-3xW" secondAttribute="trailing" id="a29-UD-laW"/>
-                            <constraint firstItem="BLd-pa-3xW" firstAttribute="leading" secondItem="t10-bA-L30" secondAttribute="leading" id="fOH-rD-jxB"/>
-                            <constraint firstItem="BLd-pa-3xW" firstAttribute="leading" secondItem="aXa-pp-MzJ" secondAttribute="leading" id="xLb-Zd-3vg"/>
-                        </constraints>
-                    </view>
-                    <toolbarItems/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="logTable" destination="aXa-pp-MzJ" id="Y9p-qi-9Ez"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0bl-l1-wjf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7797" y="-2913"/>
-        </scene>
-        <!--Table View Controller-->
+        <!--TableVC-->
         <scene sceneID="jX8-Rg-24y">
             <objects>
-                <tableViewController id="NnY-ua-Ip2" sceneMemberID="viewController">
+                <tableViewController id="NnY-ua-Ip2" customClass="tableVC" customModule="diaBTech_Basics" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="gVi-Ei-mfX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.54951037830000005" green="0.60294490960000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="cJs-xP-xAA">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -1291,9 +1228,25 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1G3-aS-puM" id="g0Q-W5-XU5">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xcw-Ia-WvD">
+                                            <rect key="frame" x="17" y="11" width="41" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BG:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4J-5a-BGi">
+                                            <rect key="frame" x="538" y="11" width="30" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.54951037830000005" green="0.60294490960000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="NnY-ua-Ip2" id="UfC-WS-2Em"/>
                             <outlet property="delegate" destination="NnY-ua-Ip2" id="ofW-NK-ZD8"/>
@@ -1306,7 +1259,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sOQ-GH-oOg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8402" y="-2913"/>
+            <point key="canvasLocation" x="7906" y="-2908"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="CBe-Cz-JNf">
@@ -2472,8 +2425,8 @@ Any export of activity logs should be limited to the ‘user’, the ‘users’
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="63Z-0h-spV"/>
-        <segue reference="wBR-0O-bTs"/>
+        <segue reference="3xt-aG-KNO"/>
+        <segue reference="gQs-HB-hlP"/>
         <segue reference="VEC-vc-YL7"/>
     </inferredMetricsTieBreakers>
 </document>

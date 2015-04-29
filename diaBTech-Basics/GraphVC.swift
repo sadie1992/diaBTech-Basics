@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import CoreData
-//import JBChart
 
 class GraphVC: UIViewController, JBLineChartViewDelegate, JBLineChartViewDataSource {
     
@@ -37,7 +36,7 @@ class GraphVC: UIViewController, JBLineChartViewDelegate, JBLineChartViewDataSou
             var BGR =  Data[i].bloodSugarReading
         
             var dateForm = NSDateFormatter()
-            dateForm.dateFormat = "MM:dd 'at' HH:mm"
+            dateForm.dateFormat = "MM-dd 'at' HH:mm"
             var datee = dateForm.stringFromDate(date)
             println("Date: " + datee)
             let x : Int = Int(BGR)
@@ -52,7 +51,7 @@ class GraphVC: UIViewController, JBLineChartViewDelegate, JBLineChartViewDataSou
                 var A1c = a1c[j].a1c
             
                 var dateForm = NSDateFormatter()
-                dateForm.dateFormat = "MM:dd 'at' HH:mm"
+                dateForm.dateFormat = "MM-dd 'at' HH:mm"
                 var datee = dateForm.stringFromDate(date)
                 println("Date: " + datee)
         
