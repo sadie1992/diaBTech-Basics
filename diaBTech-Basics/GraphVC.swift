@@ -17,9 +17,9 @@ class GraphVC: UIViewController, JBLineChartViewDelegate, JBLineChartViewDataSou
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var lineGraph: JBLineChartView!
     
-    var chartLegend = ["4-14 at 14:30"]
-    var chartBGData = [130]
-    var chartA1CData = [7.9]
+    var chartLegend: [String] = []
+    var chartBGData: [Int] = []
+    var chartA1CData: [Double] = []
     var Data = [UserHealth]()
     var a1c = [UserA1C]()
     var inclA1C = true
