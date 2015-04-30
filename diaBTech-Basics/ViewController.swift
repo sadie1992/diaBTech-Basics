@@ -98,6 +98,19 @@ class ViewController: UIViewController, FBLoginViewDelegate {
         
     }
     
+    @IBAction func goGraph(sender: AnyObject) {
+        if(startDateGraph.date.compare(endDateGraph.date) == NSComparisonResult.OrderedDescending){
+            println("Error, end date is before start date.")
+            let alert = UIAlertView()
+            alert.title = "Alert"
+            alert.message = "End date is before start date. Try again."
+            alert.addButtonWithTitle("Ok")
+            alert.show()
+        }
+        else {
+            performSegueWithIdentifier("toGraph", sender: nil)
+        }
+    }
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
         
         var fetReq = NSFetchRequest(entityName: "UserID")
@@ -111,7 +124,7 @@ class ViewController: UIViewController, FBLoginViewDelegate {
         var segueShouldOccur = (userItems.count > 0)
         println("Should segue occur: ", segueShouldOccur.boolValue)
         
-        if (identifier == "toMenu") { // you define it in the storyboard (click on the segue, then Attributes' inspector > Identifier
+        if (identifier == "toMenu") {
            println("Checking if to Menu should happen...")
             if !segueShouldOccur {
                 println("*** NOPE, segue wont occur")
@@ -208,47 +221,6 @@ class ViewController: UIViewController, FBLoginViewDelegate {
         println("New number of logs (reg): ", userData.count)
         println("New number of logs (A1C): ", userA1CData.count)
     }
-    /*
-    // MARK: UITableViewDataSource
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       // println("Can find a user in CD: ", userData.count)
-        println("Number of logs (reg): ", userData.count)
-        println("Number of logs (A1C): ", userA1CData.count)
-        return (userData.count + userA1CData.count)
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        logTable.dataSource = self
-        logTable.delegate = self
-        logTable.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "LogCell")
-        let cell:UITableViewCell = logTable.dequeueReusableCellWithIdentifier("LogCell", forIndexPath: indexPath) as UITableViewCell
-        
-        // Get the LogItem for this index
-        let logItem = userData[indexPath.row].dateTime
-        let BGR = userData[indexPath.row].bloodSugarReading
-        
-        var outputFormat = NSDateFormatter()
-        outputFormat.locale = NSLocale(localeIdentifier:"en_US")
-        outputFormat.dateFormat = "MM-dd-yyyy 'at' HH:mm"
-        var newDate = outputFormat.stringFromDate(logItem)
-        // Set the title of the cell to be the title of the logItem
-        cell.textLabel?.text = newDate
-        cell.textLabel?.textColor = UIColor .blackColor()
-        cell.detailTextLabel?.text = String(BGR)
-        cell.detailTextLabel?.textColor = UIColor .redColor()
-        
-        return cell
-    }
-    
-    // MARK: UITableViewDelegate
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let logItem = userData[indexPath.row].dateTime
-        var outputFormat = NSDateFormatter()
-        outputFormat.locale = NSLocale(localeIdentifier:"en_US")
-        outputFormat.dateFormat = "MM-dd-yyyy 'at' HH:mm"
-        var newDate = outputFormat.stringFromDate(logItem)
-        println(newDate)
-    }*/
 
 
     override func didReceiveMemoryWarning() {
@@ -257,6 +229,7 @@ class ViewController: UIViewController, FBLoginViewDelegate {
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
         if (segue.identifier == "toGraph") {
             var svc = segue.destinationViewController as GraphVC;
             let fetchReq = NSFetchRequest(entityName: "UserHealth")
@@ -265,25 +238,25 @@ class ViewController: UIViewController, FBLoginViewDelegate {
             fetchReq.sortDescriptors = [sortDesc]
             
             let predicate = NSPredicate(format: "dateTime >= %@ and dateTime <= %@", startDateGraph.date, endDateGraph.date)
-            
+                
             fetchReq.predicate = predicate
-            
+                
             if let fetchResults = managedObjectContext.executeFetchRequest(fetchReq, error: nil) as? [UserHealth] {
                 userData = fetchResults
             }
-            
-            
+
             svc.Data = userData
-            
+                
             var isOn =  a1cGraph.on
             svc.inclA1C = isOn
-            
+                
             let aFetReq = NSFetchRequest(entityName: "UserA1C")
             aFetReq.predicate = predicate
             if let fetchARes = managedObjectContext.executeFetchRequest(aFetReq, error: nil) as? [UserA1C]{
                 userA1CData = fetchARes
             }
             svc.a1c = userA1CData
+        
             
             
         }
@@ -386,12 +359,11 @@ class ViewController: UIViewController, FBLoginViewDelegate {
     }
    
     func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
-        println("Username: \(user.first_name) \(user.last_name)")
-        fbStuff.fName = user.first_name
-        fbStuff.lName = user.last_name
-        fbStuff.email = user.objectForKey("email") as String!
-        println("Email:  \(fbStuff.email)")
-
+        if(FB.hasActiveSession()){
+            fbStuff.fName = user.first_name
+            fbStuff.lName = user.last_name
+            fbStuff.email = user.objectForKey("email") as String!
+        }
     }
     
     @IBAction func disagreeTOS(sender: AnyObject) {

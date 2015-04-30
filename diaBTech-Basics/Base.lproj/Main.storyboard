@@ -952,7 +952,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ObZ-gf-U6Q" kind="showDetail" identifier="toGraph" id="sao-Di-2uB"/>
+                                    <action selector="goGraph:" destination="A0B-Li-N3P" eventType="touchUpInside" id="M76-2h-WYN"/>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="REq-hV-tIj">
@@ -974,6 +974,12 @@
                                         <rect key="frame" x="3" y="30" width="563" height="162"/>
                                         <date key="date" timeIntervalSinceReferenceDate="446346004.81212002">
                                             <!--2015-02-23 01:00:04 +0000-->
+                                        </date>
+                                        <date key="minimumDate" timeIntervalSinceReferenceDate="126270000">
+                                            <!--2005-01-01 11:00:00 +0000-->
+                                        </date>
+                                        <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
+                                            <!--2037-12-31 11:00:00 +0000-->
                                         </date>
                                     </datePicker>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End date: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOm-rx-HuT">
@@ -1031,6 +1037,7 @@
                         <outlet property="a1cGraph" destination="qQA-jJ-4mW" id="ufu-dt-Jpn"/>
                         <outlet property="endDateGraph" destination="qTr-AF-2Lw" id="mno-ER-mEN"/>
                         <outlet property="startDateGraph" destination="2hu-k6-blk" id="bed-Ps-wtm"/>
+                        <segue destination="ObZ-gf-U6Q" kind="presentation" identifier="toGraph" id="NmH-N6-KC9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oau-Vw-Lhm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2426,7 +2433,7 @@ Any export of activity logs should be limited to the ‘user’, the ‘users’
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="3xt-aG-KNO"/>
-        <segue reference="gQs-HB-hlP"/>
+        <segue reference="5ER-ok-sPP"/>
         <segue reference="VEC-vc-YL7"/>
     </inferredMetricsTieBreakers>
 </document>
