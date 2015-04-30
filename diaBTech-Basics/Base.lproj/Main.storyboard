@@ -1513,12 +1513,10 @@
                             <constraint firstAttribute="trailing" secondItem="AVY-fQ-fQJ" secondAttribute="trailing" id="5AA-9f-EpZ"/>
                             <constraint firstItem="AVY-fQ-fQJ" firstAttribute="top" secondItem="Mke-9w-awa" secondAttribute="top" id="7iF-do-sdR"/>
                             <constraint firstItem="QDe-EX-4fd" firstAttribute="top" secondItem="AVY-fQ-fQJ" secondAttribute="bottom" id="9vJ-0n-aLt"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="QDe-EX-4fd" secondAttribute="trailing" constant="-16" id="Qzw-lg-VKB"/>
                             <constraint firstItem="QDe-EX-4fd" firstAttribute="bottom" secondItem="DHR-ia-M6F" secondAttribute="top" id="RBe-tG-Dbu"/>
                             <constraint firstItem="AVY-fQ-fQJ" firstAttribute="leading" secondItem="QDe-EX-4fd" secondAttribute="leading" id="YDQ-3Y-1IV"/>
                             <constraint firstItem="QDe-EX-4fd" firstAttribute="leading" secondItem="Mke-9w-awa" secondAttribute="leading" id="oU3-yq-nTt"/>
                             <constraint firstItem="AVY-fQ-fQJ" firstAttribute="trailing" secondItem="QDe-EX-4fd" secondAttribute="trailing" id="rME-b3-Rmp"/>
-                            <constraint firstItem="QDe-EX-4fd" firstAttribute="leading" secondItem="Mke-9w-awa" secondAttribute="leadingMargin" constant="-16" id="uPX-fb-QhY"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -2433,7 +2431,7 @@ Any export of activity logs should be limited to the ‘user’, the ‘users’
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="3xt-aG-KNO"/>
-        <segue reference="5ER-ok-sPP"/>
+        <segue reference="Qel-Bj-pqd"/>
         <segue reference="VEC-vc-YL7"/>
     </inferredMetricsTieBreakers>
 </document>
